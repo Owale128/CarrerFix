@@ -8,7 +8,7 @@ function App() {
       afVariation={ButtonVariation.PRIMARY}
       onAfOnClick={() => console.log("Hallå världen!")}
     >
-      Skicka
+    Skicka
     </DigiButton>
   );
 }
