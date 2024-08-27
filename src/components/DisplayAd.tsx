@@ -8,6 +8,7 @@ const DisplayAd = ({ jobAd }: IDisplayAd) => {
   return (
     <div className="card">
       <h2>{jobAd.headline}</h2>
+      <p>{jobAd.description.text}</p>
     </div>
   );
 };
