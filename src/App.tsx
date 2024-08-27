@@ -6,7 +6,6 @@ import { router } from "./Router";
 function App() {
   return (
     <div>
-      <button></button>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
