@@ -8,7 +8,7 @@ interface IDisplayAd {
 const DisplayAd = ({ jobAd }: IDisplayAd) => {
   return (
     <div className="card">
-      <NavLink to={"/ad/" + jobAd.id} className="card-link">
+      <NavLink to={`/ad/${jobAd.id}`} className="card-link">
         <h2>{jobAd.headline}</h2>
       </NavLink>
       <p>{jobAd.description.text}</p>

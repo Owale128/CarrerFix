@@ -10,7 +10,7 @@ export const AdPage = () => {
 
   useEffect(() => {
     if (id) {
-      const getJob = async (id: number) => {
+      const getJob = async (id: string) => {
         try {
           const jobData = await getAd(id);
 
@@ -22,9 +22,9 @@ export const AdPage = () => {
         }
       };
 
-      getJob(+id);
+      getJob(id);
     }
-  });
+  }, [id]);
 
   return (
     <>
