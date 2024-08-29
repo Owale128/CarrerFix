@@ -11,10 +11,10 @@ const Layout = () => {
       <header>
         <ul>
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"}>Hem</NavLink>
           </li>
           <li>
-            <NavLink to={"/ads"}>AdPage</NavLink>
+            <NavLink to={"/ads"}>Annonser</NavLink>
           </li>
         </ul>
       </header>

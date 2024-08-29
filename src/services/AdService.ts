@@ -8,3 +8,10 @@ export const getAds = async (searchText: string): Promise<IJobAd[]> => {
   );
   return response.hits;
 };
+
+export const getAd = async (id: number): Promise<IJobAd> => {
+  const response = await get<IJobAd>(
+    `https://jobsearch.api.jobtechdev.se/ad/${id}`
+  );
+  return response;
+};

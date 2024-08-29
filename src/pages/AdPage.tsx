@@ -1,30 +1,34 @@
-import { useContext } from "react";
-import { JobAdsContext } from "../contexts/JobAdsContext";
-import DisplayAd from "../components/DisplayAd";
-import { SearchForm } from "../components/SearchForm";
-import { useGetJobs } from "../hooks/useGetJobs";
+import { useParams } from "react-router-dom";
+import { getAd } from "../services/AdService";
+import { useEffect, useState } from "react";
+import { IJobAd } from "../models/IJobAd";
 
-const AdPage = () => {
-  const { jobAds } = useContext(JobAdsContext);
+export const AdPage = () => {
+  const { id } = useParams<{ id: string }>();
 
-  const [getJobsAds] = useGetJobs();
+  const [job, setJob] = useState<IJobAd>();
+
+  useEffect(() => {
+    if (id) {
+      const getJob = async (id: number) => {
+        try {
+          const jobData = await getAd(id);
+
+          setJob(jobData);
+
+          console.log("data retreived: ", jobData);
+        } catch (error) {
+          console.error("No data found", error);
+        }
+      };
+
+      getJob(+id);
+    }
+  });
 
   return (
-    <div>
-      <SearchForm getJobAds={getJobsAds} />
-      {jobAds.length > 0 ? (
-        <ul>
-          {jobAds.map((job) => (
-            <li key={job.id}>
-              <DisplayAd jobAd={job}></DisplayAd>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No job ads found.</p>
-      )}
-    </div>
+    <>
+      <p>{job?.id}</p>
+    </>
   );
 };
-
-export default AdPage;

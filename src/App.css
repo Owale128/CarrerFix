@@ -34,7 +34,13 @@
 }
 
 .card {
-  padding: 2em;
+  border: 1px solid #ffff;
+  padding: 16px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 
 .read-the-docs {

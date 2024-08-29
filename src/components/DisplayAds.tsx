@@ -10,9 +10,7 @@ const DisplayAds = () => {
       {jobAds.length > 0 ? (
         <ul>
           {jobAds.map((job) => (
-            <li key={job.id}>
-              <DisplayAd jobAd={job}></DisplayAd>
-            </li>
+            <DisplayAd key={job.id} jobAd={job}></DisplayAd>
           ))}
         </ul>
       ) : (
