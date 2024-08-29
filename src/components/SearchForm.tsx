@@ -5,6 +5,7 @@ import {
 import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
 import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ISearchForm {
   getJobAds: (searchText: string) => void;
@@ -12,12 +13,14 @@ interface ISearchForm {
 
 export const SearchForm = ({ getJobAds }: ISearchForm) => {
   const [text, setText] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleSearch = (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
     if (text.trim() !== "") {
       getJobAds(text);
       setText("");
+      navigate("/ads");
     }
   };
 
