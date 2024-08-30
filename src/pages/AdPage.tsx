@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { getAd } from "../services/AdService";
 import { useEffect, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
+import { ExtendedAdDetails } from "../components/ExtendedAdDetails";
 
 export const AdPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,7 +29,7 @@ export const AdPage = () => {
 
   return (
     <>
-      <h2>{ad?.headline}</h2>
+      <ExtendedAdDetails ad={ad}></ExtendedAdDetails>
     </>
   );
 };

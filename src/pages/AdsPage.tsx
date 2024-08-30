@@ -1,9 +1,9 @@
+import { DisplayAds } from "../components/DisplayAds";
 import { SearchForm } from "../components/SearchForm";
 
-import DisplayAds from "../components/DisplayAds";
 import { useAds } from "../hooks/useAds";
 
-const AdPage = () => {
+export const AdsPage = () => {
   const [getAds] = useAds();
 
   return (
@@ -13,5 +13,3 @@ const AdPage = () => {
     </div>
   );
 };
-
-export default AdPage;
