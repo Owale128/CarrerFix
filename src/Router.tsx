@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import { Home } from "./pages/Home";
 import AdsPage from "./pages/AdsPage";
 import { AdPage } from "./pages/AdPage";
+import AboutPage from "./pages/AboutPage";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage/>,
       },
       {
         path: "/ads",
