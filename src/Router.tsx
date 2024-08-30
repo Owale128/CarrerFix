@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { AdPage } from "./pages/AdPage";
 import AboutPage from "./pages/AboutPage";
 import { AdsPage } from "./pages/AdsPage";
+import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -28,5 +29,6 @@ export const router = createBrowserRouter([
         element: <AdPage />,
       },
     ],
+    errorElement: <NotFound />
   },
 ]);
