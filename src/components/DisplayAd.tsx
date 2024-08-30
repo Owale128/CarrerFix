@@ -12,6 +12,7 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
         <h2>{jobAd.headline}</h2>
       </NavLink>
       <p>Läs mer...</p>
+      <p>Datum: {jobAd.publication_date}</p>
     </div>
   );
 };
