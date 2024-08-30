@@ -14,7 +14,7 @@ const Layout = () => {
             <NavLink to={"/"}>Hem</NavLink>
           </li>
           <li>
-            <NavLink to={"/ads"}>Annonser</NavLink>
+            <NavLink to={"/about"}>About</NavLink>
           </li>
         </ul>
       </header>
