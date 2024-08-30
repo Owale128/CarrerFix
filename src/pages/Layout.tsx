@@ -10,6 +10,9 @@ const Layout = () => {
     <JobAdsContext.Provider value={{ jobAds, setJobAds }}>
       <header className="header">
         <ul>
+          <li className="logo">
+            <img src="../assets/logo-img.jpg" alt="Logo" className="logo-img" />
+          </li>
           <li className="list">
             <NavLink to={"/"}>Hem</NavLink>
           </li>
