@@ -3,7 +3,7 @@ import { SearchForm } from "../components/SearchForm";
 
 import { useAds } from "../hooks/useAds";
 
-export const AdPage = () => {
+export const AdsPage = () => {
   const [getAds] = useAds();
 
   return (
