@@ -8,9 +8,12 @@ const Layout = () => {
 
   return (
     <JobAdsContext.Provider value={{ jobAds, setJobAds }}>
-      <header>
+      <header className="header">
         <ul>
-          <li>
+          <li className="logo">
+            <img src="../assets/logo-img.jpg" alt="Logo" className="logo-img" />
+          </li>
+          <li className="list">
             <NavLink to={"/"}>Hem</NavLink>
           </li>
           <li>
@@ -21,7 +24,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      <footer></footer>
+      <footer className="footer"></footer>
     </JobAdsContext.Provider>
   );
 };
