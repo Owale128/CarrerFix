@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { JobAdsContext } from "../contexts/JobAdsContext";
-import DisplayAd from "./DisplayAd";
+import { DisplayAd } from "./DisplayAd";
 
-const DisplayAds = () => {
+export const DisplayAds = () => {
   const { jobAds } = useContext(JobAdsContext);
 
   return (
@@ -19,5 +19,3 @@ const DisplayAds = () => {
     </div>
   );
 };
-
-export default DisplayAds;
