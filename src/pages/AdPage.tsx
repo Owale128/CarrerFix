@@ -6,29 +6,29 @@ import { IJobAd } from "../models/IJobAd";
 export const AdPage = () => {
   const { id } = useParams<{ id: string }>();
 
-  const [job, setJob] = useState<IJobAd>();
+  const [ad, setAd] = useState<IJobAd>();
 
   useEffect(() => {
     if (id) {
-      const getJob = async (id: string) => {
+      const getAdData = async (id: string) => {
         try {
-          const jobData = await getAd(id);
+          const data = await getAd(id);
 
-          setJob(jobData);
+          setAd(data);
 
-          console.log("data retreived: ", jobData);
+          console.log("data retreived: ", data);
         } catch (error) {
           console.error("No data found", error);
         }
       };
 
-      getJob(id);
+      getAdData(id);
     }
   }, [id]);
 
   return (
     <>
-      <p>{job?.id}</p>
+      <h2>{ad?.headline}</h2>
     </>
   );
 };
