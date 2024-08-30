@@ -3,11 +3,11 @@ import { useGetJobs } from "../hooks/useGetJobs";
 import DisplayAds from "../components/DisplayAds";
 
 const AdPage = () => {
-  const [getJobsAds] = useGetJobs();
+  const [getAds] = useGetJobs();
 
   return (
     <div>
-      <SearchForm getJobAds={getJobsAds} />
+      <SearchForm getAds={getAds} />
       <DisplayAds></DisplayAds>
     </div>
   );
