@@ -1,13 +1,13 @@
 import { SearchForm } from "../components/SearchForm";
 
-import { useGetJobs } from "../hooks/useGetJobs";
+import { useAds } from "../hooks/useAds";
 
 export const Home = () => {
-  const [getAds] = useGetJobs();
+  const [getAdData] = useAds();
 
   return (
     <>
-      <SearchForm getAds={getAds} />
+      <SearchForm getAdData={getAdData} />
     </>
   );
 };

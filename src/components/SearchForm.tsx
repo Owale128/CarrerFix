@@ -8,17 +8,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface ISearchForm {
-  getAds: (searchText: string) => void;
+  getAdData: (searchText: string) => void;
 }
 
-export const SearchForm = ({ getAds }: ISearchForm) => {
+export const SearchForm = ({ getAdData }: ISearchForm) => {
   const [text, setText] = useState<string>("");
   const navigate = useNavigate();
 
   const handleSearch = (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
     if (text.trim() !== "") {
-      getAds(text);
+      getAdData(text);
       setText("");
       navigate("/ads");
     }

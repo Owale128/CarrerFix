@@ -1,13 +1,14 @@
 import { SearchForm } from "../components/SearchForm";
-import { useGetJobs } from "../hooks/useGetJobs";
+
 import DisplayAds from "../components/DisplayAds";
+import { useAds } from "../hooks/useAds";
 
 const AdPage = () => {
-  const [getAds] = useGetJobs();
+  const [getAds] = useAds();
 
   return (
     <div>
-      <SearchForm getAds={getAds} />
+      <SearchForm getAdData={getAds} />
       <DisplayAds></DisplayAds>
     </div>
   );
