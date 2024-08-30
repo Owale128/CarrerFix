@@ -25,7 +25,7 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
   };
 
   return (
-    <DigiFormInputSearch
+    <DigiFormInputSearch 
       afLabel="Sök Jobb"
       afVariation={FormInputSearchVariation.MEDIUM}
       afType={FormInputType.SEARCH}
@@ -36,3 +36,4 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
     ></DigiFormInputSearch>
   );
 };
+
