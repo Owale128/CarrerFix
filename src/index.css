@@ -115,3 +115,16 @@ body {
 .list a:hover {
   color: orange;
 }
+
+
+.logo {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  margin: 1px; 
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}

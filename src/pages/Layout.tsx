@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useState } from "react";
 import { IJobAd } from "../models/IJobAd";
+import logoImg from "../assets/logo-img.png";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
@@ -10,9 +11,9 @@ const Layout = () => {
     <JobAdsContext.Provider value={{ jobAds, setJobAds }}>
       <header className="header">
         <ul>
-          <li className="logo">
-            <img src="../assets/logo-img.jpg" alt="Logo" className="logo-img" />
-          </li>
+          <div className="logo">
+            <img src={logoImg} alt="Logo" className="logo-img" />
+          </div>
           <li className="list">
             <NavLink to={"/"}>Hem</NavLink>
           </li>
