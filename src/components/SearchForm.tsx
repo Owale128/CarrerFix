@@ -4,22 +4,26 @@ import {
 } from "@digi/arbetsformedlingen";
 import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
 import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
-import { useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { SearchTextContext } from "../contexts/SearchTextContext";
 
 interface ISearchForm {
-  getAdData: (searchText: string) => void;
+  getAdData: (searchText: string, offset: number, limit: number) => void;
 }
 
 export const SearchForm = ({ getAdData }: ISearchForm) => {
-  const [text, setText] = useState<string>("");
   const navigate = useNavigate();
+
+  const { searchText, setSearchText } = useContext(SearchTextContext);
+
+  const offset = 0;
+  const limit = 10;
 
   const handleSearch = (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
-    if (text.trim() !== "") {
-      getAdData(text);
-      setText("");
+    if (searchText.trim() !== "") {
+      getAdData(searchText, offset, limit);
       navigate("/ads");
     }
   };
@@ -31,8 +35,8 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
       afType={FormInputType.SEARCH}
       afButtonText="Sök"
       onAfOnSubmitSearch={handleSearch}
-      onAfOnChange={(e) => setText(e.target.value)}
-      value={text}
+      onAfOnChange={(e) => setSearchText(e.target.value)}
+      value={searchText}
     ></DigiFormInputSearch>
   );
 };
