@@ -9,11 +9,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -28,8 +23,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+
   min-height: 100vh;
 }
 
@@ -70,7 +64,8 @@ button:focus-visible {
   }
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -83,7 +78,7 @@ body {
 .header {
   background-color: #0d0040;
   color: white;
-  padding: 20px ;
+  padding: 20px;
   font-size: 20px;
   font-weight: bold;
   display: flex;
@@ -116,12 +111,11 @@ body {
   color: orange;
 }
 
-
 .logo {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  margin: 1px; 
+  margin: 1px;
 }
 
 .logo-img {
