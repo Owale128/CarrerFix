@@ -7,11 +7,14 @@ import logoImg from "../assets/logo-img.png";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
   const [searchText, setSearchText] = useState<string>("");
 
   return (
     <SearchTextContext.Provider value={{ searchText, setSearchText }}>
-      <JobAdsContext.Provider value={{ jobAds, setJobAds }}>
+      <JobAdsContext.Provider
+        value={{ jobAds, setJobAds, totalPages, setTotalPages }}
+      >
         <header className="header">
           <ul>
             <div className="logo">
