@@ -17,9 +17,7 @@ const Layout = () => {
       >
         <header className="header">
           <ul>
-            <div className="logo">
-              <img src={logoImg} alt="Logo" className="logo-img" />
-            </div>
+            <img src={logoImg} alt="Logo" className="logo-img" />
             <li className="list">
               <NavLink to={"/"}>Hem</NavLink>
             </li>
@@ -31,7 +29,9 @@ const Layout = () => {
         <main>
           <Outlet />
         </main>
-        <footer className="footer"></footer>
+        <footer className="footer">
+          <p>&copy; 2024 CarrerFix. Alla rättigheter förbehållna.</p>
+        </footer>
       </JobAdsContext.Provider>
     </SearchTextContext.Provider>
   );
