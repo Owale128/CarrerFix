@@ -32,17 +32,6 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
   };
 
   return (
-<<<<<<< HEAD
-    <DigiFormInputSearch
-      afLabel="Sök Jobb"
-      afVariation={FormInputSearchVariation.MEDIUM}
-      afType={FormInputType.SEARCH}
-      afButtonText="Sök"
-      onAfOnSubmitSearch={handleSearch}
-      onAfOnChange={(e) => setInputValue(e.target.value)}
-      value={inputValue}
-    ></DigiFormInputSearch>
-=======
     <div className="searchForm-container">
       <DigiFormInputSearch
         className="searchForm"
@@ -52,9 +41,8 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
         afButtonText="Sök"
         onAfOnSubmitSearch={handleSearch}
         onAfOnChange={(e) => setSearchText(e.target.value)}
-        value={searchText}
+        value={inputValue}
       />
     </div>
->>>>>>> f125ea0 (new style)
   );
 };
