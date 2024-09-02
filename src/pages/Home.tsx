@@ -74,9 +74,12 @@ export const Home = () => {
             consectetur, laoreet augue sit amet, malesuada tellus.
           </p>
         </DigiInfoCard>
+
+        {/*
         {latestAds.map((ad) => (
           <p>{ad.headline}</p>
         ))}
+        */}
       </div>
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
