@@ -71,6 +71,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -80,10 +81,11 @@ body {
 }
 
 main {
-  flex: 1;
-  padding: 20px;
-  margin: 80px auto;
-  width: 75vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4em 4em 2em 4em;
+  justify-content: space-between;
 }
 
 .header {
@@ -95,7 +97,6 @@ main {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
   z-index: 100;
 }
 
@@ -129,26 +130,10 @@ main {
   margin: 20px;
 }
 
-.footer {
-  width: 100%;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  background-color: #0d0040;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
 .info-cards-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-around;
   padding-top: 30px;
-  margin: 0 20px;
+  justify-content: space-between;
 }
 
 .infoCard {
@@ -165,9 +150,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px;
-  margin: 0 60px;
   width: 800px;
+}
+
+.adsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 0;
 }
 
 .card {
@@ -175,7 +165,6 @@ main {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -208,4 +197,31 @@ main {
 .lunchImg {
   max-width: 100%;
   height: auto;
+}
+
+.footer {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  background-color: #0d0040;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.pagination-section {
+  padding-top: 1em;
+}
+
+.search-hits-section {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.search-hits-section h3 {
+  color: black;
+  font-weight: bold;
 }

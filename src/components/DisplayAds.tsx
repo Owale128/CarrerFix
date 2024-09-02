@@ -8,7 +8,7 @@ export const DisplayAds = () => {
   return (
     <div>
       {jobAds.length > 0 ? (
-        <ul>
+        <ul className="adsList">
           {jobAds.map((job) => (
             <DisplayAd key={job.id} jobAd={job}></DisplayAd>
           ))}
