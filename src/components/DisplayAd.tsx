@@ -12,8 +12,8 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
     <article className="card">
       <NavLink to={`/ad/${jobAd.id}`} className="card-link">
         <h2>{jobAd.headline}</h2>
+      <p style={{textDecoration: 'underline', color: 'blue'}}>Läs mer...</p>
       </NavLink>
-      <p>Läs mer...</p>
 
       <div>
         <p>Datum för publicering: </p>
