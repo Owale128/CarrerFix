@@ -8,9 +8,16 @@ import {
   InfoCardVariation,
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
+import { JobAdsContext } from "../contexts/JobAdsContext";
+import { useContext } from "react";
 
 export const Home = () => {
   const [getAdData] = useAds();
+  const { jobAds } = useContext(JobAdsContext);
+
+  const latestAds = [...jobAds].slice(0, 9);
+
+  console.log(latestAds);
 
   return (
     <>
@@ -67,6 +74,9 @@ export const Home = () => {
             consectetur, laoreet augue sit amet, malesuada tellus.
           </p>
         </DigiInfoCard>
+        {latestAds.map((ad) => (
+          <p>{ad.headline}</p>
+        ))}
       </div>
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
