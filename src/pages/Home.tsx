@@ -27,8 +27,8 @@ export const Home = () => {
           afSize={InfoCardSize.STANDARD}
         >
           <p>
-            Det här är bara ord för att illustrera hur det ser ut med text
-            inuti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Tjoooo. Det här är bara ord för att illustrera hur det ser ut med
+            text inuti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Suspendisse commodo egestas elit in consequat. Proin in ex
             consectetur, laoreet augue sit amet, malesuada tellus.
           </p>
