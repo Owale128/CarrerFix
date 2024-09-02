@@ -5,25 +5,21 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-    /*LAYOUT*/
-    --digi--typography--heading-1--font-size--desktop: 2rem;
-    --digi--margin--h1-small: 1rem;
-    --digi--typography--body--font-size--desktop: 1rem;
-    /*FONTER*/
-    --digi--global--typography--font-size--base:
-    /*FÄRGER*/
-    --digi--color--background--primary: #FAFAFA;
-    --digi--color--background--secondary: #0D0040;
-    --digi--color--background--tertiary: #EAEAEA;
-    --digi--color--text--link: rgb(17, 0, 168);
-    --digi--color--text--link-hover: #FF8001;
-    /*TEXT FÄRGER*/
-    --digi--color--text--primary: black;
-    --digi--color--text--secondary: white;
+  /*LAYOUT*/
+  --digi--typography--heading-1--font-size--desktop: 2rem;
+  --digi--margin--h1-small: 1rem;
+  --digi--typography--body--font-size--desktop: 1rem;
+  /*FONTER*/
+  --digi--global--typography--font-size--base: 1rem;
+  /*FÄRGER*/
+  --digi--color--background--primary: #fafafa;
+  --digi--color--background--secondary: #0d0040;
+  --digi--color--background--tertiary: #eaeaea;
+  --digi--color--text--link: rgb(17, 0, 168);
+  --digi--color--text--link-hover: #ff8001;
+  /*TEXT FÄRGER*/
+  --digi--color--text--primary: black;
 }
 
 a {
@@ -66,21 +62,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 html,
@@ -134,7 +115,7 @@ main {
 }
 
 .list a:hover {
-  color: var(--digi--color--text--link-hover)
+  color: var(--digi--color--text--link-hover);
 }
 
 .logo-img {

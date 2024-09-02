@@ -59,6 +59,7 @@ export const AdsPage = () => {
           afTotalPages={totalPages}
           afInitActivePage={currentPage}
           onAfOnPageChange={handlePageChange}
+          afResultName="annonser"
         ></DigiNavigationPagination>
       </section>
     </>
