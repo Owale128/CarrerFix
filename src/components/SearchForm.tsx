@@ -40,7 +40,7 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
         afType={FormInputType.SEARCH}
         afButtonText="Sök"
         onAfOnSubmitSearch={handleSearch}
-        onAfOnChange={(e) => setSearchText(e.target.value)}
+        onAfOnChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
       />
     </div>
