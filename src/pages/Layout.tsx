@@ -30,7 +30,7 @@ const Layout = () => {
           <Outlet />
         </main>
         <footer className="footer">
-          <p>&copy; 2024 CarrerFix. Alla rättigheter förbehållna.</p>
+          <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
         </footer>
       </JobAdsContext.Provider>
     </SearchTextContext.Provider>

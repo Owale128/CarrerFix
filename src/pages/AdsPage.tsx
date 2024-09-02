@@ -12,12 +12,18 @@ export const AdsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const { searchText } = useContext(SearchTextContext);
+  const [totalAds, setTotalAds] = useState<number>(0);
   const limit = 10;
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
     const pageNumber = e.detail;
     setCurrentPage(pageNumber);
     console.log(pageNumber);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -27,6 +33,8 @@ export const AdsPage = () => {
         try {
           const totalCount = await getAdData(searchText, offset, limit);
           setTotalPages(Math.ceil(totalCount / limit));
+
+          setTotalAds(totalCount);
         } catch (error) {
           console.error("Error fetching data:", error);
         }
@@ -39,6 +47,11 @@ export const AdsPage = () => {
   return (
     <div>
       <SearchForm getAdData={getAdData} />
+
+      <div>
+        <p>Antal träffar: {totalAds}</p>
+        <p>Antal sidor: {totalPages}</p>
+      </div>
       <DisplayAds></DisplayAds>
 
       <DigiNavigationPagination

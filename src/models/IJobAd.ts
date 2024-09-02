@@ -9,7 +9,7 @@ export interface IJobAd {
   number_of_vacancies: number;
   description: IDescription;
   employment_type: IEmploymentType;
-  workPlace_adress: IWorkAdress;
+  workplace_address: IWorkAdress;
   publication_date: string;
   last_publication_date: string;
 }

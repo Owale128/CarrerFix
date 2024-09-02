@@ -6,12 +6,27 @@ interface IExtendedDetailsProps {
 
 export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
   return (
-    <div>
-      <div className="card">
+    <article className="card">
+      <div>
         <h2>{ad?.headline}</h2>
         <p>{ad?.description.text}</p>
         <p>Antal lediga platser: {ad?.number_of_vacancies}</p>
       </div>
-    </div>
+
+      <div>
+        <p>
+          Stad:{" "}
+          {ad?.workplace_address?.city
+            ? ad.workplace_address.city
+            : "Ingen stad angett"}
+        </p>
+        <p>
+          Stad:{" "}
+          {ad?.workplace_address?.country
+            ? ad.workplace_address.country
+            : "Inget land angett"}
+        </p>
+      </div>
+    </article>
   );
 };
