@@ -45,20 +45,22 @@ export const AdsPage = () => {
   }, [searchText, currentPage, getAdData]);
 
   return (
-    <div>
+    <>
       <SearchForm getAdData={getAdData} />
-
-      <div>
-        <p>Antal träffar: {totalAds}</p>
-        <p>Antal sidor: {totalPages}</p>
-      </div>
+      <section className="search-hits-section">
+        <h3>{totalAds} sökträffar</h3>
+        <p> | </p>
+        <h3>{totalPages} antal sidor</h3>
+      </section>
       <DisplayAds></DisplayAds>
 
-      <DigiNavigationPagination
-        afTotalPages={totalPages}
-        afInitActivePage={currentPage}
-        onAfOnPageChange={handlePageChange}
-      ></DigiNavigationPagination>
-    </div>
+      <section className="pagination-section">
+        <DigiNavigationPagination
+          afTotalPages={totalPages}
+          afInitActivePage={currentPage}
+          onAfOnPageChange={handlePageChange}
+        ></DigiNavigationPagination>
+      </section>
+    </>
   );
 };
