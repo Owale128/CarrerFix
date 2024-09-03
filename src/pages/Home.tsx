@@ -1,14 +1,8 @@
-import {
-  DigiInfoCard,
-  DigiInfoCardMulti,
-  DigiInfoCardMultiContainer,
-} from "@digi/arbetsformedlingen-react";
+import { DigiInfoCard } from "@digi/arbetsformedlingen-react";
 import { SearchForm } from "../components/SearchForm";
 import { useAds } from "../hooks/useAds";
 import {
   InfoCardHeadingLevel,
-  InfoCardMultiHeadingLevel,
-  InfoCardMultiType,
   InfoCardSize,
   InfoCardType,
   InfoCardVariation,
