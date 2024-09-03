@@ -4,6 +4,7 @@ import { useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import { SearchTextContext } from "../contexts/SearchTextContext";
 import logoImg from "../assets/logo-img.png";
+import '../sass/layout.scss'
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);

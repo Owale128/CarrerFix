@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { IJobAd } from "../models/IJobAd";
 import { DigiTypographyTime } from "@digi/arbetsformedlingen-react";
 import { TypographyTimeVariation } from "@digi/arbetsformedlingen";
+import '../sass/card.scss'
 
 interface IDisplayAd {
   jobAd: IJobAd;

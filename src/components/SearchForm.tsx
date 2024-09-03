@@ -7,6 +7,7 @@ import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/ty
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchTextContext } from "../contexts/SearchTextContext";
+import '../sass/searchForm.scss'
 
 interface ISearchForm {
   getAdData: (searchText: string, offset: number, limit: number) => void;

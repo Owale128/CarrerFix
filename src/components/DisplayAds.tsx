@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { DisplayAd } from "./DisplayAd";
+import '../sass/adsList.scss'
 
 export const DisplayAds = () => {
   const { jobAds } = useContext(JobAdsContext);

@@ -10,6 +10,8 @@ import {
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useContext } from "react";
+import '../sass/infoCard.scss'
+import '../sass/homeImg.scss'
 
 export const Home = () => {
   const [getAdData] = useAds();
