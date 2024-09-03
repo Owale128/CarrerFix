@@ -1,8 +1,14 @@
-import { DigiInfoCard } from "@digi/arbetsformedlingen-react";
+import {
+  DigiInfoCard,
+  DigiInfoCardMulti,
+  DigiInfoCardMultiContainer,
+} from "@digi/arbetsformedlingen-react";
 import { SearchForm } from "../components/SearchForm";
 import { useAds } from "../hooks/useAds";
 import {
   InfoCardHeadingLevel,
+  InfoCardMultiHeadingLevel,
+  InfoCardMultiType,
   InfoCardSize,
   InfoCardType,
   InfoCardVariation,
@@ -10,8 +16,8 @@ import {
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useContext } from "react";
-import '../sass/infoCard.scss'
-import '../sass/homeImg.scss'
+import "../sass/infoCard.scss";
+import "../sass/homeImg.scss";
 
 export const Home = () => {
   const [getAdData] = useAds();
