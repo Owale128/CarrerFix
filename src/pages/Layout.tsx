@@ -25,6 +25,9 @@ const Layout = () => {
             <li className="list">
               <NavLink to={"/about"}>About</NavLink>
             </li>
+            <li className="list">
+              <NavLink to={"/savedAds"}>Saved Ads</NavLink>
+            </li>
           </ul>
         </header>
         <main>
