@@ -1,22 +1,25 @@
 import RighArrow from "../assets/arrow-right-circle (1).svg";
 import LeftArrow from "../assets/arrow-left-circle (1).svg";
-import { DigiInfoCard } from "@digi/arbetsformedlingen-react";
+import {
+  DigiLayoutBlock,
+  DigiTypography,
+  DigiTypographyTime,
+} from "@digi/arbetsformedlingen-react";
 import { SearchForm } from "../components/SearchForm";
 import { useAds } from "../hooks/useAds";
 import {
-  InfoCardHeadingLevel,
-  InfoCardSize,
-  InfoCardType,
-  InfoCardVariation,
+  LayoutBlockContainer,
+  LayoutBlockVariation,
+  TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useContext, useEffect, useState } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
-import { truncateText } from "../Utils/textUtils";
 import { IJobAd } from "../models/IJobAd";
 import { getLatestAds } from "../Utils/adUtils";
+import { NavLink } from "react-router-dom";
 
 export const Home = () => {
   const result = useAds();
@@ -25,6 +28,17 @@ export const Home = () => {
   const [scrollIndex, setScrollIndex] = useState<number>(0);
 
   const latestAds: IJobAd[] = getLatestAds(jobAds, 9);
+
+  const handleScroll = () => {
+    setScrollIndex((prevIndex) => {
+      const maxIndex = 2;
+      if (prevIndex < maxIndex) {
+        return prevIndex + 1;
+      } else {
+        return 0;
+      }
+    });
+  };
 
   useEffect(() => {
     getAdData("any", 0, 3);
