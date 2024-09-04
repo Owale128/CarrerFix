@@ -17,8 +17,6 @@ import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useContext, useState } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
-import { IJobAd } from "../models/IJobAd";
-import { getLatestAds } from "../Utils/adUtils";
 import { NavLink } from "react-router-dom";
 
 export const Home = () => {
@@ -27,7 +25,7 @@ export const Home = () => {
   const { jobAds } = useContext(JobAdsContext);
   const [scrollIndex, setScrollIndex] = useState<number>(0);
 
-  const latestAds: IJobAd[] = getLatestAds(jobAds, 9);
+  const latestAds = [...jobAds].slice(0, 9);
 
   const handleScroll = () => {
     setScrollIndex((prevIndex) => {
