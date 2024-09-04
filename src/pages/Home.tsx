@@ -1,14 +1,12 @@
 import { SearchForm } from "../components/SearchForm";
 import { useAds } from "../hooks/useAds";
 import lunch1 from "../assets/lunch1.png";
-import "../sass/infoCard.scss";
-import "../sass/homeImg.scss";
 import ShowRecentAds from "../components/ShowRecentAds";
 import ShowLatestAds from "../components/ShowLatestAds";
 
-export const Home = () => {
+export const Home = () => {;
   const [getAdData] = useAds();
-  
+
   return (
     <>
       <SearchForm getAdData={getAdData} />
