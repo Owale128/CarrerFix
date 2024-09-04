@@ -1,0 +1,19 @@
+.spinnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.spinnerImage {
+  width: 1000px;
+  height: 1000px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  color: var(--digi--color--text--primary);
+}
