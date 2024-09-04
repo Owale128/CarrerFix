@@ -1,6 +1,6 @@
 import { IJobAd } from "../models/IJobAd";
 
-export const getLatestAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
+export const getRecentAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
   return [...jobAds]
     .sort((a, b) => {
       const dateA = new Date(a.publication_date).getTime();
@@ -9,3 +9,8 @@ export const getLatestAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
     })
     .slice(0, count);
 };
+
+/* export const getLatestSearchedAds = (searchResults: IJobAd[], count: number): IJobAd[] => {
+  return [...searchResults]
+    .slice(0, count);
+}; */
