@@ -1,10 +1,10 @@
-import spinnerGif from "../assets/balls.gif";
-import spinner from "../sass/spinner.scss";
+import SpinnerGif from "../assets/balls.gif";
+import "../sass/spinner.scss"
 
-const Spinner = () => {
+export const Spinner = () => {
   return (
     <div className="spinnerContainer">
-      <img src={spinnerGif} alt="Loading..." className="spinnerImage" />
+      <img src={SpinnerGif} alt="Loading..." className="spinnerImage" />
       <h2>Laddar Data...</h2>
     </div>
   );
