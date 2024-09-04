@@ -40,9 +40,11 @@ export const Home = () => {
     });
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     getAdData("any", 0, 3);
   }, [getAdData]);
+
+  */
 
   return (
     <>
