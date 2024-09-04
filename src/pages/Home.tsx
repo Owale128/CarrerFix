@@ -12,9 +12,9 @@ import { JobAdsContext } from "../contexts/JobAdsContext";
 import { useContext, useEffect } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
-import { truncateText } from "./Utils/textUtils";
+import { truncateText } from "../Utils/textUtils";
 import { IJobAd } from "../models/IJobAd";
-import { getLatestAds } from "./Utils/adUtils";
+import { getLatestAds } from "../Utils/adUtils";
 
 export const Home = () => {
   const result = useAds();
