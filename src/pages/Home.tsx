@@ -12,18 +12,31 @@ import {
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
+<<<<<<< HEAD
 import { NavLink } from "react-router-dom";
+=======
+import { truncateText } from "./Utils/textUtils";
+import { IJobAd } from "../models/IJobAd";
+import { getLatestAds } from "./Utils/adUtils";
+>>>>>>> showLatestAd
 
 export const Home = () => {
-  const [getAdData] = useAds();
+  const result = useAds();
+  const [ getAdData ] = result;
   const { jobAds } = useContext(JobAdsContext);
 
+<<<<<<< HEAD
   const latestAds = [...jobAds].slice(0, 3);
+=======
+  const latestAds: IJobAd[] = getLatestAds(jobAds, 3);
+>>>>>>> showLatestAd
 
-  console.log(latestAds);
+  useEffect(() => {
+    getAdData("any", 0, 3); 
+  }, [getAdData]);
 
   return (
     <>
@@ -31,6 +44,7 @@ export const Home = () => {
       <h3>Annonser baserade på dina senaste sökningar</h3>
       <div className="info-cards-container">
         {latestAds.map((ad) => (
+<<<<<<< HEAD
           <DigiLayoutBlock
             key={ad.id}
             afVariation={LayoutBlockVariation.PRIMARY}
@@ -55,6 +69,21 @@ export const Home = () => {
               ></DigiTypographyTime>
             </DigiTypography>
           </DigiLayoutBlock>
+=======
+          <DigiInfoCard
+            key={ad.id}
+            className="infoCard"
+            afHeading={ad.headline}
+            afHeadingLevel={InfoCardHeadingLevel.H2}
+            afType={InfoCardType.TIP}
+            afLinkHref={`/ad/${ad.id}`}
+            afLinkText="Sök NU"
+            afVariation={InfoCardVariation.PRIMARY}
+            afSize={InfoCardSize.STANDARD}
+          >
+           <p>{truncateText(ad.description.text, 100)}</p>
+          </DigiInfoCard>
+>>>>>>> showLatestAd
         ))}
       </div>
       <div className="image-container">
