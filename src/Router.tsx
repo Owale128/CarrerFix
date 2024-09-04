@@ -7,6 +7,7 @@ import { AdsPage } from "./pages/AdsPage";
 import NotFound from "./pages/NotFound";
 import { Suspense } from "react";
 import Spinner from "./components/Spinner";
+import SavedAds from "./pages/SavedAds";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
         <AdPage />
         </Suspense>
         ),
+      },
+      {
+        path: "/savedAds",
+        element: <SavedAds/>,
       },
     ],
     errorElement: <NotFound />
