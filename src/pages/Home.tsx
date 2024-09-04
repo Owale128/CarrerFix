@@ -14,18 +14,29 @@ import {
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
 import { NavLink } from "react-router-dom";
+import { IJobAd } from "../models/IJobAd";
 
 export const Home = () => {
   const result = useAds();
   const [getAdData] = result;
   const { jobAds } = useContext(JobAdsContext);
   const [scrollIndex, setScrollIndex] = useState<number>(0);
+  const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
 
-  const latestAds = [...jobAds].slice(0, 9);
+  useEffect(() => {
+    const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
+    if (storedAds.length > 0) {
+      setLatestAds(storedAds);
+    } else if (jobAds.length > 0) {
+      const updatedAds = jobAds.slice(0, 9);
+      setLatestAds(updatedAds);
+      localStorage.setItem("storedAds", JSON.stringify(updatedAds));
+    }
+  }, [jobAds]);
 
   const handleScroll = () => {
     setScrollIndex((prevIndex) => {
@@ -92,7 +103,7 @@ export const Home = () => {
           )}
         </div>
       </div>
-         
+
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
       </div>
