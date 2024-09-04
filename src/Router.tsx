@@ -6,8 +6,9 @@ import AboutPage from "./pages/AboutPage";
 import { AdsPage } from "./pages/AdsPage";
 import NotFound from "./pages/NotFound";
 import { Suspense } from "react";
-import Spinner from "./components/Spinner";
 import SavedAds from "./pages/SavedAds";
+import { Spinner } from "./components/Spinner";
+
 
 export const router = createBrowserRouter([
   {

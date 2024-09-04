@@ -1,4 +1,4 @@
-import { IJobAd } from "../../models/IJobAd";
+import { IJobAd } from "../models/IJobAd";
 
 export const getLatestAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
   return [...jobAds]

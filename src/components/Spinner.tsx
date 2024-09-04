@@ -1,5 +1,12 @@
-const Spinner = () => {
-  return <h2>..Laddar Data..</h2>
-}
+import SpinnerGif from "../assets/balls.gif";
+import "../sass/spinner.scss"
 
-export default Spinner
+export const Spinner = () => {
+  return (
+    <div className="spinnerContainer">
+      <img src={SpinnerGif} alt="Loading..." className="spinnerImage" />
+      <h2>Laddar Data...</h2>
+    </div>
+  );
+};
+
