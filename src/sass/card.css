@@ -1,0 +1,30 @@
+.card {
+  background-color: var(--digi--color--background--primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card p {
+  color: #555555;
+  margin: 10px 0;
+}
+.card h2 {
+  font-size: 1.5rem;
+  color: #0d0040;
+  margin-bottom: 10px;
+}
+.card h2:hover {
+  color: #ff8001;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.latest-ads-card {
+  width: 360px;
+  padding: 1.5em;
+  text-wrap: wrap;
+  height: 150px;
+  background-color: var(--digi--color--background--primary);
+}/*# sourceMappingURL=card.css.map */
