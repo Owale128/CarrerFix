@@ -14,7 +14,7 @@ import {
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
 import { IJobAd } from "../models/IJobAd";
@@ -94,7 +94,7 @@ export const Home = () => {
           )}
         </div>
       </div>
-
+         
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
       </div>
