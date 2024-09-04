@@ -6,7 +6,6 @@
     .infoCard {
       flex: 1 1 300px;
       max-width: 400px;
-      
       &:hover {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         transform: translateY(-5px);

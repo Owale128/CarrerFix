@@ -9,79 +9,43 @@ import {
 } from "@digi/arbetsformedlingen";
 import lunch1 from "../assets/lunch1.png";
 import { JobAdsContext } from "../contexts/JobAdsContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import "../sass/infoCard.scss";
 import "../sass/homeImg.scss";
+import { truncateText } from "./Utils/textUtils";
+import { IJobAd } from "../models/IJobAd";
+import { getLatestAds } from "./Utils/adUtils";
 
 export const Home = () => {
-  const [getAdData] = useAds();
+  const result = useAds();
+  const [ getAdData ] = result;
   const { jobAds } = useContext(JobAdsContext);
 
-  const latestAds = [...jobAds].slice(0, 9);
+  const latestAds: IJobAd[] = getLatestAds(jobAds, 3);
 
-  console.log(latestAds);
+  useEffect(() => {
+    getAdData("any", 0, 3); 
+  }, [getAdData]);
 
   return (
     <>
       <SearchForm getAdData={getAdData} />
       <div className="info-cards-container">
-        <DigiInfoCard
-          className="infoCard"
-          afHeading="Jag är ett infokort"
-          afHeadingLevel={InfoCardHeadingLevel.H2}
-          afType={InfoCardType.TIP}
-          afLinkHref="Frivillig länk"
-          afLinkText="Sök NU"
-          afVariation={InfoCardVariation.PRIMARY}
-          afSize={InfoCardSize.STANDARD}
-        >
-          <p>
-            Tjoooo. Det här är bara ord för att illustrera hur det ser ut med
-            text inuti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse commodo egestas elit in consequat. Proin in ex
-            consectetur, laoreet augue sit amet, malesuada tellus.
-          </p>
-        </DigiInfoCard>
-        <DigiInfoCard
-          className="infoCard"
-          afHeading="Jag är ett infokort"
-          afHeadingLevel={InfoCardHeadingLevel.H2}
-          afType={InfoCardType.TIP}
-          afLinkHref="Frivillig länk"
-          afLinkText="Sök NU"
-          afVariation={InfoCardVariation.PRIMARY}
-          afSize={InfoCardSize.STANDARD}
-        >
-          <p>
-            Det här är bara ord för att illustrera hur det ser ut med text
-            inuti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse commodo egestas elit in consequat. Proin in ex
-            consectetur, laoreet augue sit amet, malesuada tellus.
-          </p>
-        </DigiInfoCard>
-        <DigiInfoCard
-          className="infoCard"
-          afHeading="Jag är ett infokort"
-          afHeadingLevel={InfoCardHeadingLevel.H2}
-          afType={InfoCardType.TIP}
-          afLinkHref="Frivillig länk"
-          afLinkText="Sök NU"
-          afVariation={InfoCardVariation.PRIMARY}
-          afSize={InfoCardSize.STANDARD}
-        >
-          <p>
-            Det här är bara ord för att illustrera hur det ser ut med text
-            inuti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse commodo egestas elit in consequat. Proin in ex
-            consectetur, laoreet augue sit amet, malesuada tellus.
-          </p>
-        </DigiInfoCard>
-
-        {/*
         {latestAds.map((ad) => (
-          <p>{ad.headline}</p>
+          <DigiInfoCard
+            key={ad.id}
+            className="infoCard"
+            afHeading={ad.headline}
+            afHeadingLevel={InfoCardHeadingLevel.H2}
+            afType={InfoCardType.TIP}
+            afLinkHref={`/ad/${ad.id}`}
+            afLinkText="Sök NU"
+            afVariation={InfoCardVariation.PRIMARY}
+            afSize={InfoCardSize.STANDARD}
+          >
+           <p>{truncateText(ad.description.text, 100)}</p>
+          </DigiInfoCard>
         ))}
-        */}
       </div>
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
