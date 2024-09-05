@@ -12,7 +12,7 @@ import {
   } from "@digi/arbetsformedlingen";
   import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
-import { JobAdsContext } from "../contexts/JobAdsContext";
+import { JobAdsContext } from "../context/JobAdsContext";
 
 const ShowLatestAds = () => {
 

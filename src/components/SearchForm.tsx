@@ -6,7 +6,7 @@ import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
 import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchTextContext } from "../contexts/SearchTextContext";
+import { SearchTextContext } from "../context/SearchTextContext";
 import '../sass/searchForm.scss'
 
 interface ISearchForm {

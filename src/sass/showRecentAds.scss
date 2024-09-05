@@ -1,0 +1,14 @@
+
+div {
+    position: relative;
+    
+    .showRecentAdsContainer {
+        .bookMarkRecentAds {
+            right: 1rem;
+            cursor: pointer;
+            width: 2rem;
+            bottom: 3rem;
+            position: absolute;
+        }
+    }
+}
