@@ -32,14 +32,28 @@ a:hover {
   color: var(--digi--color--text--link-hover);
 }
 
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   display: flex;
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   background-color: var(--digi--color--background--tertiary);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 4em 4em 2em 4em;
+  justify-content: space-between;
 }
 
 h1 {
@@ -66,12 +80,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 4em 4em 2em 4em;
-  justify-content: space-between;
 }

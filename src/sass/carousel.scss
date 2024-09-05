@@ -11,10 +11,10 @@
   transition: margin-left 0.5s ease;
 
   .latest-ads-card {
-    width: 320px;
+    width: 350px;
     padding: 1.5em;
     text-wrap: wrap;
-    height: 170px;
+    height: 220px;
     background-color: var(--digi--color--background--primary);
 
     &:hover {
@@ -58,9 +58,8 @@
 }
 
 .scroll-1 {
-  margin-left: -90%;
+  margin-left: -86%;
 }
-
 .scroll-2 {
-  margin-left: -210%;
+  margin-left: -200%;
 }

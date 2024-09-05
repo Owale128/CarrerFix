@@ -13,11 +13,11 @@ export const Home = () => {
       <div>
         <SuggestedAds />
       </div>
-      <div>
-        <ShowRecentAds />
-      </div>
       <div className="image-container">
         <img src={lunch1} alt="Lunch 1" className="lunchImg" />
+      </div>
+      <div>
+        <ShowRecentAds />
       </div>
     </>
   );
