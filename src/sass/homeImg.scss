@@ -1,13 +1,11 @@
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+  width: 100%;
+  height: 500px;
 
-    .lunchImg {
-      max-width: 100%;
-      height: auto;
-    }
-
+  .workerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%) contrast(120%) grayscale(50%);
   }
-  
+}
