@@ -6,33 +6,44 @@ import {
   DigiTypographyTime,
 } from "@digi/arbetsformedlingen-react";
 import {
-    LayoutBlockContainer,
-    LayoutBlockVariation,
-    TypographyTimeVariation,
-  } from "@digi/arbetsformedlingen";
-  import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
+  LayoutBlockContainer,
+  LayoutBlockVariation,
+  TypographyTimeVariation,
+} from "@digi/arbetsformedlingen";
+import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { JobAdsContext } from "../contexts/JobAdsContext";
+import { IJobAd } from "../models/IJobAd";
 
 const ShowLatestAds = () => {
+  const { jobAds } = useContext(JobAdsContext);
+  const [scrollIndex, setScrollIndex] = useState<number>(0);
+  const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
 
-    const { jobAds } = useContext(JobAdsContext);
-    const [scrollIndex, setScrollIndex] = useState<number>(0);
-    const latestAds = [...jobAds].slice(0, 9);
-  
-    const handleScroll = () => {
-      setScrollIndex((prevIndex) => {
-        const maxIndex = 2;
-        if (prevIndex < maxIndex) {
-          return prevIndex + 1;
-        } else {
-          return 0;
-        }
-      });
-    };
+  useEffect(() => {
+    const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
+    if (storedAds.length > 0) {
+      setLatestAds(storedAds);
+    } else if (jobAds.length > 0) {
+      const updatedAds = jobAds.slice(0, 9);
+      setLatestAds(updatedAds);
+      localStorage.setItem("storedAds", JSON.stringify(updatedAds));
+    }
+  }, [jobAds]);
+
+  const handleScroll = () => {
+    setScrollIndex((prevIndex) => {
+      const maxIndex = 2;
+      if (prevIndex < maxIndex) {
+        return prevIndex + 1;
+      } else {
+        return 0;
+      }
+    });
+  };
   return (
     <>
-          <h3>Annonser baserade på dina senaste sökningar</h3>
+      <h3>Annonser baserade på dina senaste sökningar</h3>
       <div className="carousel-wrapper">
         <div className={`latest-ads-cards-container scroll-${scrollIndex}`}>
           {latestAds.map((ad) => (
@@ -76,9 +87,9 @@ const ShowLatestAds = () => {
             </button>
           )}
         </div>
-        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default ShowLatestAds
+export default ShowLatestAds;
