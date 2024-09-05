@@ -1,4 +1,6 @@
 import { IJobAd } from "../models/IJobAd";
+import { Dispatch } from "react";
+import { IAction, ActionType } from "../reducers/SaveAdRecucer";
 
 export const getRecentAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
   return [...jobAds]
@@ -10,7 +12,20 @@ export const getRecentAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
     .slice(0, count);
 };
 
-/* export const getLatestSearchedAds = (searchResults: IJobAd[], count: number): IJobAd[] => {
-  return [...searchResults]
-    .slice(0, count);
-}; */
+export const handleSaveAd = (
+  jobAd: IJobAd,
+  isSaved: boolean,
+  dispatch: Dispatch<IAction>,
+  setIsSaved: (isSaved: boolean) => void
+) => {
+  if (isSaved) {
+    dispatch({ type: ActionType.REMOVE_AD, payload: jobAd.id });
+  } else {
+    dispatch({ type: ActionType.ADD_AD, payload: jobAd });
+  }
+  setIsSaved(!isSaved);
+};
+
+export const checkIfAdIsSaved = (adId: string, savedAds: IJobAd[]): boolean => {
+  return savedAds.some(ad => ad.id === adId);
+};

@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react"
-import { IJobAd } from "../models/IJobAd"
+import { useContext, useEffect } from "react"
 import { DisplayAd } from "../components/DisplayAd"
-
-
+import { SaveAdsContext } from "../context/SaveAdsContext";
 
 const SavedAds = () => {
-   const [saveAds, setSaveAds] = useState<IJobAd[]>([])
-
-useEffect(() => {
-    const storedAd = JSON.parse(localStorage.getItem('savedAds')|| '[]');
-    setSaveAds(storedAd)
-})
-
-const handleRemoveAd = (adId: string) => {
-    const updatedAd = saveAds.filter(ad => ad.id !== adId)
-    setSaveAds(updatedAd);
-    localStorage.setItem('savedAds', JSON.stringify(updatedAd))
-}
+  const {saveAds} = useContext(SaveAdsContext);
+  
+  useEffect(() => {
+    localStorage.setItem('savedAds', JSON.stringify(saveAds))
+}, [saveAds])
 
   return (
 <div>
@@ -25,8 +16,7 @@ const handleRemoveAd = (adId: string) => {
         <ul className="savedAdsList">
           {saveAds.map(ad => (
             <li key={ad.id} className="savedAdItem">
-              <DisplayAd jobAd={ad} />
-              <button onClick={() => handleRemoveAd(ad.id)}>Ta bort</button>
+              <DisplayAd jobAd={ad}/>
             </li>
           ))}
         </ul>

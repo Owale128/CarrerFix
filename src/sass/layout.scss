@@ -27,22 +27,23 @@
       margin: 20px;
     }
 
+    
     .list {
-        text-decoration: none;
-        color: var(--digi--color--text--secondary);
-        font-weight: bold;
-        padding: 10px 15px;
-
-        a {
-
-            &:hover {
-            color: var(--digi--color--text--link-hover);
-          }
+      text-decoration: none;
+      color: var(--digi--color--text--secondary);
+      font-weight: bold;
+      padding: 10px 15px;
+      
+      a {
+        
+        &:hover {
+          color: var(--digi--color--text--link-hover);
         }
-      }    
-    }
+      }
+    }    
   }
-  
+}
+
   .footer {
     color: var(--digi--color--text--secondary);
     padding: 20px;

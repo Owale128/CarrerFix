@@ -4,8 +4,8 @@ import { SearchForm } from "../components/SearchForm";
 import { useAds } from "../hooks/useAds";
 import { useContext, useEffect, useState } from "react";
 import { DigiNavigationPaginationCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
-import { SearchTextContext } from "../contexts/SearchTextContext";
-import "../sass/pagination&search.scss";
+import { SearchTextContext } from "../context/SearchTextContext";
+import '../sass/pagination&search.scss'
 
 export const AdsPage = () => {
   const [getAdData] = useAds();

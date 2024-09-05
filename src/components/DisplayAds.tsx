@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { JobAdsContext } from "../contexts/JobAdsContext";
+import { JobAdsContext } from "../context/JobAdsContext";
 import { DisplayAd } from "./DisplayAd";
 import '../sass/adsList.scss'
 

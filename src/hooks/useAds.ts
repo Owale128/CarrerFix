@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import { JobAdsContext } from "../contexts/JobAdsContext";
+import { JobAdsContext } from "../context/JobAdsContext";
 import { getAds } from "../services/AdService";
 import { IJobSearchResponse } from "../models/IJobSearchResponse";
 import { IJobAd } from "../models/IJobAd";
