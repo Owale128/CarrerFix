@@ -7,10 +7,15 @@ import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/ty
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchTextContext } from "../contexts/SearchTextContext";
-import '../sass/searchForm.scss'
+import "../sass/searchForm.scss";
+import { IJobAd } from "../models/IJobAd";
 
 interface ISearchForm {
-  getAdData: (searchText: string, offset: number, limit: number) => void;
+  getAdData: (
+    searchText: string,
+    offset: number,
+    limit: number
+  ) => Promise<{ ads: IJobAd[]; totalCount: number }>;
 }
 
 export const SearchForm = ({ getAdData }: ISearchForm) => {
@@ -22,11 +27,12 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
   const offset = 0;
   const limit = 10;
 
-  const handleSearch = (e: DigiFormInputSearchCustomEvent<string>) => {
+  const handleSearch = async (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
     if (inputValue.trim() !== "") {
       setSearchText(inputValue);
-      getAdData(inputValue, offset, limit);
+      const searchResults = await getAdData(inputValue, offset, limit);
+      localStorage.setItem("storedAds", JSON.stringify(searchResults.ads));
       setInputValue("");
       navigate("/ads");
     }

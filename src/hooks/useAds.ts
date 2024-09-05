@@ -2,12 +2,22 @@ import { useCallback, useContext } from "react";
 import { JobAdsContext } from "../contexts/JobAdsContext";
 import { getAds } from "../services/AdService";
 import { IJobSearchResponse } from "../models/IJobSearchResponse";
+import { IJobAd } from "../models/IJobAd";
+
+interface GetAdDataResult {
+  ads: IJobAd[];
+  totalCount: number;
+}
 
 export const useAds = () => {
   const { setJobAds } = useContext(JobAdsContext);
 
   const getAdData = useCallback(
-    async (searchText: string, offset: number, limit: number) => {
+    async (
+      searchText: string,
+      offset: number,
+      limit: number
+    ): Promise<GetAdDataResult> => {
       try {
         const jobData: IJobSearchResponse = await getAds(
           searchText,
@@ -16,13 +26,19 @@ export const useAds = () => {
         );
         setJobAds(jobData.hits);
         console.log("Data retrieved:", jobData);
-        return jobData.total.value;
+        return {
+          ads: jobData.hits,
+          totalCount: jobData.total.value,
+        };
       } catch (error) {
         console.error("Error fetching data:", error);
-        return 0;
+        return {
+          ads: [],
+          totalCount: 0,
+        };
       }
     },
     [setJobAds]
   );
-  return [getAdData];
+  return [getAdData] as const;
 };

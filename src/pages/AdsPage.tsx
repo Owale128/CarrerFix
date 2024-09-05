@@ -5,7 +5,7 @@ import { useAds } from "../hooks/useAds";
 import { useContext, useEffect, useState } from "react";
 import { DigiNavigationPaginationCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { SearchTextContext } from "../contexts/SearchTextContext";
-import '../sass/pagination&search.scss'
+import "../sass/pagination&search.scss";
 
 export const AdsPage = () => {
   const [getAdData] = useAds();
@@ -33,9 +33,9 @@ export const AdsPage = () => {
         const offset = (currentPage - 1) * limit;
         try {
           const totalCount = await getAdData(searchText, offset, limit);
-          setTotalPages(Math.ceil(totalCount / limit));
+          setTotalPages(Math.ceil(totalCount.totalCount / limit));
 
-          setTotalAds(totalCount);
+          setTotalAds(totalCount.totalCount);
         } catch (error) {
           console.error("Error fetching data:", error);
         }

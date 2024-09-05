@@ -11,12 +11,11 @@ import {
   TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { JobAdsContext } from "../contexts/JobAdsContext";
+import { useEffect, useState } from "react";
+
 import { IJobAd } from "../models/IJobAd";
 
 const ShowLatestAds = () => {
-  const { jobAds } = useContext(JobAdsContext);
   const [scrollIndex, setScrollIndex] = useState<number>(0);
   const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
 
@@ -24,12 +23,8 @@ const ShowLatestAds = () => {
     const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
     if (storedAds.length > 0) {
       setLatestAds(storedAds);
-    } else if (jobAds.length > 0) {
-      const updatedAds = jobAds.slice(0, 9);
-      setLatestAds(updatedAds);
-      localStorage.setItem("storedAds", JSON.stringify(updatedAds));
     }
-  }, [jobAds]);
+  }, []);
 
   const handleScroll = () => {
     setScrollIndex((prevIndex) => {
