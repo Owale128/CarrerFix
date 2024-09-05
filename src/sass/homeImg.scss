@@ -1,11 +1,24 @@
 .image-container {
   width: 100%;
   height: 500px;
+  position: relative;
 
-  .workerImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(60%) contrast(120%) grayscale(50%);
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(150, 105, 97, 0.3) 100%
+    ),
+    url("/src/assets/construction-worker-569126.jpg") no-repeat center / cover;
+}
+
+.info {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 4em;
+  left: 4em;
+
+  h1 {
+    color: white;
   }
 }
