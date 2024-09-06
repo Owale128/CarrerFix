@@ -53,7 +53,7 @@ export const AdsPage = () => {
         <p> | </p>
         <h3>{totalPages} antal sidor</h3>
       </section>
-      <DisplayAds></DisplayAds>
+      <DisplayAds/>
 
       <section className="pagination-section">
         <DigiNavigationPagination
