@@ -14,7 +14,7 @@ export const AdsPage = () => {
   const { searchText } = useContext(SearchTextContext);
   const [totalAds, setTotalAds] = useState<number>(0);
 
-  const limit = 10;
+  const limit = 0;
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
     const pageNumber = e.detail;
