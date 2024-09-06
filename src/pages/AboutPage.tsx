@@ -25,14 +25,14 @@ export const AboutPage = () => {
       </section>
       <section className="middleSection">
         <div className="middleContent">
-          <h1>jadu nått ska vara här</h1>
+          <h3 className="arrow">↓↑</h3>
         </div>
       </section>
       <section className="bottomSection">
         <div className="bottomContent">
-          <h1>
+          <h2>
             Hitta <span>drömjobbet</span> som tar din karriär till nästa nivå!
-          </h1>
+          </h2>
           <p>
             Utforska dina karriärmöjligheter med oss! Vi erbjuder ett brett
             utbud av spännande jobbmöjligheter som kan passa just dina
