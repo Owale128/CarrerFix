@@ -5,6 +5,18 @@
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  
+  .description {
+    margin-bottom: 32px;
+  }
+  
+  .number, .city, .country, .apply {
+    margin: 5px;
+    font-size: 16px;
+  }
+  .numberTitle, .cityTitle, .countryTitle {
+    font-weight: bold;
+  }
 
   .bookMark {
     width: 32px;

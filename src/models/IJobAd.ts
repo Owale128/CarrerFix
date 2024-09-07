@@ -14,4 +14,5 @@ export interface IJobAd {
   publication_date: string;
   employer: IEmployerInfo;
   last_publication_date: string;
+  webpage_url: string;
 }

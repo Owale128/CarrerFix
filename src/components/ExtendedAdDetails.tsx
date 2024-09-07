@@ -9,22 +9,25 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
     <article className="card">
       <div>
         <h2>{ad?.headline}</h2>
-        <p>{ad?.description.text}</p>
-        <p>Antal lediga platser: {ad?.number_of_vacancies}</p>
+        <p className="description">{ad?.description.text}</p>
+        <p className="number"><span className="numberTitle">Antal lediga platser:</span> {ad?.number_of_vacancies}</p>
       </div>
 
       <div>
-        <p>
-          Stad:{" "}
+        <p className="city">
+          <span className="cityTitle">Stad:</span>{" "}
           {ad?.workplace_address?.city
             ? ad.workplace_address.city
             : "Ingen stad angett"}
         </p>
-        <p>
-          Land:{" "}
+        <p className="country">
+          <span className="countryTitle">Land:</span>{" "}
           {ad?.workplace_address?.country
             ? ad.workplace_address.country
             : "Inget land angett"}
+        </p>
+        <p className="apply">
+          <a href={ad?.webpage_url}>Sök NU</a>
         </p>
       </div>
     </article>
