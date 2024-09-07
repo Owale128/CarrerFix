@@ -22,8 +22,8 @@ export const Home = () => {
     window.scrollTo({
       top: 1100,
       behavior: "smooth",
-    }); 
-  }
+    });
+  };
 
   return (
     <>
@@ -37,7 +37,7 @@ export const Home = () => {
         >
           <DigiTypography>
             <blockquote>
-              <h1>Titta på våra senaste annonser</h1>
+              <h1>Se våra senaste annonser</h1>
               <DigiButton
                 afSize={ButtonSize.LARGE}
                 afVariation={ButtonVariation.SECONDARY}

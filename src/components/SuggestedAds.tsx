@@ -51,6 +51,7 @@ const ShowLatestAds = () => {
               <DigiTypography>
                 <blockquote>
                   <h3>{ad.headline}</h3>
+                  <h4>{ad.employer.name}</h4>
                   <NavLink to={`/ad/${ad.id}`} className="card-link">
                     <p style={{ textDecoration: "underline", color: "blue" }}>
                       Läs mer...
