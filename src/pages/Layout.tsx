@@ -5,7 +5,7 @@ import { IJobAd } from "../models/IJobAd";
 import { SearchTextContext } from "../context/SearchTextContext";
 import logoImg from "../assets/logo-img.png";
 import { SaveAdReducer } from "../reducers/SaveAdRecucer";
-import '../sass/layout.scss'
+import "../sass/layout.scss";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import { DigiIconStarReg } from "@digi/arbetsformedlingen-react";
 
@@ -13,9 +13,9 @@ const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [searchText, setSearchText] = useState<string>("");
-  const saved = JSON.parse(localStorage.getItem('savedAds') || '[]')
-  const [saveAds, dispatch] = useReducer(SaveAdReducer, saved)
- 
+  const saved = JSON.parse(localStorage.getItem("savedAds") || "[]");
+  const [saveAds, dispatch] = useReducer(SaveAdReducer, saved);
+
   const count = saveAds.length;
 
   return (
@@ -25,7 +25,9 @@ const Layout = () => {
       >
         <header className="header">
           <ul>
-            <img src={logoImg} alt="Logo" className="logo-img" />
+            <NavLink to={"/"} className="logo-link">
+              <img src={logoImg} alt="Logo" className="logo-img" />
+            </NavLink>
             <li className="list">
               <NavLink to={"/"}>Hem</NavLink>
             </li>
@@ -33,17 +35,17 @@ const Layout = () => {
               <NavLink to={"/about"}>Om</NavLink>
             </li>
             <li className="list">
-            <NavLink to={"/savedAds"}>
-                  <DigiIconStarReg className="star" />
-                  {count > 0 && <div className="badge">{count}</div>}
-            </NavLink>
+              <NavLink to={"/savedAds"}>
+                <DigiIconStarReg className="star" />
+                {count > 0 && <div className="badge">{count}</div>}
+              </NavLink>
             </li>
           </ul>
         </header>
-        <SaveAdsContext.Provider value={{saveAds, dispatch}}>
-        <main>
-          <Outlet />
-        </main>
+        <SaveAdsContext.Provider value={{ saveAds, dispatch }}>
+          <main>
+            <Outlet />
+          </main>
         </SaveAdsContext.Provider>
         <footer className="footer">
           <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
