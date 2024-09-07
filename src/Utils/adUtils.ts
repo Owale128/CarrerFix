@@ -1,6 +1,6 @@
 import { IJobAd } from "../models/IJobAd";
 import { Dispatch } from "react";
-import { IAction, ActionType } from "../reducers/SaveAdReducer";
+import { ActionType, IAction } from "../reducers/SaveAdRecucer";
 
 export const getRecentAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
   return [...jobAds]

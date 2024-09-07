@@ -7,7 +7,7 @@ import { DigiFormInputSearchCustomEvent } from "@digi/arbetsformedlingen/dist/ty
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchTextContext } from "../context/SearchTextContext";
-import '../sass/searchForm.scss'
+import "../sass/searchForm.scss";
 import { IJobAd } from "../models/IJobAd";
 
 interface ISearchForm {
@@ -43,7 +43,8 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
       <DigiFormInputSearch
         className="searchForm"
         afLabel="Sök Jobb"
-        afVariation={FormInputSearchVariation.MEDIUM}
+        afVariation={FormInputSearchVariation.LARGE}
+        afAutofocus={true}
         afType={FormInputType.SEARCH}
         afButtonText="Sök"
         onAfOnSubmitSearch={handleSearch}

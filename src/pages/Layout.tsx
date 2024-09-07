@@ -4,10 +4,11 @@ import { useReducer, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import { SearchTextContext } from "../context/SearchTextContext";
 import logoImg from "../assets/logo-img.png";
-import { SaveAdReducer } from "../reducers/SaveAdReducer";
+
 import "../sass/layout.scss";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import { DigiIconStarReg } from "@digi/arbetsformedlingen-react";
+import { SaveAdReducer } from "../reducers/SaveAdRecucer";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
