@@ -24,13 +24,13 @@
 
   .left-carousel-button,
   .right-carousel-button {
-    background-color: var(--digi--color--background--tertiary);
+    background-color: var(--digi--color--background--secondary);
     opacity: 0.7;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     position: absolute;
-    transform: translateY(50%);
+    transform: translateY(70%);
     cursor: pointer;
     display: flex;
     align-items: center;

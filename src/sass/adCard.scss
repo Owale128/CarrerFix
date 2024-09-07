@@ -1,27 +1,25 @@
-.container {
-  .latestAdsHeading {
-    margin-bottom: 0.5em;
-  }
-  .showRecentAdsContainer {
-    position: relative;
-    margin-bottom: 19.2px;
+.latestAdsHeading {
+  margin-bottom: 1em;
+}
+.showRecentAdsContainer {
+  position: relative;
+  margin-bottom: 19.2px;
 
-    .adCard {
-      padding: 1.5em;
-      background-color: var(--digi--color--background--primary);
+  .adCard {
+    padding: 1.5em;
+    background-color: var(--digi--color--background--primary);
 
-      .addressSection {
-        display: flex;
-        gap: 0.5em;
-      }
+    .addressSection {
+      display: flex;
+      gap: 0.5em;
     }
   }
+}
 
-  .bookMarkRecentAds {
-    cursor: pointer;
-    width: 32px;
-    bottom: 1.5em;
-    right: 1.5em;
-    position: absolute;
-  }
+.bookMarkRecentAds {
+  cursor: pointer;
+  width: 32px;
+  bottom: 1.5em;
+  right: 1.5em;
+  position: absolute;
 }

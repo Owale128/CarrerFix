@@ -1,0 +1,19 @@
+.extendedAdCard {
+  padding: 2.5em;
+  background-color: var(--digi--color--background--primary);
+
+  .descriptionSection {
+    max-width: 100%;
+
+    .description {
+      display: block;
+      max-width: 70%;
+    }
+  }
+
+  .locationSection {
+    border: solid;
+    padding: 1em;
+    width: 50%;
+  }
+}

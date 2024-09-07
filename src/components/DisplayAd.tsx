@@ -1,8 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IJobAd } from "../models/IJobAd";
-import { DigiTypographyTime } from "@digi/arbetsformedlingen-react";
-import { TypographyTimeVariation } from "@digi/arbetsformedlingen";
+import {
+  DigiLayoutBlock,
+  DigiTypography,
+  DigiTypographyTime,
+} from "@digi/arbetsformedlingen-react";
+import {
+  LayoutBlockContainer,
+  LayoutBlockVariation,
+  TypographyTimeVariation,
+} from "@digi/arbetsformedlingen";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import {
   DigiIconBookmarkSolid,
@@ -25,24 +33,52 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
 
   return (
     <>
-      <article className="card">
-        <NavLink to={`/ad/${jobAd.id}`} className="card-link">
-          <h2>{jobAd.headline}</h2>
-          <p className="readMore">Läs mer...</p>
-        </NavLink>
+      <div className="showRecentAdsContainer">
+        <DigiLayoutBlock
+          className="adCard"
+          afVariation={LayoutBlockVariation.PRIMARY}
+          afContainer={LayoutBlockContainer.NONE}
+        >
+          <DigiTypography>
+            <blockquote>
+              <h3>{jobAd.headline}</h3>
+              <h4>{jobAd.employer.name}</h4>
+              <section className="addressSection">
+                <p>
+                  {jobAd.workplace_address.region
+                    ? jobAd.workplace_address.region
+                    : "Ingen region angett"}
+                </p>
+                <p>-</p>
+                <p>
+                  {jobAd.workplace_address?.country
+                    ? jobAd.workplace_address.country
+                    : "Inget land angett"}
+                </p>
+              </section>
+            </blockquote>
+
+            <blockquote>
+              <NavLink to={`/ad/${jobAd.id}`} className="card-link">
+                <p style={{ textDecoration: "underline", color: "blue" }}>
+                  Läs mer...
+                </p>
+              </NavLink>
+            </blockquote>
+            <DigiTypographyTime
+              style={{ color: "black" }}
+              afVariation={TypographyTimeVariation.DISTANCE}
+              afDateTime={jobAd.publication_date}
+            ></DigiTypographyTime>
+          </DigiTypography>
+        </DigiLayoutBlock>
         <div
-          onClick={() => handleSaveAd(jobAd, isSaved, dispatch, setIsSaved)}
-          className="bookMark"
+          onClick={() => handleSaveAd(jobAd, isSaved, dispatch, () => {})}
+          className="bookMarkRecentAds"
         >
           {isSaved ? <DigiIconBookmarkSolid /> : <DigiIconBookmarkOutline />}
         </div>
-        <div>
-          <DigiTypographyTime
-            afVariation={TypographyTimeVariation.DISTANCE}
-            afDateTime={jobAd.publication_date}
-          ></DigiTypographyTime>
-        </div>
-      </article>
+      </div>
     </>
   );
 };

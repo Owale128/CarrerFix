@@ -2,7 +2,6 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,8 +13,8 @@
   --digi--global--typography--font-size--base: 1rem;
   /*FÄRGER*/
   --digi--color--background--primary: #fafafa;
-  --digi--color--background--secondary: #0d0040;
-  --digi--color--background--tertiary: #eaeaea;
+  --digi--color--background--secondary: #eaeaea;
+  --digi--color--background--tertiary: #0d0040;
   --digi--color--text--link: rgb(17, 0, 168);
   --digi--color--text--link-hover: #ff8001;
   /*TEXT FÄRGER*/
@@ -44,7 +43,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background-color: var(--digi--color--background--tertiary);
+  background-color: var(--digi--color--background--secondary);
 }
 
 main {

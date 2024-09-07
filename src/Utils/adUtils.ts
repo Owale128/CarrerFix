@@ -1,6 +1,6 @@
 import { IJobAd } from "../models/IJobAd";
 import { Dispatch } from "react";
-import { IAction, ActionType } from "../reducers/SaveAdRecucer";
+import { IAction, ActionType } from "../reducers/SaveAdReducer";
 
 export const getRecentAds = (jobAds: IJobAd[], count: number): IJobAd[] => {
   return [...jobAds]
@@ -27,5 +27,5 @@ export const handleSaveAd = (
 };
 
 export const checkIfAdIsSaved = (adId: string, savedAds: IJobAd[]): boolean => {
-  return savedAds.some(ad => ad.id === adId);
+  return savedAds.some((ad) => ad.id === adId);
 };

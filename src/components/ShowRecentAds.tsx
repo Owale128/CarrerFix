@@ -23,10 +23,10 @@ const ShowRecentAds = () => {
   const [getAdData] = useAds();
   const { jobAds } = useContext(JobAdsContext);
   const { saveAds, dispatch } = useContext(SaveAdsContext);
-  const recentAds = getRecentAds(jobAds, 3);
+  const recentAds = getRecentAds(jobAds, 10);
 
   useEffect(() => {
-    getAdData("recent", 0, 3);
+    getAdData("recent", 0, 10);
   }, [getAdData]);
 
   return (
@@ -46,14 +46,6 @@ const ShowRecentAds = () => {
                 <blockquote>
                   <h3>{ad.headline}</h3>
                   <h4>{ad.employer.name}</h4>
-
-                  <NavLink to={`/ad/${ad.id}`} className="card-link">
-                    <p style={{ textDecoration: "underline", color: "blue" }}>
-                      Läs mer...
-                    </p>
-                  </NavLink>
-                </blockquote>
-                <blockquote>
                   <section className="addressSection">
                     <p>
                       {ad?.workplace_address?.region
@@ -67,6 +59,14 @@ const ShowRecentAds = () => {
                         : "Inget land angett"}
                     </p>
                   </section>
+                </blockquote>
+
+                <blockquote>
+                  <NavLink to={`/ad/${ad.id}`} className="card-link">
+                    <p style={{ textDecoration: "underline", color: "blue" }}>
+                      Läs mer...
+                    </p>
+                  </NavLink>
                 </blockquote>
                 <DigiTypographyTime
                   style={{ color: "black" }}
