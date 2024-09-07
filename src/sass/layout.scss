@@ -1,15 +1,14 @@
 .header {
-    background-color: var(--digi--color--background--secondary);
-    color: var(--digi--color--text--secondary);
-    padding: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 100;
-
-    ul {
+  background-color: var(--digi--color--background--secondary);
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+  
+  ul {
     list-style-type: none;
     margin: 0;
     margin-right: 50px;
@@ -17,7 +16,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
+    
     .logo-img {
       width: 60px;
       height: 50px;
@@ -26,18 +25,40 @@
       left: 0;
       margin: 20px;
     }
-
+    
     
     .list {
       text-decoration: none;
-      color: var(--digi--color--text--secondary);
       font-weight: bold;
       padding: 10px 15px;
       
+    
+      .star {
+        position: relative;
+        stroke: white; 
+        width: 23px;
+      }
+        .badge {
+          position: absolute;
+          top: 35px; 
+          right: 85px; 
+          background-color: green; 
+          color: white;
+          border-radius: 50%;
+          font-size: 12px;
+          font-weight: bold;
+          width: 20px; 
+          height: 20px; 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
       a {
-        
+        color: white;
         &:hover {
           color: var(--digi--color--text--link-hover);
+
         }
       }
     }    
@@ -45,7 +66,6 @@
 }
 
   .footer {
-    color: var(--digi--color--text--secondary);
     padding: 20px;
     color: white;
     text-align: center;

@@ -7,6 +7,7 @@ import logoImg from "../assets/logo-img.png";
 import { SaveAdReducer } from "../reducers/SaveAdRecucer";
 import '../sass/layout.scss'
 import { SaveAdsContext } from "../context/SaveAdsContext";
+import { DigiIconStarReg } from "@digi/arbetsformedlingen-react";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
@@ -14,6 +15,8 @@ const Layout = () => {
   const [searchText, setSearchText] = useState<string>("");
   const saved = JSON.parse(localStorage.getItem('savedAds') || '[]')
   const [saveAds, dispatch] = useReducer(SaveAdReducer, saved)
+ 
+  const count = saveAds.length;
 
   return (
     <SearchTextContext.Provider value={{ searchText, setSearchText }}>
@@ -30,7 +33,10 @@ const Layout = () => {
               <NavLink to={"/about"}>Om</NavLink>
             </li>
             <li className="list">
-              <NavLink to={"/savedAds"}>Sparad Annons</NavLink>
+            <NavLink to={"/savedAds"}>
+                  <DigiIconStarReg className="star" />
+                  {count > 0 && <div className="badge">{count}</div>}
+            </NavLink>
             </li>
           </ul>
         </header>

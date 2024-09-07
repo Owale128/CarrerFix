@@ -18,6 +18,13 @@ import {
 export const Home = () => {
   const [getAdData] = useAds();
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 1100,
+      behavior: "smooth",
+    }); 
+  }
+
   return (
     <>
       <SearchForm getAdData={getAdData} />
@@ -35,6 +42,7 @@ export const Home = () => {
                 afSize={ButtonSize.LARGE}
                 afVariation={ButtonVariation.SECONDARY}
                 afFullWidth={false}
+                onClick={handleScroll}
               >
                 Kom igång
                 <DigiIconArrowDown slot="icon-secondary" />

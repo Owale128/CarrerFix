@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { JobAdsContext } from "../context/JobAdsContext";
 import { DisplayAd } from "./DisplayAd";
 import '../sass/adsList.scss'
@@ -6,20 +6,6 @@ import '../sass/adsList.scss'
 export const DisplayAds = () => {
   const { jobAds } = useContext(JobAdsContext);
   const [sevenDaySpan, setSevenDaySpan] = useState<boolean>(false);
-  
-  useEffect(() => {
-    
-    const setFilter: boolean = JSON.parse(localStorage.getItem("sevenDaySpan") || '[]');
-
-    if(setFilter !== null) {
-      setSevenDaySpan(setFilter);
-    }
-  },[])
-
-useEffect(() => {
-  localStorage.setItem('sevenDaySpan', JSON.stringify(sevenDaySpan));
-  
-},[sevenDaySpan])
 
   const now =  new Date().getTime();
   const sevenDaysAgo = now - (7*24*60*60*1000);
