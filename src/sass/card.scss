@@ -5,16 +5,21 @@
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  
+
   .description {
     margin-bottom: 32px;
   }
-  
-  .number, .city, .country, .apply {
+
+  .number,
+  .city,
+  .country,
+  .apply {
     margin: 5px;
-    font-size: 16px;
+    font-size: 1em;
   }
-  .numberTitle, .cityTitle, .countryTitle {
+  .numberTitle,
+  .cityTitle,
+  .countryTitle {
     font-weight: bold;
   }
 
@@ -50,5 +55,4 @@
   &:hover {
     transform: translateY(-5px);
   }
-
 }
