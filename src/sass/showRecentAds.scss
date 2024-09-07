@@ -1,14 +1,22 @@
-
 .container {
-    .showRecentAdsContainer {
-        position: relative;
-        margin-bottom: 19.2px;
-        .bookMarkRecentAds {
-            right: 16px;
-            cursor: pointer;
-            width: 32px;
-            bottom: 48px;
-            position: absolute;
-        }
+  .latestAdsHeading {
+    margin-bottom: 0.5em;
+  }
+  .showRecentAdsContainer {
+    position: relative;
+    margin-bottom: 19.2px;
+
+    .addressSection {
+      display: flex;
+      gap: 0.5em;
     }
+
+    .bookMarkRecentAds {
+      right: 16px;
+      cursor: pointer;
+      width: 32px;
+      bottom: 48px;
+      position: absolute;
+    }
+  }
 }

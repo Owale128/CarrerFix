@@ -5,7 +5,7 @@ import { useAds } from "../hooks/useAds";
 import { useContext, useEffect, useState } from "react";
 import { DigiNavigationPaginationCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { SearchTextContext } from "../context/SearchTextContext";
-import '../sass/pagination&search.scss'
+import "../sass/pagination&search.scss";
 
 export const AdsPage = () => {
   const [getAdData] = useAds();
@@ -14,7 +14,7 @@ export const AdsPage = () => {
   const { searchText } = useContext(SearchTextContext);
   const [totalAds, setTotalAds] = useState<number>(0);
 
-  const limit = 0;
+  const limit = 10;
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
     const pageNumber = e.detail;
@@ -53,7 +53,7 @@ export const AdsPage = () => {
         <p> | </p>
         <h3>{totalPages} antal sidor</h3>
       </section>
-      <DisplayAds/>
+      <DisplayAds />
 
       <section className="pagination-section">
         <DigiNavigationPagination

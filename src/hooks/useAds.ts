@@ -40,5 +40,5 @@ export const useAds = () => {
     },
     [setJobAds]
   );
-  return [getAdData] as const;
+  return [getAdData];
 };

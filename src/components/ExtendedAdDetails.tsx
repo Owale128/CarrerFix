@@ -21,7 +21,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
             : "Ingen stad angett"}
         </p>
         <p>
-          Stad:{" "}
+          Land:{" "}
           {ad?.workplace_address?.country
             ? ad.workplace_address.country
             : "Inget land angett"}
