@@ -21,7 +21,7 @@ interface IExtendedDetailsProps {
 
 export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
   return (
-    <div className="showRecentAdsContainer">
+    <div className="extendedAdContainer">
       <DigiLayoutBlock
         className="extendedAdCard"
         afVariation={LayoutBlockVariation.PRIMARY}
@@ -40,7 +40,15 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
 
           <blockquote className="descriptionSection">
-            <p className="description">{ad.description.text}</p>
+            <h2>Om jobbet</h2>
+            <div
+              className="description"
+              dangerouslySetInnerHTML={{
+                __html:
+                  ad.description?.text_formatted ||
+                  "<p>No description available.</p>",
+              }}
+            />
           </blockquote>
 
           <section className="qualificationSection">
@@ -50,9 +58,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
               afType={InfoCardType.TIP}
               afVariation={InfoCardVariation.SECONDARY}
               afSize={InfoCardSize.STANDARD}
-            >
-              <blockquote></blockquote>
-            </DigiInfoCard>
+            ></DigiInfoCard>
           </section>
           <blockquote className="locationSection">
             <p className="city">
@@ -82,6 +88,14 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
         </DigiTypography>
       </DigiLayoutBlock>
+
+      <DigiInfoCard
+        afHeading="Kontaktuppgifter"
+        afHeadingLevel={InfoCardHeadingLevel.H2}
+        afType={InfoCardType.RELATED}
+        afVariation={InfoCardVariation.PRIMARY}
+        afSize={InfoCardSize.STANDARD}
+      ></DigiInfoCard>
     </div>
   );
 };

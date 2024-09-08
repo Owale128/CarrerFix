@@ -1,23 +1,23 @@
-.extendedAdCard {
-  padding: 2.5em;
+.extendedAdContainer {
+  display: flex;
+  padding: 3.5em;
   background-color: var(--digi--color--background--primary);
 
-  .descriptionSection {
-    max-width: 100%;
+  .extendedAdCard {
+    background-color: var(--digi--color--background--primary);
+    border: solid;
 
-    .description {
-      display: block;
-      max-width: 70%;
+    .qualificationSection {
+      width: 100%;
+    }
+
+    .locationSection {
+      padding-top: 1.5em;
+      max-width: 50%;
     }
   }
+}
 
-  .qualificationSection {
-    max-width: 70%;
-  }
-
-  .locationSection {
-    border: solid;
-    padding: 1em;
-    width: 50%;
-  }
+ul {
+  list-style-position: inside;
 }
