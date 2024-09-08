@@ -1,11 +1,10 @@
 .extendedAdContainer {
-  display: flex;
   padding: 3.5em;
+  display: flex;
   background-color: var(--digi--color--background--primary);
 
   .extendedAdCard {
     background-color: var(--digi--color--background--primary);
-    border: solid;
 
     .qualificationSection {
       width: 100%;
@@ -15,6 +14,11 @@
       padding-top: 1.5em;
       max-width: 50%;
     }
+  }
+
+  .contactSection {
+    width: 50%;
+    height: 300px;
   }
 }
 

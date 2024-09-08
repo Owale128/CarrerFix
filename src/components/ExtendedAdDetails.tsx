@@ -90,12 +90,33 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
       </DigiLayoutBlock>
 
       <DigiInfoCard
+        className="contactSection"
         afHeading="Kontaktuppgifter"
         afHeadingLevel={InfoCardHeadingLevel.H2}
         afType={InfoCardType.RELATED}
-        afVariation={InfoCardVariation.PRIMARY}
+        afVariation={InfoCardVariation.SECONDARY}
         afSize={InfoCardSize.STANDARD}
-      ></DigiInfoCard>
+        af-border-position="left"
+      >
+        <DigiTypography>
+          <blockquote>
+            <p>
+              Arbetsgivarens hemsida:{" "}
+              {ad.application_details?.url ? (
+                <a
+                  href={ad.application_details.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {ad.application_details.url}
+                </a>
+              ) : (
+                "Ingen hemsida tillgänglig"
+              )}
+            </p>
+          </blockquote>
+        </DigiTypography>
+      </DigiInfoCard>
     </div>
   );
 };
