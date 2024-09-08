@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import {
   DigiInfoCard,
   DigiLayoutBlock,
@@ -20,6 +21,9 @@ interface IExtendedDetailsProps {
 }
 
 export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
+  const sanitizedDescription = DOMPurify.sanitize(
+    ad.description.text_formatted
+  );
   return (
     <div className="extendedAdContainer">
       <DigiLayoutBlock
@@ -45,8 +49,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
               className="description"
               dangerouslySetInnerHTML={{
                 __html:
-                  ad.description?.text_formatted ||
-                  "<p>No description available.</p>",
+                  sanitizedDescription || "<p>No description available.</p>",
               }}
             />
           </blockquote>
@@ -60,20 +63,6 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
               afSize={InfoCardSize.STANDARD}
             ></DigiInfoCard>
           </section>
-          <blockquote className="locationSection">
-            <p className="city">
-              <span className="cityTitle">Stad:</span>{" "}
-              {ad.workplace_address.city
-                ? ad.workplace_address.city
-                : "Ingen stad angett"}
-            </p>
-            <p className="country">
-              <span className="countryTitle">Land:</span>{" "}
-              {ad.workplace_address.country
-                ? ad.workplace_address.country
-                : "Inget land angett"}
-            </p>
-          </blockquote>
 
           <p className="apply">
             <a href={ad.application_details.url}>Sök nu</a>
@@ -91,7 +80,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
 
       <DigiInfoCard
         className="contactSection"
-        afHeading="Kontaktuppgifter"
+        afHeading="kontakt och adress"
         afHeadingLevel={InfoCardHeadingLevel.H2}
         afType={InfoCardType.RELATED}
         afVariation={InfoCardVariation.SECONDARY}
@@ -101,7 +90,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
         <DigiTypography>
           <blockquote>
             <p>
-              Arbetsgivarens hemsida:{" "}
+              <b>Ansök via arbetsgivarens hemsida:</b>{" "}
               {ad.application_details?.url ? (
                 <a
                   href={ad.application_details.url}
@@ -113,6 +102,43 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
               ) : (
                 "Ingen hemsida tillgänglig"
               )}
+            </p>
+          </blockquote>
+
+          <blockquote className="locationSection">
+            <p>
+              <span>
+                <b>Land:</b>
+              </span>{" "}
+              {ad.workplace_address.country
+                ? ad.workplace_address.country
+                : "Inget land angett"}
+            </p>
+            <p>
+              <span>
+                <b>Stad:</b>
+              </span>{" "}
+              {ad.workplace_address.city
+                ? ad.workplace_address.city
+                : "Ingen stad angett"}
+            </p>
+
+            <p>
+              <span>
+                <b>Kommun:</b>
+              </span>{" "}
+              {ad.workplace_address.municipality
+                ? ad.workplace_address.municipality
+                : "Ingen kommun angett"}
+            </p>
+
+            <p>
+              <span>
+                <b>Region:</b>
+              </span>{" "}
+              {ad.workplace_address.region
+                ? ad.workplace_address.region
+                : "Ingen region angett"}
             </p>
           </blockquote>
         </DigiTypography>

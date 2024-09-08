@@ -1,6 +1,7 @@
 .extendedAdContainer {
   padding: 3.5em;
   display: flex;
+  justify-content: space-between;
   background-color: var(--digi--color--background--primary);
 
   .extendedAdCard {
@@ -9,16 +10,16 @@
     .qualificationSection {
       width: 100%;
     }
-
-    .locationSection {
-      padding-top: 1.5em;
-      max-width: 50%;
-    }
   }
 
   .contactSection {
     width: 50%;
-    height: 300px;
+    min-height: 400px;
+    max-height: 500px;
+    .locationSection {
+      padding-top: 1.5em;
+      max-width: 50%;
+    }
   }
 }
 

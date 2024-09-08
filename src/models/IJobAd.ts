@@ -20,9 +20,5 @@ export interface IJobAd {
   publication_date: string;
   employer: IEmployerInfo;
   last_publication_date: string;
-  company_information: string;
-  needs: string;
-  requirements: string;
-  conditions: string;
   application_details: IApplicationDetails;
 }
