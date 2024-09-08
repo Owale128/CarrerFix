@@ -33,31 +33,27 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
             <h3>{ad.employer.name}</h3>
           </blockquote>
 
-          <blockquote>
-            <DigiTypographyTime
-              style={{ color: "black" }}
-              afVariation={TypographyTimeVariation.DISTANCE}
-              afDateTime={ad.publication_date}
-            ></DigiTypographyTime>
+          <blockquote className="employmentInfoSection">
+            <p>Antal lediga platser: {ad.number_of_vacancies}</p>
+            <p>Omfattning: {ad.employment_type.label}</p>
+            <p>Varaktighet: {ad.duration.label}</p>
           </blockquote>
 
           <blockquote className="descriptionSection">
             <p className="description">{ad.description.text}</p>
           </blockquote>
 
-          <DigiInfoCard
-            afHeading="Jag är ett infokort"
-            afHeadingLevel={InfoCardHeadingLevel.H2}
-            afType={InfoCardType.TIP}
-            afVariation={InfoCardVariation.SECONDARY}
-            afSize={InfoCardSize.STANDARD}
-          >
-            <p>
-              <span className="numberTitle">Antal lediga platser:</span>{" "}
-              {ad.number_of_vacancies}
-            </p>
-          </DigiInfoCard>
-
+          <section className="qualificationSection">
+            <DigiInfoCard
+              afHeading="Kvalifikationer och krav"
+              afHeadingLevel={InfoCardHeadingLevel.H2}
+              afType={InfoCardType.TIP}
+              afVariation={InfoCardVariation.SECONDARY}
+              afSize={InfoCardSize.STANDARD}
+            >
+              <blockquote></blockquote>
+            </DigiInfoCard>
+          </section>
           <blockquote className="locationSection">
             <p className="city">
               <span className="cityTitle">Stad:</span>{" "}
@@ -74,8 +70,16 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
 
           <p className="apply">
-            <a href={ad.webpage_url}>Sök nu</a>
+            <a href={ad.application_details.url}>Sök nu</a>
           </p>
+
+          <blockquote className="dateSection">
+            <p>Datum för publicering: </p>
+            <DigiTypographyTime
+              afVariation={TypographyTimeVariation.PRIMARY}
+              afDateTime={ad.publication_date}
+            ></DigiTypographyTime>
+          </blockquote>
         </DigiTypography>
       </DigiLayoutBlock>
     </div>
