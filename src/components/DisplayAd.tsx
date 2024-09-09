@@ -60,9 +60,7 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
 
             <blockquote>
               <NavLink to={`/ad/${jobAd.id}`} className="card-link">
-                <p>
-                  Läs mer...
-                </p>
+                <p>Läs mer...</p>
               </NavLink>
             </blockquote>
             <DigiTypographyTime

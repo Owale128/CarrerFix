@@ -3,12 +3,10 @@ import { IJobSearchResponse } from "../models/IJobSearchResponse";
 import { get } from "./AdBase";
 
 export const getAds = async (
-  searchText: string,
-  offset: number,
-  limit: number
+  searchText: string
 ): Promise<IJobSearchResponse> => {
   const response = await get<IJobSearchResponse>(
-    `https://jobsearch.api.jobtechdev.se/search?q=${searchText}&offset=${offset}&limit=${limit}`
+    `https://jobsearch.api.jobtechdev.se/search?q=${searchText}&limit=100`
   );
   return response;
 };

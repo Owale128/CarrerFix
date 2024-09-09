@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { JobAdsContext } from "../context/JobAdsContext";
 import { getAds } from "../services/AdService";
 import { IJobSearchResponse } from "../models/IJobSearchResponse";
@@ -11,21 +11,16 @@ interface GetAdDataResult {
 
 export const useAds = () => {
   const { setJobAds } = useContext(JobAdsContext);
+  const [allAds, setAllAds] = useState<IJobAd[]>([]);
+  const [totalCount, setTotalCount] = useState<number>(0);
 
   const getAdData = useCallback(
-    async (
-      searchText: string,
-      offset: number,
-      limit: number
-    ): Promise<GetAdDataResult> => {
+    async (searchText: string): Promise<GetAdDataResult> => {
       try {
-        const jobData: IJobSearchResponse = await getAds(
-          searchText,
-          offset,
-          limit
-        );
+        const jobData: IJobSearchResponse = await getAds(searchText);
+        setAllAds(jobData.hits);
+        setTotalCount(jobData.total.value);
         setJobAds(jobData.hits);
-        console.log("Data retrieved:", jobData);
         return {
           ads: jobData.hits,
           totalCount: jobData.total.value,
@@ -40,5 +35,6 @@ export const useAds = () => {
     },
     [setJobAds]
   );
-  return [getAdData];
+
+  return [getAdData, allAds, totalCount] as const;
 };

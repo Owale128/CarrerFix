@@ -21,8 +21,11 @@ const ShowLatestAds = () => {
 
   useEffect(() => {
     const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
+
+    const adsToDisplay = [...storedAds].slice(0, 9);
+
     if (storedAds.length > 0) {
-      setLatestAds(storedAds);
+      setLatestAds(adsToDisplay);
     }
   }, []);
 

@@ -10,6 +10,7 @@ import { SaveAdReducer } from "../reducers/SaveAdRecucer";
 import { ITheme, ThemeContext, themes } from "../context/ThemeContext";
 import Button from "../components/Button";
 import { SearchTextContext } from "../context/SearchTextContext";
+import { FilterContext } from "../context/FilterContext";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
@@ -17,59 +18,64 @@ const Layout = () => {
   const [searchText, setSearchText] = useState<string>("");
   const saved = JSON.parse(localStorage.getItem("savedAds") || "[]");
   const [saveAds, dispatch] = useReducer(SaveAdReducer, saved);
-  const [theme, setTheme] = useState<ITheme>(themes.dark)
-  
+  const [theme, setTheme] = useState<ITheme>(themes.dark);
+  const [sevenDaySpan, setSevenDaySpan] = useState<boolean>(false);
+
   const count = saveAds.length;
 
   useEffect(() => {
-    localStorage.setItem('savedAds', JSON.stringify(saveAds));
+    localStorage.setItem("savedAds", JSON.stringify(saveAds));
   }, [saveAds]);
 
   const toggleTheme = () => {
-    if(theme.name === 'Night') {
-      setTheme(themes.light)
+    if (theme.name === "Night") {
+      setTheme(themes.light);
     } else {
-      setTheme(themes.dark)
+      setTheme(themes.dark);
     }
-  }
+  };
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <JobAdsContext.Provider
-        value={{ jobAds, setJobAds, totalPages, setTotalPages }}
+    <FilterContext.Provider value={{ sevenDaySpan, setSevenDaySpan }}>
+      <ThemeContext.Provider value={theme}>
+        <JobAdsContext.Provider
+          value={{ jobAds, setJobAds, totalPages, setTotalPages }}
         >
-     <SearchTextContext.Provider value={{ searchText, setSearchText }}>
-        <header className="header">
-          <ul>
-            <NavLink to={"/"} className="logo-link">
-              <img src={logoImg} alt="Logo" className="logo-img" />
-            </NavLink>
-            <Button click={toggleTheme}><>Byt till: {theme.name === 'Night' ? 'Day' : 'Night'}</></Button>
-            <li className="list">
-              <NavLink to={"/"}>Hem</NavLink>
-            </li>
-            <li className="list">
-              <NavLink to={"/about"}>Om</NavLink>
-            </li>
-            <li className="list">
-              <NavLink to={"/savedAds"}>
-                <DigiIconStarReg className="star" />
-                {count > 0 && <div className="badge">{count}</div>}
-              </NavLink>
-            </li>
-          </ul>
-        </header>
-        <SaveAdsContext.Provider value={{ saveAds, dispatch }}>
-          <main>
-            <Outlet />
-          </main>
-        </SaveAdsContext.Provider>
-        <footer className="footer">
-          <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
-        </footer>
-        </SearchTextContext.Provider>
-      </JobAdsContext.Provider>
-  </ThemeContext.Provider>
+          <SearchTextContext.Provider value={{ searchText, setSearchText }}>
+            <header className="header">
+              <ul>
+                <NavLink to={"/"} className="logo-link">
+                  <img src={logoImg} alt="Logo" className="logo-img" />
+                </NavLink>
+                <Button click={toggleTheme}>
+                  <>Byt till: {theme.name === "Night" ? "Day" : "Night"}</>
+                </Button>
+                <li className="list">
+                  <NavLink to={"/"}>Hem</NavLink>
+                </li>
+                <li className="list">
+                  <NavLink to={"/about"}>Om</NavLink>
+                </li>
+                <li className="list">
+                  <NavLink to={"/savedAds"}>
+                    <DigiIconStarReg className="star" />
+                    {count > 0 && <div className="badge">{count}</div>}
+                  </NavLink>
+                </li>
+              </ul>
+            </header>
+            <SaveAdsContext.Provider value={{ saveAds, dispatch }}>
+              <main>
+                <Outlet />
+              </main>
+            </SaveAdsContext.Provider>
+            <footer className="footer">
+              <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
+            </footer>
+          </SearchTextContext.Provider>
+        </JobAdsContext.Provider>
+      </ThemeContext.Provider>
+    </FilterContext.Provider>
   );
 };
 

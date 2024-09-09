@@ -12,26 +12,20 @@ import { IJobAd } from "../models/IJobAd";
 
 interface ISearchForm {
   getAdData: (
-    searchText: string,
-    offset: number,
-    limit: number
+    searchText: string
   ) => Promise<{ ads: IJobAd[]; totalCount: number }>;
 }
 
 export const SearchForm = ({ getAdData }: ISearchForm) => {
   const navigate = useNavigate();
-
   const { setSearchText } = useContext(SearchTextContext);
   const [inputValue, setInputValue] = useState("");
-
-  const offset = 0;
-  const limit = 10;
 
   const handleSearch = async (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
     if (inputValue.trim() !== "") {
       setSearchText(inputValue);
-      const searchResults = await getAdData(inputValue, offset, limit);
+      const searchResults = await getAdData(inputValue);
       localStorage.setItem("storedAds", JSON.stringify(searchResults.ads));
       setInputValue("");
       navigate("/ads");

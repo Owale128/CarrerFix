@@ -26,7 +26,7 @@ const ShowRecentAds = () => {
   const recentAds = getRecentAds(jobAds, 10);
 
   useEffect(() => {
-    getAdData("recent", 0, 10);
+    getAdData("recent");
   }, [getAdData]);
 
   return (
@@ -63,9 +63,7 @@ const ShowRecentAds = () => {
 
                 <blockquote>
                   <NavLink to={`/ad/${ad.id}`} className="card-link">
-                    <p>
-                      Läs mer...
-                    </p>
+                    <p>Läs mer...</p>
                   </NavLink>
                 </blockquote>
                 <DigiTypographyTime
