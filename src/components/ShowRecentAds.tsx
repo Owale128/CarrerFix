@@ -30,8 +30,8 @@ const ShowRecentAds = () => {
   }, [getAdData]);
 
   return (
-    <div className="container" title="Sök Nu">
-      <h3 className="latestAdsHeading">Senast upplagda annonser</h3>
+    <div className="container">
+      <h3 className="latestAdsHeading">Nya annonser</h3>
       {recentAds.map((ad) => {
         const isSaved = checkIfAdIsSaved(ad.id, saveAds);
 

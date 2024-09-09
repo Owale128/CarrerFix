@@ -1,5 +1,6 @@
 import DOMPurify from "dompurify";
 import {
+  DigiButton,
   DigiInfoCard,
   DigiLayoutBlock,
   DigiTypography,
@@ -7,6 +8,8 @@ import {
 } from "@digi/arbetsformedlingen-react";
 import { IJobAd } from "../models/IJobAd";
 import {
+  ButtonSize,
+  ButtonVariation,
   InfoCardHeadingLevel,
   InfoCardSize,
   InfoCardType,
@@ -58,19 +61,45 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
             />
           </blockquote>
 
-          <section className="qualificationSection">
+          <blockquote className="qualificationSection">
             <DigiInfoCard
               afHeading="Kvalifikationer och krav"
               afHeadingLevel={InfoCardHeadingLevel.H2}
               afType={InfoCardType.TIP}
               afVariation={InfoCardVariation.SECONDARY}
               afSize={InfoCardSize.STANDARD}
-            ></DigiInfoCard>
-          </section>
+            >
+              <blockquote>
+                {ad.experience_required ? (
+                  <p>Erfarenhet krävs</p>
+                ) : (
+                  <p>Ingen erfarenhet krävs</p>
+                )}
+                {ad.driving_license_required ? (
+                  <p>Krav på körkort</p>
+                ) : (
+                  <p>Inget krav på körkort</p>
+                )}
+                {ad.access_to_own_car ? (
+                  <p>Tillgång till egen bil</p>
+                ) : (
+                  <p>Ingen egen bil behövs</p>
+                )}
+              </blockquote>
+            </DigiInfoCard>
+          </blockquote>
 
-          <p className="apply">
-            <a href={ad.application_details.url}>Sök nu</a>
-          </p>
+          <blockquote>
+            <DigiButton
+              afSize={ButtonSize.LARGE}
+              afVariation={ButtonVariation.PRIMARY}
+              afFullWidth={false}
+            >
+              <a className="applyLink" href={ad.application_details.url}>
+                Sök nu
+              </a>
+            </DigiButton>
+          </blockquote>
 
           <blockquote className="dateSection">
             <p>Datum för publicering: </p>

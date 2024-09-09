@@ -21,4 +21,7 @@ export interface IJobAd {
   employer: IEmployerInfo;
   last_publication_date: string;
   application_details: IApplicationDetails;
+  experience_required: boolean;
+  access_to_own_car: boolean;
+  driving_license_required: boolean;
 }

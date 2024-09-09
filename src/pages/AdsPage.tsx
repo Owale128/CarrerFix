@@ -12,7 +12,6 @@ import { IJobAd } from "../models/IJobAd";
 export const AdsPage = () => {
   const [getAdData, allAds, totalCount] = useAds();
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
   const [filteredAds, setFilteredAds] = useState<IJobAd[]>([]);
   const { searchText } = useContext(SearchTextContext);
   const { sevenDaySpan } = useContext(FilterContext);
@@ -29,6 +28,8 @@ export const AdsPage = () => {
   }, [searchText, getAdData]);
 
   useEffect(() => {
+    if (totalCount === 0) return;
+
     const now = new Date().getTime();
     const sevenDaysAgo = now - 7 * 24 * 60 * 60 * 1000;
 
@@ -45,12 +46,13 @@ export const AdsPage = () => {
       );
     });
 
-    setTotalPages(Math.ceil(sorted.length / limit));
+    // Beräkning aav antal sidor
+    Math.ceil(totalCount / limit);
 
     const start = (currentPage - 1) * limit;
     const end = start + limit;
     setFilteredAds(sorted.slice(start, end));
-  }, [allAds, sevenDaySpan, currentPage]);
+  }, [allAds, sevenDaySpan, currentPage, totalCount]);
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
     const pageNumber = e.detail;
@@ -60,6 +62,9 @@ export const AdsPage = () => {
       behavior: "smooth",
     });
   };
+
+  // Calculate total pages for display
+  const totalPages = Math.ceil(totalCount / limit);
 
   return (
     <>
@@ -77,6 +82,7 @@ export const AdsPage = () => {
           onAfOnPageChange={handlePageChange}
           af-total-results={totalCount}
           af-current-result-start={(currentPage - 1) * limit + 1}
+          afCurrentResultEnd={currentPage * limit}
           afResultName="annonser"
         />
       </section>
