@@ -37,7 +37,7 @@ export const Home = () => {
         >
           <DigiTypography>
             <blockquote>
-              <h1>Se våra senaste annonser</h1>
+              <h1 >Se våra senaste annonser</h1>
               <DigiButton
                 afSize={ButtonSize.LARGE}
                 afVariation={ButtonVariation.SECONDARY}

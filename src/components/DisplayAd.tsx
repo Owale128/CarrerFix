@@ -60,7 +60,7 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
 
             <blockquote>
               <NavLink to={`/ad/${jobAd.id}`} className="card-link">
-                <p style={{ textDecoration: "underline", color: "blue" }}>
+                <p>
                   Läs mer...
                 </p>
               </NavLink>
