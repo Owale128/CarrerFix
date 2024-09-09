@@ -17,12 +17,16 @@ import {
 } from "@digi/arbetsformedlingen";
 
 interface IExtendedDetailsProps {
-  ad: IJobAd;
+  ad?: IJobAd;
 }
 
 export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
+  if (!ad) {
+    return <p>Ingen annons tillgänglig.</p>;
+  }
+
   const sanitizedDescription = DOMPurify.sanitize(
-    ad.description.text_formatted
+    ad.description?.text_formatted
   );
   return (
     <div className="extendedAdContainer">
