@@ -1,14 +1,10 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { DisplayAd } from "../components/DisplayAd"
 import { SaveAdsContext } from "../context/SaveAdsContext";
 
 const SavedAds = () => {
   const {saveAds} = useContext(SaveAdsContext);
   
-  useEffect(() => {
-    localStorage.setItem('savedAds', JSON.stringify(saveAds))
-}, [saveAds])
-
   return (
 <div>
       <h1>Sparade Annonser</h1>

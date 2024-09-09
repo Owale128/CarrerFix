@@ -63,7 +63,7 @@ const ShowRecentAds = () => {
 
                 <blockquote>
                   <NavLink to={`/ad/${ad.id}`} className="card-link">
-                    <p style={{ textDecoration: "underline", color: "blue" }}>
+                    <p>
                       Läs mer...
                     </p>
                   </NavLink>
