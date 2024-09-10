@@ -3,6 +3,7 @@ import { IDescription } from "./IDescription";
 import { IDuration } from "./IDuration";
 import { IEmployerInfo } from "./IEmployerInfo";
 import { IEmploymentType } from "./IEmploymentType";
+import { IOccupation } from "./IOccupation";
 import { ISalaryType } from "./ISalaryType";
 import { IWorkAdress } from "./IWorkAdress";
 
@@ -24,4 +25,5 @@ export interface IJobAd {
   experience_required: boolean;
   access_to_own_car: boolean;
   driving_license_required: boolean;
+  occupation_field: IOccupation;
 }

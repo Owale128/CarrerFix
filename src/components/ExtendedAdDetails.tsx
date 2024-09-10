@@ -102,7 +102,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
 
           <blockquote className="dateSection">
-            <p>Datum för publicering: </p>
+            <p>Datum för publicering:</p>
             <DigiTypographyTime
               afVariation={TypographyTimeVariation.PRIMARY}
               afDateTime={ad.publication_date}
@@ -113,7 +113,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
 
       <DigiInfoCard
         className="contactSection"
-        afHeading="kontakt och adress"
+        afHeading="Kontakta arbetsgivaren"
         afHeadingLevel={InfoCardHeadingLevel.H2}
         afType={InfoCardType.RELATED}
         afVariation={InfoCardVariation.SECONDARY}
