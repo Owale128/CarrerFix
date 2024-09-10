@@ -18,16 +18,21 @@ export const AdsPage = () => {
   const [filteredAds, setFilteredAds] = useState<IJobAd[]>([]);
   const { searchText } = useContext(SearchTextContext);
   const { sevenDaySpan } = useContext(FilterContext);
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(false)
   
   const limit = 10;
 
   useEffect(() => {
     const fetchData = async () => {
       if (searchText.trim() !== "") {
-        await getAdData(searchText);
-       setLoading(false)
-        setCurrentPage(1);
+        setLoading(true);
+        try {
+          await getAdData(searchText);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          setLoading(false);
+        }
       }
     };
 
@@ -35,6 +40,8 @@ export const AdsPage = () => {
   }, [searchText, getAdData]);
 
   useEffect(() => {
+    
+
     const now = new Date().getTime();
     const sevenDaysAgo = now - 7 * 24 * 60 * 60 * 1000;
 
