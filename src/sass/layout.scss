@@ -1,44 +1,57 @@
+@import "../sass/buttons.scss";
+
 .header {
   background-color: var(--digi--color--background--tertiary);
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   z-index: 100;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    max-height: 40px;
+    width: 70px;
+  }
 
   ul {
     list-style-type: none;
     margin: 0;
-    margin-right: 50px;
-    padding: 10px;
     display: flex;
     align-items: center;
-    gap: 20px;
-
-    .logoImg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 24px;
-      cursor: pointer;
-    }
+    margin-right: 48px;
+    font-size: 24px;
 
     .list {
-      text-decoration: none;
       font-weight: bold;
-      padding: 10px 15px;
+      padding: 20px 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--digi--color--text--link-hover);
+        }
+      }
 
       .star {
         position: relative;
         stroke: white;
         width: 23px;
       }
+
       .badge {
         position: absolute;
         top: 35px;
-        right: 85px;
+        right: 75px;
         background-color: green;
         color: white;
         border-radius: 50%;
@@ -50,14 +63,46 @@
         justify-content: center;
         align-items: center;
       }
-
-      a {
-        color: white;
-        &:hover {
-          color: var(--digi--color--text--link-hover);
-        }
+      .sc-digi-icon-star-reg:hover {
+        color: var(--digi--color--text--link-hover);
       }
     }
   }
+}
+/*
+.footer {
+  background-color: var(--digi--color--background--tertiary);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;  Justera avståndet mellan logotyperna om nödvändigt 
+  }
+
+  .logo-img {
+    max-height: 40px; 
+    margin-right: 10px; 
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+*/
+
+.sc-digi-logo {
+  display: none;
+}
+
+.digi-logo__system-name  {
+  text-decoration:none
+}
+
+#text {
+  text-decoration: none;
 }
 
