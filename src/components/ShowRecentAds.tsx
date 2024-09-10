@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { JobAdsContext } from "../context/JobAdsContext";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import {
   DigiLayoutBlock,
@@ -20,10 +19,9 @@ import {
 import { NavLink } from "react-router-dom";
 
 const ShowRecentAds = () => {
-  const [getAdData] = useAds();
-  const { jobAds } = useContext(JobAdsContext);
+  const [getAdData, allAds] = useAds();
   const { saveAds, dispatch } = useContext(SaveAdsContext);
-  const recentAds = getRecentAds(jobAds, 10);
+  const recent = getRecentAds(allAds, 10);
 
   useEffect(() => {
     getAdData("recent");
@@ -32,7 +30,7 @@ const ShowRecentAds = () => {
   return (
     <div className="container">
       <h3 className="latestAdsHeading">Nya annonser</h3>
-      {recentAds.map((ad) => {
+      {recent.map((ad) => {
         const isSaved = checkIfAdIsSaved(ad.id, saveAds);
 
         return (

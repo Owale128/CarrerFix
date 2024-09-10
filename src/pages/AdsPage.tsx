@@ -11,19 +11,22 @@ import { IJobAd } from "../models/IJobAd";
 import Spinner from "../components/Spinner";
 
 export const AdsPage = () => {
-  const [getAdData, allAds, loading] = useAds();
+  const [getAdData, allAds] = useAds();
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [sortedAds, setSortedAds] = useState<IJobAd[]>([]);
   const [filteredAds, setFilteredAds] = useState<IJobAd[]>([]);
   const { searchText } = useContext(SearchTextContext);
   const { sevenDaySpan } = useContext(FilterContext);
+  const [loading, setLoading] = useState<boolean>(true)
+  
   const limit = 10;
 
   useEffect(() => {
     const fetchData = async () => {
       if (searchText.trim() !== "") {
         await getAdData(searchText);
+       setLoading(false)
         setCurrentPage(1);
       }
     };
@@ -66,14 +69,13 @@ export const AdsPage = () => {
     });
   };
 
+  if(loading) {
+    return <Spinner />
+  }
+
   return (
     <>
       <SearchForm getAdData={getAdData} />
-  
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
           <section className="search-hits-section">
             <h3>{allAds.length} sökträffar</h3>
             <p> | </p>
@@ -93,8 +95,6 @@ export const AdsPage = () => {
               afResultName="annonser"
             />
           </section>
-        </>
-      )}
-    </>
+       </>
   );
 };
