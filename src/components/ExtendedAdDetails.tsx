@@ -1,23 +1,23 @@
 import DOMPurify from "dompurify";
-import '../sass/buttons.scss'
+import "../sass/buttons.scss";
 import {
-  DigiButton,
   DigiInfoCard,
   DigiLayoutBlock,
+  DigiLinkButton,
   DigiLinkExternal,
   DigiTypography,
   DigiTypographyTime,
 } from "@digi/arbetsformedlingen-react";
 import { IJobAd } from "../models/IJobAd";
 import {
-  ButtonSize,
-  ButtonVariation,
   InfoCardHeadingLevel,
   InfoCardSize,
   InfoCardType,
   InfoCardVariation,
   LayoutBlockContainer,
   LayoutBlockVariation,
+  LinkButtonSize,
+  LinkButtonVariation,
   LinkVariation,
   TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
@@ -93,15 +93,13 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
 
           <blockquote>
-            <DigiButton
-              afSize={ButtonSize.LARGE}
-              afVariation={ButtonVariation.PRIMARY}
-              afFullWidth={false}
+            <DigiLinkButton
+              afHref={ad.application_details.url}
+              afSize={LinkButtonSize.LARGE}
+              afVariation={LinkButtonVariation.PRIMARY}
             >
-              <a className="applyLink" href={ad.application_details.url}>
-                Sök nu
-              </a>
-            </DigiButton>
+              Sök nu
+            </DigiLinkButton>
           </blockquote>
 
           <blockquote className="dateSection">
