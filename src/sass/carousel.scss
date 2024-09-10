@@ -1,15 +1,17 @@
-.carousel-wrapper {
+.carouselWrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
 
-  .latest-ads-cards-container {
+  .suggestedAdsCardContainer {
     display: flex;
     gap: 20px;
     width: 300%;
     transition: margin-left 0.5s ease;
+    padding-top: 1em;
+    border-top: solid 1em var(--digi--color--background--tertiary);
 
-    .latest-ads-card {
+    .suggestedAdsCard {
       width: 350px;
       padding: 1.5em;
       text-wrap: wrap;
@@ -22,8 +24,8 @@
       }
     }
 
-    .left-carousel-button,
-    .right-carousel-button {
+    .leftCarouselButton,
+    .rightCarouselButton {
       background-color: var(--digi--color--background--secondary);
       opacity: 0.7;
       width: 80px;
@@ -38,23 +40,23 @@
       justify-content: center;
     }
 
-    .left-carousel-button:hover,
-    .right-carousel-button:hover {
+    .leftCarouselButton:hover,
+    .rightCarouselButton:hover {
       opacity: 1;
     }
 
-    .right-carousel-button {
+    .rightCarouselButton {
       right: 10px;
     }
 
-    .left-carousel-button {
+    .leftCarouselButton {
       left: 10px;
     }
 
-    .arrow-icon {
+    .arrowIcon {
       width: 50%;
       height: 50%;
-      opacity: 0.7;
+      opacity: 0.8;
     }
   }
 

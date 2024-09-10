@@ -45,25 +45,21 @@ const ShowLatestAds = () => {
       {latestAds.length > 0 && (
         <>
           <h3>Annonser baserade på dina senaste sökningar</h3>
-          <div className="carousel-wrapper">
-            <div className={`latest-ads-cards-container scroll-${scrollIndex}`}>
+          <div className="carouselWrapper">
+            <div className={`suggestedAdsCardContainer scroll-${scrollIndex}`}>
               {latestAds.map((ad) => (
                 <DigiLayoutBlock
                   key={ad.id}
                   afVariation={LayoutBlockVariation.PRIMARY}
                   afContainer={LayoutBlockContainer.NONE}
-                  className="latest-ads-card"
+                  className="suggestedAdsCard"
                 >
                   <DigiTypography>
                     <blockquote>
                       <h3>{ad.headline}</h3>
                       <h4>{ad.employer.name}</h4>
                       <NavLink to={`/ad/${ad.id}`} className="card-link">
-                        <p
-                          style={{ textDecoration: "underline", color: "blue" }}
-                        >
-                          Läs mer...
-                        </p>
+                        <p>Läs mer...</p>
                       </NavLink>
                     </blockquote>
 
@@ -80,10 +76,10 @@ const ShowLatestAds = () => {
                   Math.floor((latestAds.length - 1) / adsPerScroll) && (
                   <button
                     onClick={handleScroll}
-                    className="right-carousel-button"
+                    className="rightCarouselButton"
                   >
                     <img
-                      className="arrow-icon"
+                      className="arrowIcon"
                       src={RighArrow}
                       alt="right arrow"
                     />
@@ -93,13 +89,9 @@ const ShowLatestAds = () => {
               {scrollIndex > 0 && (
                 <button
                   onClick={() => setScrollIndex(scrollIndex - 1)}
-                  className="left-carousel-button"
+                  className="leftCarouselButton"
                 >
-                  <img
-                    className="arrow-icon"
-                    src={LeftArrow}
-                    alt="left arrow"
-                  />
+                  <img className="arrowIcon" src={LeftArrow} alt="left arrow" />
                 </button>
               )}
             </div>
