@@ -30,5 +30,5 @@ export const useAds = () => {
     []
   );
 
-  return [getAdData, allAds, totalCount] as const;
+  return [getAdData, allAds, setAllAds, totalCount] as const;
 };

@@ -26,6 +26,7 @@ export const SearchForm = ({ getAdData }: ISearchForm) => {
       setSearchText(inputValue);
       const searchResults = await getAdData(inputValue);
       localStorage.setItem("storedAds", JSON.stringify(searchResults.ads));
+      localStorage.setItem("storedSearchText", inputValue);
       setInputValue("");
       navigate("/ads");
     }
