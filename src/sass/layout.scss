@@ -17,13 +17,11 @@
     align-items: center;
     gap: 20px;
 
-    .logo-img {
-      width: 60px;
-      height: 50px;
+    .logoImg {
       position: absolute;
       top: 0;
       left: 0;
-      margin: 20px;
+      margin: 24px;
       cursor: pointer;
     }
 
@@ -63,18 +61,3 @@
   }
 }
 
-.button {
-  padding: 5px;
-  font-size: 18px;
-}
-
-.footer {
-  padding: 2em;
-  color: white;
-  text-align: center;
-  background-color: #0d0040;
-
-  p {
-    font-size: 14px;
-  }
-}

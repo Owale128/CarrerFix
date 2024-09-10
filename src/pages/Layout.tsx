@@ -1,16 +1,20 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { JobAdsContext } from "../context/JobAdsContext";
 import { useEffect, useReducer, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
-import logoImg from "../assets/logo-img.png";
 import "../sass/layout.scss";
 import { SaveAdsContext } from "../context/SaveAdsContext";
-import { DigiIconStarReg } from "@digi/arbetsformedlingen-react";
+import { DigiFooter, DigiIconStarReg, DigiLogo } from "@digi/arbetsformedlingen-react";
 import { SaveAdReducer } from "../reducers/SaveAdRecucer";
 import { ITheme, ThemeContext, themes } from "../context/ThemeContext";
 import Button from "../components/Button";
 import { SearchTextContext } from "../context/SearchTextContext";
 import { FilterContext } from "../context/FilterContext";
+import {
+  FooterVariation,
+  LogoColor,
+  LogoVariation,
+} from "@digi/arbetsformedlingen";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
@@ -38,18 +42,26 @@ const Layout = () => {
   return (
     <FilterContext.Provider value={{ sevenDaySpan, setSevenDaySpan }}>
       <ThemeContext.Provider value={theme}>
-        <JobAdsContext.Provider
-          value={{ jobAds, setJobAds, totalPages, setTotalPages }}
-        >
-          <SearchTextContext.Provider value={{ searchText, setSearchText }}>
+        <SearchTextContext.Provider value={{ searchText, setSearchText }}>
+          <JobAdsContext.Provider
+            value={{ jobAds, setJobAds, totalPages, setTotalPages }}
+          >
             <header className="header">
               <ul>
-                <NavLink to={"/"} className="logo-link">
-                  <img src={logoImg} alt="Logo" className="logo-img" />
+                <NavLink to={"/"} className="logoImg">
+                  <div className="logoContainer">
+                    <DigiLogo
+                      afVariation={LogoVariation.LARGE}
+                      afColor={LogoColor.SECONDARY}
+                      afSystemName="CarrierFix"
+                    ></DigiLogo>
+                  </div>
+                  <nav>
+                    <Button click={toggleTheme}>
+                      <>Byt till: {theme.name === "Night" ? "Day" : "Night"}</>
+                    </Button>
+                  </nav>
                 </NavLink>
-                <Button click={toggleTheme}>
-                  <>Byt till: {theme.name === "Night" ? "Day" : "Night"}</>
-                </Button>
                 <li className="list">
                   <NavLink to={"/"}>Hem</NavLink>
                 </li>
@@ -69,11 +81,19 @@ const Layout = () => {
                 <Outlet />
               </main>
             </SaveAdsContext.Provider>
-            <footer className="footer">
-              <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
-            </footer>
-          </SearchTextContext.Provider>
-        </JobAdsContext.Provider>
+            <DigiFooter afVariation={FooterVariation.SMALL}>
+              <div slot="content-bottom-left">
+                <Link to="/">
+                  <DigiLogo
+                    afVariation={LogoVariation.LARGE}
+                    afColor={LogoColor.SECONDARY}
+                    afSystemName="CarrierFix"
+                  ></DigiLogo>
+                </Link>
+              </div>
+            </DigiFooter>
+          </JobAdsContext.Provider>
+        </SearchTextContext.Provider>
       </ThemeContext.Provider>
     </FilterContext.Provider>
   );

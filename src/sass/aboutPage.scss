@@ -22,7 +22,7 @@
         rgba(150, 105, 97, 0.67) 0%,
         rgba(2, 0, 76, 0.84) 100%
       ),
-      url("../assets/house.jpg");
+      url("../assets/house.jpg")no-repeat center center / cover;;
   }
 
   .bottomSection {
@@ -31,7 +31,7 @@
         rgba(150, 105, 97, 0.67) 0%,
         rgba(2, 0, 76, 0.84) 100%
       ),
-      url("../assets/house2.jpg");
+      url("../assets/house2.jpg")no-repeat center center / cover;;
   }
 
   .middleSection {
@@ -61,6 +61,7 @@
     
     
     h1, h2 {
+      color: white;
       font-size: 4.5rem;
       margin-bottom: 1.5rem;
       animation: fadeIn 0.6s ease-in-out forwards;
@@ -86,4 +87,9 @@
     animation-delay: 1.1s;
   }
   
+}
+
+
+.digi-button .digi-button--variation-primary .digi-button--size-large .sc-digi-button {
+  color: red;
 }

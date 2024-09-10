@@ -24,9 +24,7 @@ export const AboutPage = () => {
         </div>
       </section>
       <section className="middleSection">
-        <div className="middleContent">
-          <h3 className="arrow">↓↑</h3>
-        </div>
+        <div className="middleContent"></div>
       </section>
       <section className="bottomSection">
         <div className="bottomContent">
@@ -41,7 +39,7 @@ export const AboutPage = () => {
           </p>
           <DigiButton
             afSize={ButtonSize.LARGE}
-            afVariation={ButtonVariation.PRIMARY}
+            afVariation={ButtonVariation.SECONDARY}
             afFullWidth={false}
             onClick={handleButtonClick}
           >
