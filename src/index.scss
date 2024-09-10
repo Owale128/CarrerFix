@@ -1,5 +1,6 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
   /*LAYOUT*/
@@ -20,6 +21,8 @@
   /*TEXT FÄRGER*/
   --digi--color--text--primary: black;
   --digi--icon--color: black;
+
+  font-family: "Open Sans", sans-serif;
 }
 
 * {
