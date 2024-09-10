@@ -18,6 +18,7 @@ import { IJobAd } from "../models/IJobAd";
 const ShowLatestAds = () => {
   const [scrollIndex, setScrollIndex] = useState<number>(0);
   const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
+  const adsPerScroll = 3;
 
   useEffect(() => {
     const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
@@ -67,7 +68,6 @@ const ShowLatestAds = () => {
                     </blockquote>
 
                     <DigiTypographyTime
-                      style={{ color: "black" }}
                       afVariation={TypographyTimeVariation.DISTANCE}
                       afDateTime={ad.publication_date}
                     ></DigiTypographyTime>
@@ -75,18 +75,20 @@ const ShowLatestAds = () => {
                 </DigiLayoutBlock>
               ))}
 
-              {latestAds.length > 3 && scrollIndex < 2 && (
-                <button
-                  onClick={handleScroll}
-                  className="right-carousel-button"
-                >
-                  <img
-                    className="arrow-icon"
-                    src={RighArrow}
-                    alt="right arrow"
-                  />
-                </button>
-              )}
+              {latestAds.length > adsPerScroll &&
+                scrollIndex <
+                  Math.floor((latestAds.length - 1) / adsPerScroll) && (
+                  <button
+                    onClick={handleScroll}
+                    className="right-carousel-button"
+                  >
+                    <img
+                      className="arrow-icon"
+                      src={RighArrow}
+                      alt="right arrow"
+                    />
+                  </button>
+                )}
 
               {scrollIndex > 0 && (
                 <button
