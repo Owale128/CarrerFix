@@ -1,6 +1,8 @@
 .digi-button {
   --digi--button--color--background--primary--default: #e05762;
 
+  --digi--link--button--color--background--primary--default: #e05762;
+
   --digi--button--color--text--primary--default: white;
 
   --digi--button--color--background--secondary--default: black;
@@ -24,4 +26,17 @@
 }
 .applyLink {
   text-decoration: none;
+}
+
+.digi-link-button.digi-link-button--primary a {
+  background-color: transparent;
+  background-color: #e05762;
+}
+
+.digi-link-button.digi-link-button--primary .digi-link-button__text {
+  color: #ffffff;
+}
+
+.sc-digi-link-button-s a {
+  border-color: black;
 }
