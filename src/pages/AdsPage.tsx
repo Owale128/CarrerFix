@@ -12,6 +12,8 @@ import { IJobAd } from "../models/IJobAd";
 export const AdsPage = () => {
   const [getAdData, allAds, totalCount] = useAds();
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [sortedAds, setSortedAds] = useState<IJobAd[]>([]);
   const [filteredAds, setFilteredAds] = useState<IJobAd[]>([]);
   const { searchText } = useContext(SearchTextContext);
   const { sevenDaySpan } = useContext(FilterContext);
@@ -28,8 +30,6 @@ export const AdsPage = () => {
   }, [searchText, getAdData]);
 
   useEffect(() => {
-    if (totalCount === 0) return;
-
     const now = new Date().getTime();
     const sevenDaysAgo = now - 7 * 24 * 60 * 60 * 1000;
 
@@ -46,13 +46,14 @@ export const AdsPage = () => {
       );
     });
 
-    // Beräkning aav antal sidor
-    Math.ceil(totalCount / limit);
+    setSortedAds(sorted);
+
+    setTotalPages(Math.ceil(sorted.length / limit));
 
     const start = (currentPage - 1) * limit;
     const end = start + limit;
     setFilteredAds(sorted.slice(start, end));
-  }, [allAds, sevenDaySpan, currentPage, totalCount]);
+  }, [allAds, sevenDaySpan, currentPage]);
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
     const pageNumber = e.detail;
@@ -63,14 +64,11 @@ export const AdsPage = () => {
     });
   };
 
-  // Calculate total pages for display
-  const totalPages = Math.ceil(totalCount / limit);
-
   return (
     <>
       <SearchForm getAdData={getAdData} />
       <section className="search-hits-section">
-        <h3>{totalCount} sökträffar</h3>
+        <h3>{allAds.length} sökträffar</h3>
         <p> | </p>
         <h3>{totalPages} antal sidor</h3>
       </section>
@@ -80,9 +78,9 @@ export const AdsPage = () => {
           afTotalPages={totalPages}
           afInitActivePage={currentPage}
           onAfOnPageChange={handlePageChange}
-          af-total-results={totalCount}
+          af-total-results={allAds.length}
           af-current-result-start={(currentPage - 1) * limit + 1}
-          afCurrentResultEnd={currentPage * limit}
+          afCurrentResultEnd={Math.min(currentPage * limit, sortedAds.length)}
           afResultName="annonser"
         />
       </section>
