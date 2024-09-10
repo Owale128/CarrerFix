@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchTextContext } from "../context/SearchTextContext";
 import "../sass/searchForm.scss";
+import "../sass/buttons.scss"
 import { IJobAd } from "../models/IJobAd";
 
 interface ISearchForm {
