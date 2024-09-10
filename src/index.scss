@@ -19,10 +19,6 @@
   --digi--color--text--link-hover: #ffa041;
   /*TEXTFÄRGER*/
   --digi--color--text--primary: black;
-
-  /* KNAPPFÄRG */
-  --digi--button--color--background--primary--default: #ff9f39;
-  --digi--button--color--text--primary--default: #0000;
 }
 
 a {
@@ -83,9 +79,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-.digi-button.digi-button--variation-primary {
-  --digi--button--color--background--primary--default: #ff9f39;
-  --digi--button--color--text--primary--default: #000000;
 }

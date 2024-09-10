@@ -1,0 +1,9 @@
+.digi-button {
+  --digi--button--color--background--primary--default: #ff9f39;
+  --digi--button--color--text--primary--default: #000000;
+}
+
+.digi-button.digi-button--variation-primary {
+  background-color: var(--digi--button--color--background--primary--default);
+  color: var(--digi--button--color--text--primary--default);
+}
