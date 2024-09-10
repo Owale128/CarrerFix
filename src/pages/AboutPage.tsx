@@ -1,6 +1,13 @@
 import "../sass/AboutPage.scss";
-import { DigiButton } from "@digi/arbetsformedlingen-react";
-import { ButtonSize, ButtonVariation } from "@digi/arbetsformedlingen";
+import {
+  DigiButton,
+  DigiTypographyHeadingJumbo,
+} from "@digi/arbetsformedlingen-react";
+import {
+  ButtonSize,
+  ButtonVariation,
+  TypographyHeadingJumboLevel,
+} from "@digi/arbetsformedlingen";
 import { useNavigate } from "react-router-dom";
 import "../sass/buttons.scss";
 
@@ -13,6 +20,10 @@ export const AboutPage = () => {
 
   return (
     <div className="aboutPage">
+      <DigiTypographyHeadingJumbo
+        afText="Om Oss"
+        afLevel={TypographyHeadingJumboLevel.H1}
+      ></DigiTypographyHeadingJumbo>
       <section className="topSection">
         <div className="topContent">
           <h1>Om Vårt Projekt</h1>
@@ -29,9 +40,7 @@ export const AboutPage = () => {
       </section>
       <section className="bottomSection">
         <div className="bottomContent">
-          <h2>
-            Hitta drömjobbet som tar din karriär till nästa nivå!
-          </h2>
+          <h2>Hitta drömjobbet som tar din karriär till nästa nivå!</h2>
           <p>
             Utforska dina karriärmöjligheter med oss! Vi erbjuder ett brett
             utbud av spännande jobbmöjligheter som kan passa just dina

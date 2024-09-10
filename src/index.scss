@@ -2,15 +2,13 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
 
 :root {
-  line-height: 1.5;
-  font-weight: 400;
-
   /*LAYOUT*/
   --digi--typography--heading-1--font-size--desktop: 2rem;
   --digi--margin--h1-small: 1rem;
-  --digi--typography--body--font-size--desktop: 1rem;
   /*FONTER*/
+  --digi--typography--body--font-size--desktop: 1rem;
   --digi--global--typography--font-size--base: 1rem;
+  --digi--typography--heading-1--line-height--desktop: 1.5;
   /*FÄRGER*/
   --digi--color--background--primary: #fafafa;
   --digi--color--background--secondary: #eaeaea;
@@ -24,20 +22,19 @@
   --digi--icon--color: black;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: var(--digi--color--text--link-hover);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: var(--digi--color--text--link);
+}
+
+a:hover {
+  color: var(--digi--color--text--link-hover);
 }
 
 body {
@@ -56,9 +53,4 @@ main {
   gap: 2em;
   padding: 4em 4em 2em 4em;
   justify-content: space-between;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
