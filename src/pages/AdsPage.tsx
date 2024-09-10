@@ -10,7 +10,7 @@ import "../sass/pagination&search.scss";
 import { IJobAd } from "../models/IJobAd";
 
 export const AdsPage = () => {
-  const [getAdData, allAds, totalCount] = useAds();
+  const [getAdData, allAds] = useAds();
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [sortedAds, setSortedAds] = useState<IJobAd[]>([]);

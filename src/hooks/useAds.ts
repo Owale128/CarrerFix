@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { getAds } from "../services/AdService"; // Ensure this service function handles pagination properly
+import { getAds } from "../services/AdService";
 import { IJobSearchResponse } from "../models/IJobSearchResponse";
 import { IJobAd } from "../models/IJobAd";
 
@@ -15,13 +15,13 @@ export const useAds = () => {
   const getAdData = useCallback(
     async (searchText: string): Promise<GetAdDataResult> => {
       try {
-        const jobData: IJobSearchResponse = await getAds(searchText); // Ensure this call is correct
+        const jobData: IJobSearchResponse = await getAds(searchText);
         setAllAds(jobData.hits);
         setTotalCount(jobData.total.value);
         return { ads: jobData.hits, totalCount: jobData.total.value };
       } catch (error) {
         console.error("Error fetching data:", error);
-        return { ads: [], totalCount: 0 }; // Return empty data in case of an error
+        return { ads: [], totalCount: 0 };
       }
     },
     []
