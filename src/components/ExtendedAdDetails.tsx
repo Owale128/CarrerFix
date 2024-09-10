@@ -1,4 +1,5 @@
 import DOMPurify from "dompurify";
+import '../sass/buttons.scss'
 import {
   DigiButton,
   DigiInfoCard,

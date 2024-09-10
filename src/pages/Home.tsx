@@ -40,7 +40,7 @@ export const Home = () => {
               <h1 >Se våra senaste annonser</h1>
               <DigiButton
                 afSize={ButtonSize.LARGE}
-                afVariation={ButtonVariation.SECONDARY}
+                afVariation={ButtonVariation.PRIMARY}
                 afFullWidth={false}
                 onClick={handleScroll}
               >

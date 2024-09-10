@@ -2,7 +2,9 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import { JobAdsContext } from "../context/JobAdsContext";
 import { useEffect, useReducer, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
+import LogoImg from "../assets/logoImg.png";
 import "../sass/layout.scss";
+import "../sass/logo.scss";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import {
   DigiFooter,
@@ -39,16 +41,19 @@ const Layout = () => {
           value={{ jobAds, setJobAds, totalPages, setTotalPages }}
         >
           <header className="header">
-            <ul>
+            <div className="logoWrapper">
+              <img src={LogoImg} alt="logoImg" className="logo-img" />
               <NavLink to={"/"} className="logoImg">
                 <div className="logoContainer">
                   <DigiLogo
-                    afVariation={LogoVariation.LARGE}
+                    afSvgAriaHidden={true}
                     afColor={LogoColor.SECONDARY}
-                    afSystemName="CarrierFix"
-                  ></DigiLogo>
+                    afSystemName="CareerFix"
+                  />
                 </div>
               </NavLink>
+            </div>
+            <ul>
               <li className="list">
                 <NavLink to={"/"}>Hem</NavLink>
               </li>
@@ -70,13 +75,16 @@ const Layout = () => {
           </SaveAdsContext.Provider>
           <DigiFooter afVariation={FooterVariation.SMALL}>
             <div slot="content-bottom-left">
-              <Link to="/">
-                <DigiLogo
-                  afVariation={LogoVariation.LARGE}
-                  afColor={LogoColor.SECONDARY}
-                  afSystemName="CarrierFix"
-                ></DigiLogo>
-              </Link>
+              <div className="logoWrapper">
+                {/* <img src={LogoImg} alt="logoImg" className="logo-img" /> */}
+                <Link to="/">
+                  <DigiLogo
+                    afVariation={LogoVariation.LARGE}
+                    afColor={LogoColor.SECONDARY}
+                    afSystemName="CareerFix"
+                  />
+                </Link>
+              </div>
             </div>
           </DigiFooter>
         </JobAdsContext.Provider>

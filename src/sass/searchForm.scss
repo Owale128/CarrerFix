@@ -1,9 +1,6 @@
+@import "../sass/buttons.scss";
+
 .searchForm-container {
   display: flex;
   width: 800px;
-
-  .digi-button.digi-button--variation-primary {
-    --digi--button--color--background--primary--default: #ff9f39;
-    --digi--button--color--text--primary--default: #000000;
-  }
 }

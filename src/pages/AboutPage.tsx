@@ -2,6 +2,7 @@ import "../sass/AboutPage.scss";
 import { DigiButton } from "@digi/arbetsformedlingen-react";
 import { ButtonSize, ButtonVariation } from "@digi/arbetsformedlingen";
 import { useNavigate } from "react-router-dom";
+import "../sass/buttons.scss";
 
 export const AboutPage = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export const AboutPage = () => {
       <section className="bottomSection">
         <div className="bottomContent">
           <h2>
-            Hitta <span>drömjobbet</span> som tar din karriär till nästa nivå!
+            Hitta drömjobbet som tar din karriär till nästa nivå!
           </h2>
           <p>
             Utforska dina karriärmöjligheter med oss! Vi erbjuder ett brett
@@ -39,7 +40,7 @@ export const AboutPage = () => {
           </p>
           <DigiButton
             afSize={ButtonSize.LARGE}
-            afVariation={ButtonVariation.SECONDARY}
+            afVariation={ButtonVariation.PRIMARY}
             afFullWidth={false}
             onClick={handleButtonClick}
           >
