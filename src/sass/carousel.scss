@@ -1,65 +1,73 @@
-.carousel-wrapper {
+.carouselWrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-}
 
-.latest-ads-cards-container {
-  display: flex;
-  gap: 20px;
-  width: 300%;
-  transition: margin-left 0.5s ease;
+  .suggestedAdsCardContainer {
+    display: flex;
+    gap: 20px;
+    width: 300%;
+    transition: margin-left 0.5s ease;
+    padding-top: 1em;
+    border-top: solid 1em var(--digi--color--background--tertiary);
 
-  .latest-ads-card {
-    width: 350px;
-    padding: 1.5em;
-    text-wrap: wrap;
-    background-color: var(--digi--color--background--primary);
-    height: 300px;
+    .suggestedAdsCard {
+      width: 350px;
+      padding: 1.5em;
+      text-wrap: wrap;
+      background-color: var(--digi--color--background--primary);
+      height: 300px;
 
-    &:hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      transform: translateY(-5px);
+      &:hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: translateY(-5px);
+      }
+    }
+
+    .leftCarouselButton,
+    .rightCarouselButton {
+      background-color: var(--digi--color--background--secondary);
+      opacity: 0.7;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: none;
+      position: absolute;
+      bottom: 5%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .leftCarouselButton:hover,
+    .rightCarouselButton:hover {
+      opacity: 1;
+    }
+
+    .rightCarouselButton {
+      right: 10px;
+    }
+
+    .leftCarouselButton {
+      left: 10px;
+    }
+
+    .arrowIcon {
+      width: 50%;
+      height: 50%;
+      opacity: 0.8;
     }
   }
 
-  .left-carousel-button,
-  .right-carousel-button {
-    background-color: var(--digi--color--background--secondary);
-    opacity: 0.7;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .scroll-0 {
+    margin-left: 0;
   }
 
-  .right-carousel-button {
-    right: 10px;
+  .scroll-1 {
+    margin-left: -85.8%;
   }
-
-  .left-carousel-button {
-    left: 10px;
+  .scroll-2 {
+    margin-left: -171.5%;
   }
-
-  .arrow-icon {
-    width: 50%;
-    height: 50%;
-    opacity: 0.7;
-  }
-}
-
-.scroll-0 {
-  margin-left: 0;
-}
-
-.scroll-1 {
-  margin-left: -86%;
-}
-.scroll-2 {
-  margin-left: -200%;
 }

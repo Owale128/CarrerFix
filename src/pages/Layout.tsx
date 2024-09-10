@@ -58,7 +58,7 @@ const Layout = () => {
                 <NavLink to={"/"}>Hem</NavLink>
               </li>
               <li className="list">
-                <NavLink to={"/about"}>Om</NavLink>
+                <NavLink to={"/about"}>Om Oss</NavLink>
               </li>
               <li className="list">
                 <NavLink to={"/savedAds"}>

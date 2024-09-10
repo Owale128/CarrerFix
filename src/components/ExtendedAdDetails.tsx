@@ -1,5 +1,4 @@
 import DOMPurify from "dompurify";
-import "../sass/buttons.scss";
 import {
   DigiInfoCard,
   DigiLayoutBlock,
@@ -98,7 +97,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
               afSize={LinkButtonSize.LARGE}
               afVariation={LinkButtonVariation.PRIMARY}
             >
-              Sök nu
+              Ansök nu
             </DigiLinkButton>
           </blockquote>
 
