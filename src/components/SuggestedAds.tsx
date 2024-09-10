@@ -41,52 +41,69 @@ const ShowLatestAds = () => {
   };
   return (
     <>
-      <h3>Annonser baserade på dina senaste sökningar</h3>
-      <div className="carousel-wrapper">
-        <div className={`latest-ads-cards-container scroll-${scrollIndex}`}>
-          {latestAds.map((ad) => (
-            <DigiLayoutBlock
-              key={ad.id}
-              afVariation={LayoutBlockVariation.PRIMARY}
-              afContainer={LayoutBlockContainer.NONE}
-              className="latest-ads-card"
-            >
-              <DigiTypography>
-                <blockquote>
-                  <h3>{ad.headline}</h3>
-                  <h4>{ad.employer.name}</h4>
-                  <NavLink to={`/ad/${ad.id}`} className="card-link">
-                    <p style={{ textDecoration: "underline", color: "blue" }}>
-                      Läs mer...
-                    </p>
-                  </NavLink>
-                </blockquote>
+      {latestAds.length > 0 && (
+        <>
+          <h3>Annonser baserade på dina senaste sökningar</h3>
+          <div className="carousel-wrapper">
+            <div className={`latest-ads-cards-container scroll-${scrollIndex}`}>
+              {latestAds.map((ad) => (
+                <DigiLayoutBlock
+                  key={ad.id}
+                  afVariation={LayoutBlockVariation.PRIMARY}
+                  afContainer={LayoutBlockContainer.NONE}
+                  className="latest-ads-card"
+                >
+                  <DigiTypography>
+                    <blockquote>
+                      <h3>{ad.headline}</h3>
+                      <h4>{ad.employer.name}</h4>
+                      <NavLink to={`/ad/${ad.id}`} className="card-link">
+                        <p
+                          style={{ textDecoration: "underline", color: "blue" }}
+                        >
+                          Läs mer...
+                        </p>
+                      </NavLink>
+                    </blockquote>
 
-                <DigiTypographyTime
-                  style={{ color: "black" }}
-                  afVariation={TypographyTimeVariation.DISTANCE}
-                  afDateTime={ad.publication_date}
-                ></DigiTypographyTime>
-              </DigiTypography>
-            </DigiLayoutBlock>
-          ))}
+                    <DigiTypographyTime
+                      style={{ color: "black" }}
+                      afVariation={TypographyTimeVariation.DISTANCE}
+                      afDateTime={ad.publication_date}
+                    ></DigiTypographyTime>
+                  </DigiTypography>
+                </DigiLayoutBlock>
+              ))}
 
-          {scrollIndex < 2 && (
-            <button onClick={handleScroll} className="right-carousel-button">
-              <img className="arrow-icon" src={RighArrow} alt="right arrow" />
-            </button>
-          )}
+              {latestAds.length > 3 && scrollIndex < 2 && (
+                <button
+                  onClick={handleScroll}
+                  className="right-carousel-button"
+                >
+                  <img
+                    className="arrow-icon"
+                    src={RighArrow}
+                    alt="right arrow"
+                  />
+                </button>
+              )}
 
-          {scrollIndex > 0 && (
-            <button
-              onClick={() => setScrollIndex(scrollIndex - 1)}
-              className="left-carousel-button"
-            >
-              <img className="arrow-icon" src={LeftArrow} alt="left arrow" />
-            </button>
-          )}
-        </div>
-      </div>
+              {scrollIndex > 0 && (
+                <button
+                  onClick={() => setScrollIndex(scrollIndex - 1)}
+                  className="left-carousel-button"
+                >
+                  <img
+                    className="arrow-icon"
+                    src={LeftArrow}
+                    alt="left arrow"
+                  />
+                </button>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };
