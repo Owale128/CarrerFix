@@ -1,4 +1,4 @@
-@import 'keyframes.scss';
+@import "keyframes.scss";
 
 .aboutPage {
   display: flex;
@@ -22,7 +22,7 @@
         rgba(150, 105, 97, 0.67) 0%,
         rgba(2, 0, 76, 0.84) 100%
       ),
-      url("../assets/house.jpg")no-repeat center center / cover;;
+      url("../assets/house.jpg") no-repeat center center / cover;
   }
 
   .bottomSection {
@@ -31,25 +31,25 @@
         rgba(150, 105, 97, 0.67) 0%,
         rgba(2, 0, 76, 0.84) 100%
       ),
-      url("../assets/house2.jpg")no-repeat center center / cover;;
+      url("../assets/house2.jpg") no-repeat center center / cover;
   }
 
   .middleSection {
-    height: 10vh; 
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     .middleContent {
       animation: fadeIn 2.8s ease-in-out forwards;
       .arrow {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
         color: black;
         animation: bounce 2s infinite;
       }
     }
   }
-  
+
   .topContent,
   .bottomContent {
     text-align: center;
@@ -58,15 +58,15 @@
     padding: 40px;
     opacity: 0;
     animation: fadeIn 0.6s ease-in-out forwards;
-    
-    
-    h1, h2 {
+
+    h1,
+    h2 {
       color: white;
       font-size: 4.5rem;
       margin-bottom: 1.5rem;
       animation: fadeIn 0.6s ease-in-out forwards;
     }
-    
+
     p {
       font-size: 1.3rem;
       margin-bottom: 1.5rem;
@@ -74,7 +74,7 @@
       animation: fadeIn 0.6s ease-in-out forwards;
       animation-delay: 0.5s;
     }
-    
+
     span {
       color: #ff8001;
     }
@@ -82,14 +82,15 @@
   .topContent {
     animation-delay: 0.5s;
   }
-  
+
   .bottomContent {
     animation-delay: 1.1s;
   }
-  
 }
 
-
-.digi-button .digi-button--variation-primary .digi-button--size-large .sc-digi-button {
+.digi-button
+  .digi-button--variation-primary
+  .digi-button--size-large
+  .sc-digi-button {
   color: red;
 }

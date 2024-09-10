@@ -3,6 +3,7 @@ import {
   DigiButton,
   DigiInfoCard,
   DigiLayoutBlock,
+  DigiLinkExternal,
   DigiTypography,
   DigiTypographyTime,
 } from "@digi/arbetsformedlingen-react";
@@ -16,6 +17,7 @@ import {
   InfoCardVariation,
   LayoutBlockContainer,
   LayoutBlockVariation,
+  LinkVariation,
   TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
 
@@ -122,20 +124,18 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
       >
         <DigiTypography>
           <blockquote>
-            <p>
-              <b>Ansök via arbetsgivarens hemsida:</b>{" "}
-              {ad.application_details?.url ? (
-                <a
-                  href={ad.application_details.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {ad.application_details.url}
-                </a>
-              ) : (
-                "Ingen hemsida tillgänglig"
-              )}
-            </p>
+            <p>Ansök via arbetsgivarens hemsida:</p>
+            {ad.application_details.url ? (
+              <DigiLinkExternal
+                afHref={ad.application_details.url}
+                afTarget="_blank"
+                afVariation={LinkVariation.SMALL}
+              >
+                {ad.employer.name}
+              </DigiLinkExternal>
+            ) : (
+              <p>Ingen webbplats tillgänglig</p>
+            )}
           </blockquote>
 
           <blockquote className="locationSection">

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import { DisplayAd } from "./DisplayAd";
 import "../sass/adsList.scss";
+import { DigiFormCheckbox } from "@digi/arbetsformedlingen-react";
+import { FormCheckboxVariation } from "@digi/arbetsformedlingen";
 
 interface DisplayAdsProps {
   ads: IJobAd[];
@@ -25,25 +27,29 @@ export const DisplayAds = ({ ads }: DisplayAdsProps) => {
   });
 
   return (
-    <div>
-      <label htmlFor="senaste">
-        Visa annonser som lades till de senaste 7 dagarna
-      </label>
-      <input
-        id="senaste"
-        type="checkbox"
-        checked={sevenDaySpan}
-        onChange={() => setSevenDaySpan(!sevenDaySpan)}
-      />
-      {sortedAds.length > 0 ? (
-        <ul className="adsList">
-          {sortedAds.map((job) => (
-            <DisplayAd key={job.id} jobAd={job} />
-          ))}
-        </ul>
-      ) : (
-        <p>No job ads found.</p>
+    <>
+      {sortedAds.length > 0 && (
+        <section className="checkBoxSection">
+          <DigiFormCheckbox
+            afLabel="Senaste 7 dagarna"
+            afVariation={FormCheckboxVariation.PRIMARY}
+            afChecked={sevenDaySpan}
+            onAfOnChange={() => setSevenDaySpan(!sevenDaySpan)}
+          />
+        </section>
       )}
-    </div>
+
+      <div>
+        {sortedAds.length > 0 ? (
+          <ul className="adsList">
+            {sortedAds.map((job) => (
+              <DisplayAd key={job.id} jobAd={job} />
+            ))}
+          </ul>
+        ) : (
+          <h2>Inga annonser hittade</h2>
+        )}
+      </div>
+    </>
   );
 };
