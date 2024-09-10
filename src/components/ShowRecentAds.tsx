@@ -23,8 +23,6 @@ const ShowRecentAds = () => {
   const { saveAds, dispatch } = useContext(SaveAdsContext);
   const recent = getRecentAds(allAds, 10);
 
-  console.log(recentAds);
-
   useEffect(() => {
     getAdData("recent");
   }, [getAdData]);
