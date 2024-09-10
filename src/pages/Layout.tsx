@@ -1,14 +1,21 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { JobAdsContext } from "../context/JobAdsContext";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { useReducer, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import { SearchTextContext } from "../context/SearchTextContext";
-import logoImg from "../assets/logo-img.png";
-
-import "../sass/layout.scss";
+import { JobAdsContext } from "../context/JobAdsContext";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import { DigiIconStarReg } from "@digi/arbetsformedlingen-react";
 import { SaveAdReducer } from "../reducers/SaveAdRecucer";
+import "../sass/layout.scss";
+import {
+  DigiFooter,
+  DigiLogo,
+} from "@digi/arbetsformedlingen-react";
+import {
+  FooterVariation,
+  LogoVariation,
+  LogoColor,
+} from "@digi/arbetsformedlingen";
 
 const Layout = () => {
   const [jobAds, setJobAds] = useState<IJobAd[]>([]);
@@ -26,8 +33,14 @@ const Layout = () => {
       >
         <header className="header">
           <ul>
-            <NavLink to={"/"} className="logo-link">
-              <img src={logoImg} alt="Logo" className="logo-img" />
+            <NavLink to={"/"} className="logoImg">
+              <div className="logoContainer">
+                <DigiLogo
+                  afVariation={LogoVariation.LARGE}
+                  afColor={LogoColor.SECONDARY}
+                  afSystemName="CarrierFix"
+                ></DigiLogo>
+              </div>
             </NavLink>
             <li className="list">
               <NavLink to={"/"}>Hem</NavLink>
@@ -48,9 +61,17 @@ const Layout = () => {
             <Outlet />
           </main>
         </SaveAdsContext.Provider>
-        <footer className="footer">
-          <p>&copy; 2024 CareerFix. Alla rättigheter förbehållna.</p>
-        </footer>
+        <DigiFooter afVariation={FooterVariation.SMALL}>
+          <div slot="content-bottom-left">
+            <Link to="/">
+              <DigiLogo
+                afVariation={LogoVariation.LARGE}
+                afColor={LogoColor.SECONDARY}
+                afSystemName="CarrierFix"
+              ></DigiLogo>
+            </Link>
+          </div>
+        </DigiFooter>
       </JobAdsContext.Provider>
     </SearchTextContext.Provider>
   );
