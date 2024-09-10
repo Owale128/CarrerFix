@@ -8,10 +8,9 @@ import { SearchTextContext } from "../context/SearchTextContext";
 import { FilterContext } from "../context/FilterContext";
 import "../sass/pagination&search.scss";
 import { IJobAd } from "../models/IJobAd";
-import Spinner from "../components/Spinner";
 
 export const AdsPage = () => {
-  const [getAdData, allAds, loading] = useAds();
+  const [getAdData, allAds] = useAds();
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [sortedAds, setSortedAds] = useState<IJobAd[]>([]);
@@ -69,32 +68,23 @@ export const AdsPage = () => {
   return (
     <>
       <SearchForm getAdData={getAdData} />
-  
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <section className="search-hits-section">
-            <h3>{allAds.length} sökträffar</h3>
-            <p> | </p>
-            <h3>{totalPages} antal sidor</h3>
-          </section>
-  
-          <DisplayAds ads={filteredAds} />
-  
-          <section className="pagination-section">
-            <DigiNavigationPagination
-              afTotalPages={totalPages}
-              afInitActivePage={currentPage}
-              onAfOnPageChange={handlePageChange}
-              af-total-results={allAds.length}
-              af-current-result-start={(currentPage - 1) * limit + 1}
-              afCurrentResultEnd={Math.min(currentPage * limit, sortedAds.length)}
-              afResultName="annonser"
-            />
-          </section>
-        </>
-      )}
+      <section className="search-hits-section">
+        <h3>{allAds.length} sökträffar</h3>
+        <p> | </p>
+        <h3>{totalPages} antal sidor</h3>
+      </section>
+      <DisplayAds ads={filteredAds} />
+      <section className="pagination-section">
+        <DigiNavigationPagination
+          afTotalPages={totalPages}
+          afInitActivePage={currentPage}
+          onAfOnPageChange={handlePageChange}
+          af-total-results={allAds.length}
+          af-current-result-start={(currentPage - 1) * limit + 1}
+          afCurrentResultEnd={Math.min(currentPage * limit, sortedAds.length)}
+          afResultName="annonser"
+        />
+      </section>
     </>
   );
 };
