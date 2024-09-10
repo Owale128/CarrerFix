@@ -23,6 +23,7 @@ export const AdsPage = () => {
     const fetchData = async () => {
       if (searchText.trim() !== "") {
         await getAdData(searchText);
+        setCurrentPage(1);
       }
     };
 
