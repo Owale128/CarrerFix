@@ -1,6 +1,8 @@
+@import "../sass/variables.scss";
+
 .searchFormContainer {
   display: flex;
-  width: 800px;
+  width: 600px;
 
   .digi-form-label__label--label {
     font-size: 1.5rem;

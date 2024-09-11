@@ -10,9 +10,7 @@ import { SearchTextContext } from "../context/SearchTextContext";
 import { IJobAd } from "../models/IJobAd";
 
 interface ISearchForm {
-  getAdData: (
-    searchText: string
-  ) => Promise<{ ads: IJobAd[];}>;
+  getAdData: (searchText: string) => Promise<{ ads: IJobAd[] }>;
   setCurrentPage: (page: number) => void;
 }
 
@@ -23,14 +21,14 @@ export const SearchForm = ({ getAdData, setCurrentPage }: ISearchForm) => {
 
   const handleSearch = async (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
-    
+
     if (inputValue.trim() !== "") {
       setSearchText(inputValue);
       const searchResults = await getAdData(inputValue);
       localStorage.setItem("storedAds", JSON.stringify(searchResults.ads));
       localStorage.setItem("storedSearchText", inputValue);
       setInputValue("");
-      if (typeof setCurrentPage === 'function') {
+      if (typeof setCurrentPage === "function") {
         setCurrentPage(1);
       }
       navigate("/ads");
@@ -40,7 +38,6 @@ export const SearchForm = ({ getAdData, setCurrentPage }: ISearchForm) => {
   return (
     <div className="searchFormContainer">
       <DigiFormInputSearch
-        className="searchForm"
         afLabel="Sök Jobb"
         afVariation={FormInputSearchVariation.LARGE}
         afAutofocus={true}
