@@ -14,9 +14,12 @@ import {
   LayoutBlockContainer,
   LayoutBlockVariation,
 } from "@digi/arbetsformedlingen";
+import { useContext } from "react";
+import { CurrentPagecContext } from "../context/CurrentPageContext";
 
 export const Home = () => {
   const [getAdData] = useAds();
+  const {setCurrentPage} = useContext(CurrentPagecContext)
 
   const handleScroll = () => {
     window.scrollTo({
@@ -27,7 +30,7 @@ export const Home = () => {
 
   return (
     <>
-      <SearchForm getAdData={getAdData} />
+      <SearchForm getAdData={getAdData} setCurrentPage={setCurrentPage} />
       <SuggestedAds />
       <div className="image-container">
         <DigiLayoutBlock
