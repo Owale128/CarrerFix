@@ -9,6 +9,7 @@ import {
   LayoutBlockContainer,
   LayoutBlockVariation,
   TypographyTimeVariation,
+  TypographyVariation,
 } from "@digi/arbetsformedlingen";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -44,8 +45,10 @@ const ShowLatestAds = () => {
     <>
       {latestAds.length > 0 && (
         <>
-          <h3>Annonser baserade på dina senaste sökningar</h3>
           <div className="carouselWrapper">
+            <DigiTypography afVariation={TypographyVariation.SMALL}>
+              <h2>Annonser baserade på dina senaste sökningar</h2>
+            </DigiTypography>
             <div className={`suggestedAdsCardContainer scroll-${scrollIndex}`}>
               {latestAds.map((ad) => (
                 <DigiLayoutBlock

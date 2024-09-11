@@ -76,7 +76,6 @@ const Layout = () => {
           <DigiFooter afVariation={FooterVariation.SMALL}>
             <div slot="content-bottom-left">
               <div className="logoWrapper">
-                {/* <img src={LogoImg} alt="logoImg" className="logo-img" /> */}
                 <Link to="/">
                   <DigiLogo
                     afVariation={LogoVariation.LARGE}

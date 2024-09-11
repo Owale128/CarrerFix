@@ -35,9 +35,6 @@ export const AboutPage = () => {
           </p>
         </div>
       </section>
-      <section className="middleSection">
-        <div className="middleContent"></div>
-      </section>
       <section className="bottomSection">
         <div className="bottomContent">
           <h1>Hitta drömjobbet som tar din karriär till nästa nivå!</h1>
