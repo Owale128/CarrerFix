@@ -101,7 +101,7 @@ export const AdsPage = () => {
   return (
     <>
       <SearchForm getAdData={getAdData} setCurrentPage={setCurrentPage} />
-      <section className="search-hits-section">
+      <section className="searchHitsSection">
         <h3>{allAds.length} sökträffar</h3>
         <p> | </p>
         <h3>{totalPages} antal sidor</h3>
@@ -109,7 +109,7 @@ export const AdsPage = () => {
 
       <DisplayAds ads={filteredAds} />
 
-      <section className="pagination-section">
+      <section className="paginationSection">
         <DigiNavigationPagination
           afTotalPages={totalPages}
           afInitActivePage={currentPage}

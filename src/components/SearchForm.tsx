@@ -38,7 +38,7 @@ export const SearchForm = ({ getAdData, setCurrentPage }: ISearchForm) => {
   };
 
   return (
-    <div className="searchForm-container">
+    <div className="searchFormContainer">
       <DigiFormInputSearch
         className="searchForm"
         afLabel="Sök Jobb"

@@ -1,6 +1,10 @@
 @import "../sass/buttons.scss";
 
-.searchForm-container {
+.searchFormContainer {
   display: flex;
   width: 800px;
+
+  .digi-form-label__label--label {
+    font-size: 1.5rem;
+  }
 }

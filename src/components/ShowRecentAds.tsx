@@ -9,6 +9,7 @@ import {
   LayoutBlockContainer,
   LayoutBlockVariation,
   TypographyTimeVariation,
+  TypographyVariation,
 } from "@digi/arbetsformedlingen";
 import { useAds } from "../hooks/useAds";
 import { getRecentAds, handleSaveAd, checkIfAdIsSaved } from "../Utils/adUtils";
@@ -29,7 +30,9 @@ const ShowRecentAds = () => {
 
   return (
     <div className="container">
-      <h3 className="latestAdsHeading">Nya annonser</h3>
+      <DigiTypography afVariation={TypographyVariation.SMALL}>
+      <h2>Nya annonser</h2>
+      </DigiTypography>
       {recent.map((ad) => {
         const isSaved = checkIfAdIsSaved(ad.id, saveAds);
 
@@ -60,12 +63,11 @@ const ShowRecentAds = () => {
                 </blockquote>
 
                 <blockquote>
-                  <NavLink to={`/ad/${ad.id}`} className="card-link">
+                  <NavLink to={`/ad/${ad.id}`}>
                     <p>Läs mer...</p>
                   </NavLink>
                 </blockquote>
                 <DigiTypographyTime
-                  style={{ color: "black" }}
                   afVariation={TypographyTimeVariation.DISTANCE}
                   afDateTime={ad.publication_date}
                 ></DigiTypographyTime>

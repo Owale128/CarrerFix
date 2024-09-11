@@ -59,12 +59,11 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
             </blockquote>
 
             <blockquote>
-              <NavLink to={`/ad/${jobAd.id}`} className="card-link">
+              <NavLink to={`/ad/${jobAd.id}`}>
                 <p>Läs mer...</p>
               </NavLink>
             </blockquote>
             <DigiTypographyTime
-              style={{ color: "black" }}
               afVariation={TypographyTimeVariation.DISTANCE}
               afDateTime={jobAd.publication_date}
             ></DigiTypographyTime>
