@@ -60,7 +60,10 @@ const Layout = () => {
               </li>
               <li className="list">
                 <NavLink to={"/savedAds"}>
-                  <DigiIconStarReg className="star" />
+                  <DigiIconStarReg
+                    className="star"
+                    afTitle="Sparade annonnser"
+                  />
                   {count > 0 && <div className="badge">{count}</div>}
                 </NavLink>
               </li>

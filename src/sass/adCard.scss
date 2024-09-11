@@ -27,4 +27,10 @@
   bottom: 1.5em;
   right: 1.5em;
   position: absolute;
+
+  .savedText {
+    position: absolute;
+    bottom: 0;
+    right: 2.5em;
+  }
 }

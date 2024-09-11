@@ -22,7 +22,7 @@ const SavedAds = () => {
           ))}
         </ul>
       ) : (
-        <p>Inga sparade annonser.</p>
+        <p>Inga sparade annonser</p>
       )}
     </div>
   );

@@ -89,6 +89,16 @@ const ShowLatestAds = () => {
                         ) : (
                           <DigiIconBookmarkOutline />
                         )}
+
+                        {isSaved ? (
+                          <p className="savedText">
+                            <b>Sparad</b>
+                          </p>
+                        ) : (
+                          <p className="savedText">
+                            <b>Spara</b>
+                          </p>
+                        )}
                       </div>
                     </DigiTypography>
                   </DigiLayoutBlock>
