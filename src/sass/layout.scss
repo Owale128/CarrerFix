@@ -1,7 +1,7 @@
-@import "../sass/buttons.scss";
+@import "../sass/variables.scss";
 
 .header {
-  background-color: var(--digi--color--background--tertiary);
+  background-color: $digi--color--background--tertiary;
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -26,19 +26,19 @@
     display: flex;
     align-items: center;
     margin-right: 48px;
-    font-size: 24px;
+    font-size: 20px;
 
     .list {
       font-weight: bold;
       padding: 20px 20px;
 
       a {
-        color: white;
+        color: $digi--color--text--secondary;
         text-decoration: none;
         transition: color 0.3s ease;
 
         &:hover {
-          color: var(--digi--color--text--link-hover);
+          color: $digi--color--text--link-hover;
         }
       }
 
@@ -53,7 +53,7 @@
         top: 35px;
         right: 75px;
         background-color: green;
-        color: white;
+        color: $digi--color--text--secondary;
         border-radius: 50%;
         font-size: 12px;
         font-weight: bold;
@@ -64,42 +64,19 @@
         align-items: center;
       }
       .sc-digi-icon-star-reg:hover {
-        color: var(--digi--color--text--link-hover);
+        color: $digi--color--text--link-hover;
       }
     }
   }
 }
-/*
-.footer {
-  background-color: var(--digi--color--background--tertiary);
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .logoWrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;  Justera avståndet mellan logotyperna om nödvändigt 
-  }
-
-  .logo-img {
-    max-height: 40px; 
-    margin-right: 10px; 
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-*/
 
 .sc-digi-logo {
   display: none;
 }
 
-.digi-logo__system-name {
-  text-decoration: none;
+.sc-digi-logo-h .digi-logo__system-name.sc-digi-logo {
+  text-decoration: underline;
+  text-decoration-color: $digi--color--text--decoration;
 }
 
 #text {

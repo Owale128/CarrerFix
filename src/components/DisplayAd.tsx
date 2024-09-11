@@ -36,10 +36,10 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
       <div className="showRecentAdsContainer">
         <DigiLayoutBlock
           className="adCard"
-          afVariation={LayoutBlockVariation.PRIMARY}
+          afVariation={LayoutBlockVariation.TERTIARY}
           afContainer={LayoutBlockContainer.NONE}
         >
-          <DigiTypography>
+          <DigiTypography className="typographyContainer">
             <blockquote>
               <h3>{jobAd.headline}</h3>
               <h4>{jobAd.employer.name}</h4>

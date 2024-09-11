@@ -3,8 +3,6 @@ import { JobAdsContext } from "../context/JobAdsContext";
 import { useEffect, useReducer, useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import LogoImg from "../assets/logoImg.png";
-import "../sass/layout.scss";
-import "../sass/logo.scss";
 import { SaveAdsContext } from "../context/SaveAdsContext";
 import {
   DigiFooter,

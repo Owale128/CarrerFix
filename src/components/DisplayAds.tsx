@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IJobAd } from "../models/IJobAd";
 import { DisplayAd } from "./DisplayAd";
-import "../sass/adsList.scss";
 import { DigiFormCheckbox } from "@digi/arbetsformedlingen-react";
 import { FormCheckboxVariation } from "@digi/arbetsformedlingen";
 

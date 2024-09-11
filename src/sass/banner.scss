@@ -1,4 +1,4 @@
-@import "../sass/buttons.scss";
+@import "../sass/variables.scss";
 
 .bannerSection {
   position: relative;
@@ -19,23 +19,22 @@
     position: absolute;
     width: 300px;
     height: 200px;
-    top: 4em;
-    left: 6em;
+    top: 4rem;
+    left: 6rem;
 
     h1 {
-      color: white;
+      color: $digi--color--text--secondary;
     }
   }
 
   .wrapper {
     position: absolute;
-    width: 70px;
-    top: 1.5em;
-    right: 1.5em;
+    width: 100px;
+    top: 1.5rem;
+    right: 1.5rem;
 
     .logo {
       width: 100%;
-      opacity: 0.6;
     }
   }
 }

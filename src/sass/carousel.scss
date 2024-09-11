@@ -1,3 +1,5 @@
+@import "../sass/variables.scss";
+
 .carouselWrapper {
   position: relative;
   width: 100%;
@@ -9,15 +11,19 @@
     width: 300%;
     transition: margin-left 0.5s ease;
     padding-top: 1em;
-    border-top: solid 1em var(--digi--color--background--tertiary);
+    border-top: solid 1em $digi--color--border--secondary;
 
     .suggestedAdsCard {
       position: relative;
       width: 350px;
       padding: 1.5em;
       text-wrap: wrap;
-      background-color: var(--digi--color--background--primary);
+      background-color: $digi--color--background--primary;
       height: 300px;
+
+      .digi-typography {
+        background-color: $digi--color--background--primary;
+      }
 
       &:hover {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -27,7 +33,7 @@
 
     .leftCarouselButton,
     .rightCarouselButton {
-      background-color: var(--digi--color--background--secondary);
+      background-color: $digi--color--background--secondary;
       opacity: 0.7;
       width: 80px;
       height: 80px;

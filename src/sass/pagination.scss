@@ -1,0 +1,28 @@
+@import "../sass/variables.scss";
+
+.paginationSection {
+  padding-top: 1em;
+}
+
+.searchHitsSection {
+  display: flex;
+  gap: 2em;
+  width: 50%;
+
+  h3 {
+    color: $digi--color--text--primary;
+    font-weight: bold;
+  }
+}
+
+.sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
+  background-color: $digi--color--background--tertiary;
+}
+
+.sc-digi-layout-container-h .digi-layout-container.sc-digi-layout-container {
+  background-color: $digi--color--background--tertiary;
+}
+
+.sc-digi-footer-h .digi-footer__content-bottom.sc-digi-footer {
+  background-color: $digi--color--background--tertiary;
+}

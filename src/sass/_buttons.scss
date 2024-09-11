@@ -1,0 +1,37 @@
+@import "../sass/variables.scss";
+
+.sc-digi-button-h .digi-button--variation-primary.sc-digi-button {
+  background-color: $digi--button--color--background--primary--default;
+  color: $digi--button--color--text--primary--default;
+}
+
+.digi-button .digi-button--variation-secondary.sc-digi-button {
+  background-color: $digi--button--color--background--secondary--default;
+  color: $digi--button--color--text--secondary--default;
+}
+
+.digi-button .digi-button--variation-primary.sc-digi-button:hover {
+  background-color: $COLOR--BACKGROUND--HOVER;
+  color: aqua;
+}
+
+.applyLink {
+  text-decoration: none;
+}
+
+.digi-link-button.digi-link-button--primary a {
+  background-color: transparent;
+  background-color: $digi--link--button--color--background--primary--default;
+}
+
+.digi-link-button.digi-link-button--primary .digi-link-button__text {
+  color: $digi--link--button--color--text--primary--default;
+}
+
+.sc-digi-link-button-s a {
+  border-color: $digi--color--text--link;
+}
+
+.sc-digi-link-button-s a:hover {
+  border-color: $digi--color--text--link-hover;
+}

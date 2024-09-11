@@ -29,9 +29,9 @@ const ShowRecentAds = () => {
   }, [getAdData]);
 
   return (
-    <div className="container">
+    <div className="adsList">
       <DigiTypography afVariation={TypographyVariation.SMALL}>
-      <h2>Nya annonser</h2>
+        <h2>Nya annonser</h2>
       </DigiTypography>
       {recent.map((ad) => {
         const isSaved = checkIfAdIsSaved(ad.id, saveAds);

@@ -9,7 +9,6 @@ import {
   TypographyHeadingJumboLevel,
 } from "@digi/arbetsformedlingen";
 import { useNavigate } from "react-router-dom";
-import "../sass/buttons.scss";
 
 export const AboutPage = () => {
   const navigate = useNavigate();

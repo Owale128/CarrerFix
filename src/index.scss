@@ -2,36 +2,12 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+@import "../src/sass/variables.scss";
+
 :root {
-  /*LAYOUT*/
-  --digi--typography--heading-1--font-size--desktop: 2rem;
-  --digi--typography--body--font-size--desktop-large: 1.125rem;
-  --digi--margin--h1-large: 2rem;
-  --digi--margin--h2-large: 1.5rem;
-  --digi--margin--h3-large: 0.5rem;
-
-  --digi--padding--large: 1.5rem;
-
-  --digi--typography--body--font-size--desktop: 1rem;
-  --digi--global--typography--font-size--base: 1rem;
-  --digi--typography--heading-1--line-height--desktop: 1.5;
-  /*BAKGRUNDSFÄRGER*/
-  --digi--color--background--primary: #fafafa;
-  --digi--color--background--secondary: #eaeaea;
-  --digi--color--background--tertiary: #0d0040;
-
-  --digi--color--text--link-hover: #ffa041;
-  /*LÄNK FÄRGER*/
-  --digi--color--text--link-hover: #ff8001;
-  --digi--color--text--link: rgb(17, 0, 168);
-  /*TEXT FÄRGER*/
-  --digi--color--text--primary: black;
-  --digi--icon--color: black;
-
-  /*BORDERS*/
-  --digi--color--border--primary: #0d0040;
-
   font-family: "Open Sans", sans-serif;
+  font-size: $digi--global--typography--font-size--base;
+  color: $digi--color--text--primary;
 }
 
 * {
@@ -42,11 +18,15 @@
 
 a {
   font-weight: 500;
-  color: var(--digi--color--text--link);
+  color: $digi--color--text--link;
 }
 
 a:hover {
-  color: var(--digi--color--text--link-hover);
+  color: $digi--color--text--link-hover;
+}
+
+a:visited {
+  color: $digi--color--text--link-visited;
 }
 
 body {
@@ -55,14 +35,13 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background-color: var(--digi--color--background--secondary);
-}
-
-main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  padding: 4em 4em 2em 4em;
-  justify-content: space-between;
+  background-color: $digi--color--background--secondary;
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 4em 4em 2em 4em;
+    justify-content: space-between;
+  }
 }

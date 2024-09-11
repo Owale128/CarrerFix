@@ -1,9 +1,9 @@
-@import "../sass/buttons.scss";
+@import "../sass/variables.scss";
 
 .extendedAdContainer {
   padding: 4em 6em;
   display: flex;
-  background-color: var(--digi--color--background--primary);
+  background-color: $digi--color--background--primary;
   position: relative;
   .employerLogoContainer {
     position: absolute;
@@ -13,7 +13,7 @@
   }
 
   .extendedAdCard {
-    background-color: var(--digi--color--background--primary);
+    background-color: $digi--color--background--primary;
     width: 60%;
 
     .qualificationSection {
@@ -37,6 +37,6 @@ ul {
   list-style-position: inside;
 }
 
-.digi-info-card--border-left {
-  border-left: solid red;
+.sc-digi-info-card-h .digi-info-card--border-left.sc-digi-info-card {
+  border-left: solid 1em $digi--color--border--secondary;
 }

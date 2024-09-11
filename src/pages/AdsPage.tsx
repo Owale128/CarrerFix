@@ -6,7 +6,6 @@ import { useContext, useEffect, useState } from "react";
 import { DigiNavigationPaginationCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { SearchTextContext } from "../context/SearchTextContext";
 import { FilterContext } from "../context/FilterContext";
-import "../sass/pagination&search.scss";
 import { IJobAd } from "../models/IJobAd";
 import Spinner from "../components/Spinner";
 import { CurrentPagecContext } from "../context/CurrentPageContext";
@@ -101,8 +100,8 @@ export const AdsPage = () => {
 
   return (
     <>
-    <CurrentPagecContext.Provider value={{currentPage, setCurrentPage}}>
-      <SearchForm getAdData={getAdData} setCurrentPage={setCurrentPage} />
+      <CurrentPagecContext.Provider value={{ currentPage, setCurrentPage }}>
+        <SearchForm getAdData={getAdData} setCurrentPage={setCurrentPage} />
       </CurrentPagecContext.Provider>
       <section className="searchHitsSection">
         <h3>{allAds.length} sökträffar</h3>
