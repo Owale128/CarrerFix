@@ -18,8 +18,9 @@
   .logoImg {
     max-height: 40px;
     width: 70px;
+    height: 70px;
+    object-fit: contain;
   }
-
   ul {
     list-style-type: none;
     margin: 0;
