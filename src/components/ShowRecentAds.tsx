@@ -60,12 +60,11 @@ const ShowRecentAds = () => {
                 </blockquote>
 
                 <blockquote>
-                  <NavLink to={`/ad/${ad.id}`} className="card-link">
+                  <NavLink to={`/ad/${ad.id}`}>
                     <p>Läs mer...</p>
                   </NavLink>
                 </blockquote>
                 <DigiTypographyTime
-                  style={{ color: "black" }}
                   afVariation={TypographyTimeVariation.DISTANCE}
                   afDateTime={ad.publication_date}
                 ></DigiTypographyTime>

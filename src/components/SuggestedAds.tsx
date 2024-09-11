@@ -58,7 +58,7 @@ const ShowLatestAds = () => {
                     <blockquote>
                       <h3>{ad.headline}</h3>
                       <h4>{ad.employer.name}</h4>
-                      <NavLink to={`/ad/${ad.id}`} className="card-link">
+                      <NavLink to={`/ad/${ad.id}`}>
                         <p>Läs mer...</p>
                       </NavLink>
                     </blockquote>

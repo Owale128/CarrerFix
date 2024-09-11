@@ -42,7 +42,7 @@ const Layout = () => {
         >
           <header className="header">
             <div className="logoWrapper">
-              <img src={LogoImg} alt="logoImg" className="logo-img" />
+              <img src={LogoImg} alt="logoImg" className="logoImg" />
               <NavLink to={"/"} className="logoImg">
                 <div className="logoContainer">
                   <DigiLogo
