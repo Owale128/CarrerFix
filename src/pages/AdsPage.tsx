@@ -25,14 +25,14 @@ export const AdsPage = () => {
   useEffect(() => {
     const storedSearchText = localStorage.getItem("storedSearchText");
     const storedAds = localStorage.getItem("storedAds");
-    
+
     if (storedSearchText) {
       setSearchText(storedSearchText);
     }
     if (storedAds) {
       setAllAds(JSON.parse(storedAds));
     }
-  }, [setSearchText]);
+  }, [setSearchText, setAllAds]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,8 +52,7 @@ export const AdsPage = () => {
     };
 
     fetchData();
-
-  }, [searchText, getAdData]);
+  }, [searchText, getAdData, setAllAds]);
 
   useEffect(() => {
     try {
