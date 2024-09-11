@@ -10,6 +10,7 @@ import { IWorkAdress } from "./IWorkAdress";
 export interface IJobAd {
   id: string;
   webpage_url: string;
+  logo_url: string;
   headline: string;
   application_deadline: string;
   number_of_vacancies: number;
