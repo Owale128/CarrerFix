@@ -10,17 +10,21 @@
   --digi--typography--body--font-size--desktop: 1rem;
   --digi--global--typography--font-size--base: 1rem;
   --digi--typography--heading-1--line-height--desktop: 1.5;
-  /*FÄRGER*/
+  /*BAKGRUNDSFÄRGER*/
   --digi--color--background--primary: #fafafa;
   --digi--color--background--secondary: #eaeaea;
   --digi--color--background--tertiary: #0d0040;
-  --digi--color--text--link: rgb(17, 0, 168);
+
   --digi--color--text--link-hover: #ffa041;
-  /*TEXTFÄRGER*/
+  /*LÄNK FÄRGER*/
   --digi--color--text--link-hover: #ff8001;
+  --digi--color--text--link: rgb(17, 0, 168);
   /*TEXT FÄRGER*/
   --digi--color--text--primary: black;
   --digi--icon--color: black;
+
+  /*BORDERS*/
+  --digi--color--border--primary: #0d0040;
 
   font-family: "Open Sans", sans-serif;
 }
