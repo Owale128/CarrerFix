@@ -4,6 +4,7 @@ import {
   DigiLayoutBlock,
   DigiLinkButton,
   DigiLinkExternal,
+  DigiMediaImage,
   DigiTypography,
   DigiTypographyTime,
 } from "@digi/arbetsformedlingen-react";
@@ -35,6 +36,18 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
   );
   return (
     <div className="extendedAdContainer">
+      {ad.logo_url && (
+        <div className="employerLogoContainer">
+          <DigiMediaImage
+            className="employerLogo"
+            afUnlazy
+            afHeight="100"
+            afWidth="200"
+            afSrc={ad.logo_url}
+            afAlt={ad.employer.name}
+          ></DigiMediaImage>
+        </div>
+      )}
       <DigiLayoutBlock
         className="extendedAdCard"
         afVariation={LayoutBlockVariation.PRIMARY}
@@ -43,13 +56,26 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
         <DigiTypography>
           <blockquote>
             <h1>{ad.headline}</h1>
-            <h3>{ad.employer.name}</h3>
+            <h2>{ad.employer.name}</h2>
+            <h3>{ad.occupation_field.label}</h3>
           </blockquote>
 
           <blockquote className="employmentInfoSection">
             <p>Antal lediga platser: {ad.number_of_vacancies}</p>
             <p>Omfattning: {ad.employment_type.label}</p>
             <p>Varaktighet: {ad.duration.label}</p>
+            <p>
+              <b>
+                Ansök senast:
+                <span>
+                  {" "}
+                  <DigiTypographyTime
+                    afVariation={TypographyTimeVariation.PRIMARY}
+                    afDateTime={ad.application_deadline}
+                  ></DigiTypographyTime>
+                </span>
+              </b>
+            </p>
           </blockquote>
 
           <blockquote className="descriptionSection">
@@ -102,11 +128,15 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
 
           <blockquote className="dateSection">
-            <p>Datum för publicering:</p>
-            <DigiTypographyTime
-              afVariation={TypographyTimeVariation.PRIMARY}
-              afDateTime={ad.publication_date}
-            ></DigiTypographyTime>
+            <p>
+              Datum för publicering:{" "}
+              <span>
+                <DigiTypographyTime
+                  afVariation={TypographyTimeVariation.PRIMARY}
+                  afDateTime={ad.publication_date}
+                ></DigiTypographyTime>
+              </span>
+            </p>
           </blockquote>
         </DigiTypography>
       </DigiLayoutBlock>

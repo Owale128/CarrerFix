@@ -4,6 +4,13 @@
   padding: 4em 6em;
   display: flex;
   background-color: var(--digi--color--background--primary);
+  position: relative;
+  .employerLogoContainer {
+    position: absolute;
+    width: 60px;
+    top: 1.5em;
+    left: 6em;
+  }
 
   .extendedAdCard {
     background-color: var(--digi--color--background--primary);
@@ -12,11 +19,6 @@
     .qualificationSection {
       width: 100%;
     }
-  }
-
-  .dateSection {
-    display: flex;
-    gap: 0.5em;
   }
 
   .contactSection {
