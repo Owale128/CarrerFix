@@ -1,6 +1,8 @@
 import RighArrow from "../assets/arrow-right-circle (1).svg";
 import LeftArrow from "../assets/arrow-left-circle (1).svg";
 import {
+  DigiIconBookmarkOutline,
+  DigiIconBookmarkSolid,
   DigiLayoutBlock,
   DigiTypography,
   DigiTypographyTime,
@@ -11,13 +13,16 @@ import {
   TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { IJobAd } from "../models/IJobAd";
+import { checkIfAdIsSaved, handleSaveAd } from "../Utils/adUtils";
+import { SaveAdsContext } from "../context/SaveAdsContext";
 
 const ShowLatestAds = () => {
   const [scrollIndex, setScrollIndex] = useState<number>(0);
   const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
+  const { saveAds, dispatch } = useContext(SaveAdsContext);
   const adsPerScroll = 3;
 
   useEffect(() => {
@@ -47,29 +52,45 @@ const ShowLatestAds = () => {
           <h3>Annonser baserade på dina senaste sökningar</h3>
           <div className="carouselWrapper">
             <div className={`suggestedAdsCardContainer scroll-${scrollIndex}`}>
-              {latestAds.map((ad) => (
-                <DigiLayoutBlock
-                  key={ad.id}
-                  afVariation={LayoutBlockVariation.PRIMARY}
-                  afContainer={LayoutBlockContainer.NONE}
-                  className="suggestedAdsCard"
-                >
-                  <DigiTypography>
-                    <blockquote>
-                      <h3>{ad.headline}</h3>
-                      <h4>{ad.employer.name}</h4>
-                      <NavLink to={`/ad/${ad.id}`}>
-                        <p>Läs mer...</p>
-                      </NavLink>
-                    </blockquote>
+              {latestAds.map((ad) => {
+                const isSaved = checkIfAdIsSaved(ad.id, saveAds);
+                return (
+                  <DigiLayoutBlock
+                    key={ad.id}
+                    afVariation={LayoutBlockVariation.PRIMARY}
+                    afContainer={LayoutBlockContainer.NONE}
+                    className="suggestedAdsCard"
+                  >
+                    <DigiTypography>
+                      <blockquote>
+                        <h3>{ad.headline}</h3>
+                        <h4>{ad.employer.name}</h4>
+                        <NavLink to={`/ad/${ad.id}`}>
+                          <p>Läs mer...</p>
+                        </NavLink>
+                      </blockquote>
 
-                    <DigiTypographyTime
-                      afVariation={TypographyTimeVariation.DISTANCE}
-                      afDateTime={ad.publication_date}
-                    ></DigiTypographyTime>
-                  </DigiTypography>
-                </DigiLayoutBlock>
-              ))}
+                      <DigiTypographyTime
+                        afVariation={TypographyTimeVariation.DISTANCE}
+                        afDateTime={ad.publication_date}
+                      ></DigiTypographyTime>
+
+                      <div
+                        onClick={() =>
+                          handleSaveAd(ad, isSaved, dispatch, () => {})
+                        }
+                        className="bookMarkRecentAds"
+                      >
+                        {isSaved ? (
+                          <DigiIconBookmarkSolid />
+                        ) : (
+                          <DigiIconBookmarkOutline />
+                        )}
+                      </div>
+                    </DigiTypography>
+                  </DigiLayoutBlock>
+                );
+              })}
 
               {latestAds.length > adsPerScroll &&
                 scrollIndex <
