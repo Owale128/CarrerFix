@@ -74,6 +74,11 @@ export const DisplayAd = ({ jobAd }: IDisplayAd) => {
           className="bookMarkRecentAds"
         >
           {isSaved ? <DigiIconBookmarkSolid /> : <DigiIconBookmarkOutline />}
+          {isSaved ? (
+            <p className="savedText">
+              <b>Sparad</b>
+            </p>
+          ) : null}
         </div>
       </div>
     </>
