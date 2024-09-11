@@ -7,7 +7,6 @@
   --digi--button--color--text--secondary--default: #ffffff;
   --digi--icon--color: red;
   --COLOR--BACKGROUND--ACTIVE: rgb(0, 96, 128);
-  --COLOR--ICON--DEFAULT: rgb(22, 185, 213);
 }
 
 .digi-button.digi-button--variation-primary {
@@ -15,11 +14,17 @@
   color: var(--digi--button--color--text--primary--default);
 }
 
-.digi-button__icon
-  .digi-button__icon--secondary.sc-digi-button
-  .sc-digi-button-s {
-  background-color: var(--COLOR--ICON--DEFAULT);
+.digi-button.digi-button--variation-secondary {
+  background-color: var(--digi--button--color--background--secondary--default);
+  color: var(--digi--button--color--text--secondary--default);
 }
+
+/*
+.sc-digi-button-h .digi-button--variation-secondary.sc-digi-button {
+}
+
+*/
+
 .applyLink {
   text-decoration: none;
 }
@@ -34,5 +39,9 @@
 }
 
 .sc-digi-link-button-s a {
-  border-color: black;
+  border-color: var(--digi--color--text--link);
+}
+
+.sc-digi-link-button-s a:hover {
+  border-color: var(--digi--color--text--link-hover);
 }
