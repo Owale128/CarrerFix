@@ -7,7 +7,13 @@
 
   /*LAYOUT*/
   --digi--typography--heading-1--font-size--desktop: 2rem;
-  --digi--margin--h1-small: 1rem;
+  --digi--typography--body--font-size--desktop-large: 1.125rem;
+  --digi--margin--h1-large: 2rem;
+  --digi--margin--h2-large: 1.5rem;
+  --digi--margin--h3-large: 0.5rem;
+
+  --digi--padding--large: 1.5rem;
+
   --digi--typography--body--font-size--desktop: 1rem;
   /*FONTER*/
   --digi--global--typography--font-size--base: 1rem;
@@ -21,7 +27,7 @@
   --digi--color--text--link-hover: #ff8001;
   /*TEXT FÄRGER*/
   --digi--color--text--primary: black;
-  --digi--icon--color:black;
+  --digi--icon--color: black;
 }
 
 a {
