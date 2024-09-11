@@ -13,21 +13,26 @@ interface ISearchForm {
   getAdData: (
     searchText: string
   ) => Promise<{ ads: IJobAd[]; totalCount: number }>;
+  setCurrentPage: (page: number) => void;
 }
 
-export const SearchForm = ({ getAdData }: ISearchForm) => {
+export const SearchForm = ({ getAdData, setCurrentPage }: ISearchForm) => {
   const navigate = useNavigate();
   const { setSearchText } = useContext(SearchTextContext);
   const [inputValue, setInputValue] = useState("");
 
   const handleSearch = async (e: DigiFormInputSearchCustomEvent<string>) => {
     e.preventDefault();
+    
     if (inputValue.trim() !== "") {
       setSearchText(inputValue);
       const searchResults = await getAdData(inputValue);
       localStorage.setItem("storedAds", JSON.stringify(searchResults.ads));
       localStorage.setItem("storedSearchText", inputValue);
       setInputValue("");
+      if (typeof setCurrentPage === 'function') {
+        setCurrentPage(1);
+      }
       navigate("/ads");
     }
   };

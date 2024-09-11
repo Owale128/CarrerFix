@@ -101,7 +101,7 @@ export const AdsPage = () => {
 
   return (
     <>
-      <SearchForm getAdData={getAdData} />
+      <SearchForm getAdData={getAdData} setCurrentPage={setCurrentPage} />
       <section className="search-hits-section">
         <h3>{allAds.length} sökträffar</h3>
         <p> | </p>
