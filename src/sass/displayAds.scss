@@ -1,4 +1,7 @@
 .checkBoxSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   width: 30%;
   padding: 1em;
   background-color: var(--digi--color--background--primary);

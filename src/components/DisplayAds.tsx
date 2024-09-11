@@ -30,6 +30,9 @@ export const DisplayAds = ({ ads }: DisplayAdsProps) => {
     <>
       {sortedAds.length > 0 && (
         <section className="checkBoxSection">
+          <b>
+            <p>Filtrera sökningar</p>
+          </b>
           <DigiFormCheckbox
             afLabel="Senaste 7 dagarna"
             afVariation={FormCheckboxVariation.PRIMARY}
