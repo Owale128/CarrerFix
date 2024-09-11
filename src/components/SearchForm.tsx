@@ -12,7 +12,7 @@ import { IJobAd } from "../models/IJobAd";
 interface ISearchForm {
   getAdData: (
     searchText: string
-  ) => Promise<{ ads: IJobAd[]; totalCount: number }>;
+  ) => Promise<{ ads: IJobAd[];}>;
   setCurrentPage: (page: number) => void;
 }
 
