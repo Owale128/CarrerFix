@@ -40,7 +40,7 @@ export const AboutPage = () => {
       </section>
       <section className="bottomSection">
         <div className="bottomContent">
-          <h2>Hitta drömjobbet som tar din karriär till nästa nivå!</h2>
+          <h1>Hitta drömjobbet som tar din karriär till nästa nivå!</h1>
           <p>
             Utforska dina karriärmöjligheter med oss! Vi erbjuder ett brett
             utbud av spännande jobbmöjligheter som kan passa just dina
