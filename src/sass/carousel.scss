@@ -2,13 +2,13 @@
 
 .carouselWrapper {
   position: relative;
-  width: 100%;
+  width: 110%;
   overflow: hidden;
 
   .suggestedAdsCardContainer {
     display: flex;
     gap: 20px;
-    width: 300%;
+    width: 90%;
     transition: margin-left 0.5s ease;
     padding-top: 1em;
     border-top: solid 1em $digi--color--border--secondary;
@@ -76,5 +76,35 @@
   }
   .scroll-2 {
     margin-left: -171.5%;
+  }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 760px) {
+  .carouselWrapper {
+    width: 100%;
+    .suggestedAdsCardContainer {
+      width: 350%;
+      .suggestedAdsCard {
+        width: 250px;
+        height: 350px;
+      }
+    }
+    .scroll-0 {
+      margin-left: 0;
+    }
+    .scroll-1 {
+      margin-left: -65%;
+    }
+    .scroll-2 {
+      margin-left: -140%;
+    }
+    .scroll-3 {
+      margin-left: -210%;
+    }
+    .scroll-4 {
+      margin-left: -200%;
+    }
+
+    
   }
 }

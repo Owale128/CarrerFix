@@ -24,12 +24,12 @@ const ShowLatestAds = () => {
   const [scrollIndex, setScrollIndex] = useState<number>(0);
   const [latestAds, setLatestAds] = useState<IJobAd[]>([]);
   const { saveAds, dispatch } = useContext(SaveAdsContext);
-  const adsPerScroll = 3;
+  const adsPerScroll = 1;
 
   useEffect(() => {
     const storedAds = JSON.parse(localStorage.getItem("storedAds") || "[]");
 
-    const adsToDisplay = [...storedAds].slice(0, 9);
+    const adsToDisplay = [...storedAds].slice(0, 4);
 
     if (storedAds.length > 0) {
       setLatestAds(adsToDisplay);
@@ -38,7 +38,7 @@ const ShowLatestAds = () => {
 
   const handleScroll = () => {
     setScrollIndex((prevIndex) => {
-      const maxIndex = 2;
+      const maxIndex = 4;
       if (prevIndex < maxIndex) {
         return prevIndex + 1;
       } else {

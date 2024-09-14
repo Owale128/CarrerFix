@@ -82,3 +82,32 @@
 #text {
   text-decoration: none;
 }
+
+
+@media only screen and (min-width: 390px) and (max-width: 760px) {
+
+  .header {
+    flex-direction: column;
+
+    .logoImg {
+      width: 45px;
+    }
+    
+    ul {
+      margin: 0;
+      font-size: 23px;
+
+      .list {
+        padding: 10px 20px;
+
+        .star {
+          width: 30px;
+        }
+        .badge {
+          top: 90px;
+          right: 68px;
+        }
+      }
+    }
+  }
+}

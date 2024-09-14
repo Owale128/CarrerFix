@@ -41,7 +41,7 @@ const Layout = () => {
           <header className="header">
             <div className="logoWrapper">
               <img src={LogoImg} alt="logoImg" className="logoImg" />
-              <NavLink to={"/"} className="logoImg">
+              <NavLink to={"/"} className="logoLink">
                 <div className="logoContainer">
                   <DigiLogo
                     afSvgAriaHidden={true}

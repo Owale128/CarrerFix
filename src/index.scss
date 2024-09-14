@@ -45,3 +45,15 @@ body {
     justify-content: space-between;
   }
 }
+
+
+@media only screen and (min-width: 390px) and (max-width: 760px) {
+
+  body {
+
+    main {
+      padding: 60px 20px 20px 20px;
+    }
+  }
+
+}
