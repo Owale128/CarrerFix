@@ -1,4 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/8i8QJdqC)
-# Case AF
+# School Project! 😊
 
-Denna uppgift består av att ni behöver skapa er egna platsbank. Ni får lägga till precis den funktionalitet som ni själva tycker skall finnas med i denna applikation. För fler detaljer se pdf-filen som är bifogad till uppgiften på itslearning
+The application we've built is a web application built with React that acts as a job platform where users can search for jobs, view job posting details, and save ads they're interested in. We have implemented a search form where the user can search for jobs via an input, and based on this, relevant job advertisements are displayed. The results are sorted and presented, and the user can easily navigate between different pages using pagination.
+The home page displays the latest and recommended job advertisements. Users have the option to save ads, and the saved ads are stored locally so they can return to them later. We have also developed features that display detailed job ads with all relevant information. In addition, the application handles API calls to retrieve and display job ads based on the user's search, with support for filtering and sorting, such as displaying the most recent ads published during a certain time period.
+
+Link: https://carrerfix.netlify.app/
+
+<img width="1470" alt="Skärmavbild 2024-09-15 kl  15 31 24" src="https://github.com/user-attachments/assets/92e224c2-b336-4456-8aaf-fa6061746a02">
+
+# Stack:
+[![My Skills](https://skillicons.dev/icons?i=vite,react,ts,sass,netlify)](https://skillicons.dev)
