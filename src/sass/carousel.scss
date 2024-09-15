@@ -82,8 +82,18 @@
 @media only screen and (min-width: 390px) and (max-width: 760px) {
   .carouselWrapper {
     width: 100%;
+    h2 {
+      font-size: 15px;
+    }
     .suggestedAdsCardContainer {
       width: 350%;
+
+      .rightCarouselButton, .leftCarouselButton {
+        width: 60px;
+        height: 60px;
+        bottom: 20%;
+      }
+
       .suggestedAdsCard {
         width: 250px;
         height: 350px;

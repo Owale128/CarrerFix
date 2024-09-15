@@ -54,7 +54,7 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
         afContainer={LayoutBlockContainer.NONE}
       >
         <DigiTypography>
-          <blockquote>
+          <blockquote className="company">
             <h1>{ad.headline}</h1>
             <h2>{ad.employer.name}</h2>
             <h3>{ad.occupation_field.label}</h3>
@@ -117,41 +117,16 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
             </DigiInfoCard>
           </blockquote>
 
-          <blockquote>
-            <DigiLinkButton
-              afHref={ad.application_details.url}
-              afSize={LinkButtonSize.LARGE}
-              afVariation={LinkButtonVariation.PRIMARY}
-            >
-              Ansök nu
-            </DigiLinkButton>
-          </blockquote>
-
-          <blockquote className="dateSection">
-            <p>
-              Datum för publicering:{" "}
-              <span>
-                <DigiTypographyTime
-                  afVariation={TypographyTimeVariation.PRIMARY}
-                  afDateTime={ad.publication_date}
-                ></DigiTypographyTime>
-              </span>
-            </p>
-          </blockquote>
-        </DigiTypography>
-      </DigiLayoutBlock>
-
-      <DigiInfoCard
+          <DigiInfoCard
         className="contactSection"
         afHeading="Kontakta arbetsgivaren"
         afHeadingLevel={InfoCardHeadingLevel.H2}
         afType={InfoCardType.RELATED}
         afVariation={InfoCardVariation.SECONDARY}
         afSize={InfoCardSize.STANDARD}
-        af-border-position="left"
       >
         <DigiTypography>
-          <blockquote>
+          <blockquote className="employer">
             <p>Ansök via arbetsgivarens hemsida:</p>
             {ad.application_details.url ? (
               <DigiLinkExternal
@@ -204,6 +179,30 @@ export const ExtendedAdDetails = ({ ad }: IExtendedDetailsProps) => {
           </blockquote>
         </DigiTypography>
       </DigiInfoCard>
+
+          <blockquote className="digiLinkButton">
+            <DigiLinkButton
+              afHref={ad.application_details.url}
+              afSize={LinkButtonSize.LARGE}
+              afVariation={LinkButtonVariation.PRIMARY}
+            >
+              Ansök nu
+            </DigiLinkButton>
+          </blockquote>
+
+          <blockquote className="dateSection">
+            <p>
+              Datum för publicering:{" "}
+              <span>
+                <DigiTypographyTime
+                  afVariation={TypographyTimeVariation.PRIMARY}
+                  afDateTime={ad.publication_date}
+                ></DigiTypographyTime>
+              </span>
+            </p>
+          </blockquote>
+        </DigiTypography>
+      </DigiLayoutBlock>  
     </div>
   );
 };

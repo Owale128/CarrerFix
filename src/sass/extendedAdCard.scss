@@ -1,10 +1,13 @@
 @import "../sass/variables.scss";
 
 .extendedAdContainer {
-  padding: 4em 6em;
+  width: 80%;
   display: flex;
-  background-color: $digi--color--background--primary;
+  margin: 0 auto;
+  padding: 4em 6em;
   position: relative;
+  background-color: $digi--color--background--primary;
+
   .employerLogoContainer {
     position: absolute;
     width: 60px;
@@ -12,24 +15,48 @@
     left: 6em;
   }
 
-  .extendedAdCard {
-    background-color: $digi--color--background--primary;
-    width: 60%;
+  .descriptionSection {
+    width: 800px;
+  }
 
-    .qualificationSection {
+  .employmentInfoSection,
+  .company,
+  .descriptionSection,
+  .contactSection, 
+  .employer, 
+  .locationSection {
+    margin: 0 auto;
+  }
+
+  .qualificationSection {
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .extendedAdCard {
+    width: 100%;
+    background-color: $digi--color--background--primary;
+  }
+
+  .contactSection {
+    min-height: 400px;
+    max-height: 600px;
+    text-align: center;
+
+    .locationSection {
+      padding-top: 1.5em;
       width: 100%;
     }
   }
 
-  .contactSection {
-    width: 40%;
-    min-height: 400px;
-    max-height: 600px;
+  .digiLinkButton {
+    margin: 20px auto;
+    text-align: center;
+  }
 
-    .locationSection {
-      padding-top: 1.5em;
-      max-width: 50%;
-    }
+  .dateSection {
+    margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -40,3 +67,33 @@ ul {
 .sc-digi-info-card-h .digi-info-card--border-left.sc-digi-info-card {
   border-left: solid 1em $digi--color--border--secondary;
 }
+
+@media only screen and (min-width: 390px) and (max-width: 760px) {
+
+  .extendedAdContainer {
+    padding: 2em 0;
+    width: 100%;
+    flex-direction: column;
+    .employmentInfoSection {
+      display: none;
+    }
+    
+    .company {
+      display: none;
+    }
+    
+    .descriptionSection {
+      display: none;
+    }
+    
+    .digiLinkButton {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .dateSection {
+      text-align: center;
+    }
+    
+  }
+  }

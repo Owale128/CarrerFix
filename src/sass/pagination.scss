@@ -5,13 +5,13 @@
 }
 
 .searchHitsSection {
-  display: flex;
   gap: 2rem;
-  width: 50%;
+  width: 100%;
+  display: flex;
 
   h3 {
-    color: $digi--color--text--primary;
     font-weight: bold;
+    color: $digi--color--text--primary;
   }
 }
 

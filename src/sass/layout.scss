@@ -87,15 +87,20 @@
 @media only screen and (min-width: 390px) and (max-width: 760px) {
 
   .header {
+    padding: 5px;
     flex-direction: column;
 
-    .logoImg {
-      width: 45px;
-    }
+      .logoImg {
+        width: 45px;
+      }
+
+      .logContainer {
+        font-size: 10px;
+      }
     
     ul {
       margin: 0;
-      font-size: 23px;
+      font-size: 20px;
 
       .list {
         padding: 10px 20px;
@@ -104,10 +109,14 @@
           width: 30px;
         }
         .badge {
-          top: 90px;
-          right: 68px;
+          top: 80px;
+          right: 70px;
         }
       }
     }
+  }
+  .digi-footer p, .digi-footer a {
+    top: -20px;
+    position: relative;
   }
 }

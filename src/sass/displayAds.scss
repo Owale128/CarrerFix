@@ -6,3 +6,12 @@
   padding: 1em;
   background-color: $digi--color--background--primary;
 }
+
+@media only screen and (min-width: 390px) and (max-width: 760px) {
+
+  .checkBoxSection {
+    width: 100%;
+    text-align: center;
+  }
+
+ }
