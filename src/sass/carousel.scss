@@ -82,9 +82,11 @@
 @media only screen and (min-width: 390px) and (max-width: 760px) {
   .carouselWrapper {
     width: 100%;
+
     h2 {
       font-size: 15px;
     }
+
     .suggestedAdsCardContainer {
       width: 350%;
 
@@ -117,4 +119,35 @@
 
     
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+.carouselWrapper {
+  .suggestedAdsCardContainer {
+    width: 200%;
+  }
+}
+}
+
+@media only screen 
+  and (max-device-width: 360px)
+  and (max-device-height: 880px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .rightCarouselButton, .leftCarouselButton {
+      display: none;
+    }
+}
+
+@media only screen 
+  and (max-device-width: 880px)
+  and (max-device-height: 360px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+    .rightCarouselButton, .leftCarouselButton {
+      display: none;
+    }
 }
