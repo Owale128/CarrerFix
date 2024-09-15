@@ -1,4 +1,4 @@
-import "../sass/AboutPage.scss";
+import "../sass/aboutPage.scss";
 import {
   DigiButton,
   DigiTypographyHeadingJumbo,
