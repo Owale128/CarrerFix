@@ -3,8 +3,16 @@
 
 .aboutPage {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  flex-direction: column;
+
+  .about {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-decoration: underline;
+    color: rgb(0, 0, 94);
+  }
 
   .topSection,
   .bottomSection {
@@ -48,15 +56,15 @@
     h1,
     h2 {
       color: $digi--color--text--secondary;
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
+      font-size: 35.2px;
+      margin-bottom: 24px;
       animation: fadeIn 0.6s ease-in-out forwards;
     }
 
     p {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
+      font-size: 28.8px;
       line-height: 1.6;
+      margin-bottom: 40px;
       animation: fadeIn 0.6s ease-in-out forwards;
       animation-delay: 0.5s;
     }
@@ -73,11 +81,26 @@
 @media only screen and (min-width: 390px) and (max-width: 760px) { 
 
   .aboutPage {
+
+    .about {
+      font-size: 30px;
+    }
+
     .topSection {
       height: 600px;
     }
     .bottomSection {
-      height: 750px;
+      height: 700px;
+    }
+    
+    .topContent, .bottomContent {
+      h1, h2 {
+        font-size: 25.6px;
+      }
+
+      p { 
+        font-size: 20.8px;
+      }
     }
   }
 

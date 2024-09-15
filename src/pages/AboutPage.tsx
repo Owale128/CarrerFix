@@ -1,12 +1,11 @@
 import "../sass/aboutPage.scss";
 import {
   DigiButton,
-  DigiTypographyHeadingJumbo,
+  DigiTypography,
 } from "@digi/arbetsformedlingen-react";
 import {
   ButtonSize,
   ButtonVariation,
-  TypographyHeadingJumboLevel,
 } from "@digi/arbetsformedlingen";
 import { useNavigate } from "react-router-dom";
 
@@ -19,10 +18,9 @@ export const AboutPage = () => {
 
   return (
     <div className="aboutPage">
-      <DigiTypographyHeadingJumbo
-        afText="Om Oss"
-        afLevel={TypographyHeadingJumboLevel.H1}
-      ></DigiTypographyHeadingJumbo>
+    <DigiTypography className="about">
+          Om Oss
+      </DigiTypography>
       <section className="topSection">
         <div className="topContent">
           <h1>Om Vårt Projekt</h1>
