@@ -69,3 +69,16 @@
     animation-delay: 1.2s;
   }
 }
+
+@media only screen and (min-width: 390px) and (max-width: 760px) { 
+
+  .aboutPage {
+    .topSection {
+      height: 600px;
+    }
+    .bottomSection {
+      height: 750px;
+    }
+  }
+
+}

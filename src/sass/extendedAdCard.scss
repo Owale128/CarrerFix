@@ -74,6 +74,12 @@ ul {
     padding: 2em 0;
     width: 100%;
     flex-direction: column;
+
+    .employerLogoContainer {
+      width: 80px;
+      top: 0.6em;
+      left: 1em;
+    }
     .employmentInfoSection {
       display: none;
     }

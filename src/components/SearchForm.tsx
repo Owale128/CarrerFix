@@ -39,7 +39,7 @@ export const SearchForm = ({ getAdData, setCurrentPage }: ISearchForm) => {
     <div className="searchFormContainer">
       <DigiFormInputSearch
         afLabel="Sök Jobb"
-        afVariation={FormInputSearchVariation.LARGE}
+        afVariation={FormInputSearchVariation.MEDIUM}
         afAutofocus={true}
         afType={FormInputType.SEARCH}
         afButtonText="Sök"
