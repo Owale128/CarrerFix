@@ -8,4 +8,4 @@ Link: https://carrerfix.netlify.app/
 <img width="1470" alt="Skärmavbild 2024-09-15 kl  15 31 24" src="https://github.com/user-attachments/assets/92e224c2-b336-4456-8aaf-fa6061746a02">
 
 # Stack:
-[![My Skills](https://skillicons.dev/icons?i=vite,react,ts,sass, netlify)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vite,react,ts,sass,netlify)](https://skillicons.dev)
